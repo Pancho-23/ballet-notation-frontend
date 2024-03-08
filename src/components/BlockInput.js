@@ -222,7 +222,7 @@ function BlockInput() {
         </div>
         {/* End: Step Input */}
 
-        {/* Start: Number Input / PENDING */}
+        {/* Start: Number Input */}
         <div className="number block-box" id="number-container">
           <div className="block-header">Number</div>
           <div className="block-input">
@@ -245,7 +245,7 @@ function BlockInput() {
         </div>
         {/* End: Number Input */}
 
-        {/* Start: Leg Input / DONE */}
+        {/* Start: Leg Input */}
         <div className="leg block-box" id="leg-container">
           <div className="block-header">Leg</div>
           <div className="block-input">
@@ -282,10 +282,29 @@ function BlockInput() {
         </div>
         {/* End: Leg Input */}
 
-        {/* Start: Direction Input / PENDING */}
+        {/* Start: Direction Input */}
         <div className="direction block-box" id="direction-container">
           <div className="block-header">Direction</div>
           <div className="block-input">
+
+            <label htmlFor="direction-cardinal-input"></label>
+            <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" />
+
+            <datalist id="direction-cardinal-options">
+              <option label="Ommited" value='' selected></option>
+              <option label="Front" value='+'></option>
+              <option label="Back" value='-'></option>
+              <option label="Side" value='='></option>
+            </datalist>
+
+            <label htmlFor="direction-side-input"></label>
+            <input type="text" id="direction-side-input" list="direction-side-options" />
+
+            <datalist id="direction-side-options">
+              <option label="Right Leg / Ommited" value='' selected></option>
+              <option label="Left Leg" value='!'></option>
+            </datalist>
+
           </div>
         </div>
         {/* End: Direction Input */}
