@@ -13,7 +13,6 @@ function BlockInput() {
     const feetPositionInput = document.getElementById('feet-position-input').value;
     const feetOrderInput = document.getElementById('feet-order-input').value;
     const feetOpenCloseInput = document.getElementById('feet-openClose-options').value;
-    const variantsInput = document.getElementById('variants-container').value;
     const stepInput = document.getElementById('step-input').value;
     const numberInput = document.getElementById('number-input').value;
     const legFormInput = document.getElementById('leg-form-input').value;
@@ -31,6 +30,52 @@ function BlockInput() {
     const headInput = document.getElementById('head-input').value;
 
 
+    const variantInput = '';
+
+    if (document.getElementById('demi').checked === true) {
+      variantInput += 'D'
+    }
+    if (document.getElementById('ferme').checked === true) {
+      variantInput += 'F'
+    }
+    if (document.getElementById('petit').checked === true) {
+      variantInput += 'T'
+    }
+    if (document.getElementById('grand').checked === true) {
+      variantInput += 'G'
+    }
+    if (document.getElementById('quartier').checked === true) {
+      variantInput += 'Q'
+    }
+    if (document.getElementById('plat').checked === true) {
+      variantInput += 'L'
+    }
+    if (document.getElementById('releve').checked === true) {
+      variantInput += 'V'
+    }
+    if (document.getElementById('battus').checked === true) {
+      variantInput += 'B'
+    }
+    if (document.getElementById('changement').checked === true) {
+      variantInput += 'C'
+    }
+    if (document.getElementById('entournant').checked === true) {
+      variantInput += 'N'
+    }
+    if (document.getElementById('plier').checked === true) {
+      variantInput += 'P'
+    }
+    if (document.getElementById('etire').checked === true) {
+      variantInput += 'E'
+    }
+    if (document.getElementById('aterre').checked === true) {
+      variantInput += 'T'
+    }
+    if (document.getElementById('enlair').checked === true) {
+      variantInput += 'A'
+    }
+
+    const finalBlock = placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantInput + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput;
 
   }
 
@@ -131,78 +176,93 @@ function BlockInput() {
         {/* Start: Variants Input */}
         <div className="variants block-box" id="variants-container">
           <div className="block-header">Variants</div>
-          <div className="block-input">
+          <div className="block-input variants-checkboxes">
 
             <div className="check">
+              <input type="checkbox" name="Demi" id="demi" value='D' />
               <div className="check-tag">
+                Demi
               </div>
-              <input type="checkbox" name="Demi" value='D' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Fermé" id='ferme' value='F' />
               <div className="check-tag">
+                Fermé
               </div>
-              <input type="checkbox" name="Fermé" value='F' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Petit" id='petit' value='T' />
               <div className="check-tag">
+                Petit
               </div>
-              <input type="checkbox" name="Petit" value='T' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Grand" id='grand' value='G' />
               <div className="check-tag">
+                Grand
               </div>
-              <input type="checkbox" name="Grand" value='G' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Quartier" id='quartier' value='Q' />
               <div className="check-tag">
+                Quartier
               </div>
-              <input type="checkbox" name="Quartier" value='Q' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Plat" id='plat' value='L' />
               <div className="check-tag">
+                Plat
               </div>
-              <input type="checkbox" name="Plat" value='L' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Relevé" id='releve' value='V' />
               <div className="check-tag">
+                Relevé
               </div>
-              <input type="checkbox" name="Relevé" value='V' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Battus" id='battus' value='B' />
               <div className="check-tag">
+                Battus
               </div>
-              <input type="checkbox" name="Battus" value='B' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Changement" id='changement' value='C' />
               <div className="check-tag">
+                Changement
               </div>
-              <input type="checkbox" name="Changement" value='C' />
             </div>
             <div className="check">
+              <input type="checkbox" name="En Tournant" id='entournant' value='N' />
               <div className="check-tag">
+                En Tournant
               </div>
-              <input type="checkbox" name="En Tournant" value='N' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Plier" id='plier' value='P' />
               <div className="check-tag">
+                Plier
               </div>
-              <input type="checkbox" name="Plier" value='P' />
             </div>
             <div className="check">
+              <input type="checkbox" name="Etiré" id='etire' value='E' />
               <div className="check-tag">
+                Etiré
               </div>
-              <input type="checkbox" name="Etiré" value='E' />
             </div>
             <div className="check">
+              <input type="checkbox" name="A Térre" id='aterre' value='R' />
               <div className="check-tag">
+                A Térre
               </div>
-              <input type="checkbox" name="A Térre" value='R' />
             </div>
             <div className="check">
+              <input type="checkbox" name="En L'Air" id='enlair' value='A' />
               <div className="check-tag">
+                En L'Air
               </div>
-              <input type="checkbox" name="En L'Air" value='A' />
             </div>
+
 
           </div>
 
