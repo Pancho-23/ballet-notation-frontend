@@ -133,20 +133,20 @@ function BlockInput() {
           <div className="block-header">Variants</div>
           <div className="block-input">
 
-            <input type="checkbox" name="Demi" value='D' />
-            <input type="checkbox" name="Fermé" value='F' />
-            <input type="checkbox" name="Petit" value='T' />
-            <input type="checkbox" name="Grand" value='G' />
-            <input type="checkbox" name="Quartier" value='Q' />
-            <input type="checkbox" name="Plat" value='L' />
-            <input type="checkbox" name="Relevé" value='V' />
-            <input type="checkbox" name="Battus" value='B' />
-            <input type="checkbox" name="Changement" value='C' />
-            <input type="checkbox" name="En Tournant" value='N' />
-            <input type="checkbox" name="Plier" value='P' />
-            <input type="checkbox" name="Etiré" value='E' />
-            <input type="checkbox" name="A Térre" value='R' />
-            <input type="checkbox" name="En L'Air" value='A' />
+            <div className="check"><input type="checkbox" name="Demi" value='D' /></div>
+            <div className="check"><input type="checkbox" name="Fermé" value='F' /></div>
+            <div className="check"><input type="checkbox" name="Petit" value='T' /></div>
+            <div className="check"><input type="checkbox" name="Grand" value='G' /></div>
+            <div className="check"><input type="checkbox" name="Quartier" value='Q' /></div>
+            <div className="check"><input type="checkbox" name="Plat" value='L' /></div>
+            <div className="check"><input type="checkbox" name="Relevé" value='V' /></div>
+            <div className="check"><input type="checkbox" name="Battus" value='B' /></div>
+            <div className="check"><input type="checkbox" name="Changement" value='C' /></div>
+            <div className="check"><input type="checkbox" name="En Tournant" value='N' /></div>
+            <div className="check"><input type="checkbox" name="Plier" value='P' /></div>
+            <div className="check"><input type="checkbox" name="Etiré" value='E' /></div>
+            <div className="check"><input type="checkbox" name="A Térre" value='R' /></div>
+            <div className="check"><input type="checkbox" name="En L'Air" value='A' /></div>
 
           </div>
         </div>
