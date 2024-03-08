@@ -309,16 +309,25 @@ function BlockInput() {
         </div>
         {/* End: Direction Input */}
 
-        {/* Start: Spin Input / PENDING */}
+        {/* Start: Spin Input */}
         <div className="spin block-box" id="spin-container">
           <div className="block-header">Spin</div>
           <div className="block-input">
+
+            <label htmlFor="spin-input"></label>
+            <input type="text" id="spin-input" list="spin-options" />
+
+            <datalist id="spin-options">
+              <option label="Ommited" value='' selected></option>
+              <option label="Clockwise" value='>'></option>
+              <option label="Counter-Clockwise" value='<'></option>
+            </datalist>
 
           </div>
         </div>
         {/* End: Spin Input */}
 
-        {/* Start: Left Arm Input / DONE */}
+        {/* Start: Left Arm Input */}
         <div className="leftarm block-box" id="leftarm-container">
           <div className="block-header">Left Arm</div>
           <div className="block-input">
@@ -362,7 +371,7 @@ function BlockInput() {
         </div>
         {/* End: Left Arm Input */}
 
-        {/* Start: Right Arm Input / DONE */}
+        {/* Start: Right Arm Input */}
         <div className="rightarm block-box" id="rightarm-container">
           <div className="block-header">Right Arm</div>
           <div className="block-input">
@@ -406,13 +415,26 @@ function BlockInput() {
         </div>
         {/* End: Right Arm Input */}
 
-        {/* Start: Head Input / PENDING */}
+        {/* Start: Head Input */}
         <div className="head block-box" id="head-container">
           <div className="block-header">Head</div>
           <div className="block-input">
-            <label htmlFor="head-input">
-              <input type="text" id="head-input" list="head-options" />
-            </label>
+
+            <label htmlFor="head-input"></label>
+            <input type="text" id="head-input" list="head-options" />
+
+            <datalist id="head-options">
+              <option label="Ommited" value='' selected></option>
+              <option label="En Dehors Left" value='1'></option>
+              <option label="Front" value='2'></option>
+              <option label="En Dehors Right" value='3'></option>
+              <option label="Profile Right" value='4'></option>
+              <option label="En Dedans Right" value='5'></option>
+              <option label="Down" value='6'></option>
+              <option label="En Dedans Left" value='7'></option>
+              <option label="Profile Left" value='8'></option>
+            </datalist>
+
           </div>
         </div>
         {/* End: Head Input */}
