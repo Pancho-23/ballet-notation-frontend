@@ -14,6 +14,22 @@ function BlockInput() {
     const feetOrderInput = document.getElementById('feet-order-input').value;
     const feetOpenCloseInput = document.getElementById('feet-openClose-options').value;
     const variantsInput = document.getElementById('variants-container').value;
+    const stepInput = document.getElementById('step-input').value;
+    const numberInput = document.getElementById('number-input').value;
+    const legFormInput = document.getElementById('leg-form-input').value;
+    const legCardinalInput = document.getElementById('leg-cardinal-input').value;
+    const legSideInput = document.getElementById('leg-side-input').value;
+    const directionCardinalInput = document.getElementById('direction-cardinal-input').value;
+    const directionSideInput = document.getElementById('direction-side-input').value;
+    const spinInput = document.getElementById('spin-input').value;
+    const leftArmPositionInput = document.getElementById('leftarm-position-input').value;
+    const leftArmSideInput = document.getElementById('leftarm-side-input').value;
+    const leftArmFormInput = document.getElementById('leftarm-form-input').value;
+    const rightArmPositionInput = document.getElementById('rightarm-position-input').value;
+    const rightArmSideInput = document.getElementById('rightarm-side-input').value;
+    const rightArmFormInput = document.getElementById('rightarm-form-input').value;
+    const headInput = document.getElementById('head-input').value;
+
 
 
   }
