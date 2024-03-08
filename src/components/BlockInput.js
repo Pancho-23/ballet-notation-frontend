@@ -1,4 +1,3 @@
-import '../styles/BlockInput.css';
 
 function BlockInput() {
 
@@ -25,7 +24,7 @@ function BlockInput() {
 
       <form>
 
-        {/* Start: Place Input / DONE */}
+        {/* Start: Place Input */}
         <div className="place block-box" id="place-container">
           <div className="block-header">Place</div>
           <div className="block-input">
@@ -51,7 +50,7 @@ function BlockInput() {
         {/* End: Place Input */}
 
 
-        {/* Start: Hip Input / DONE */}
+        {/* Start: Hip Input */}
         <div className="hip block-box block-box" id="hip-container">
           <div className="block-header">Hip</div>
           <div className="block-input">
@@ -75,7 +74,7 @@ function BlockInput() {
         </div>
         {/* End: Hip Input */}
 
-        {/* Start: Feet Input / DONE */}
+        {/* Start: Feet Input */}
         <div className="feet block-box" id="feet-container">
           <div className="block-header">Feet</div>
           <div className="block-input">
@@ -113,7 +112,7 @@ function BlockInput() {
         </div>
         {/* End: Feet Input */}
 
-        {/* Start: Variants Input / PENDING */}
+        {/* Start: Variants Input */}
         <div className="variants block-box" id="variants-container">
           <div className="block-header">Variants</div>
           <div className="block-input">
@@ -141,6 +140,84 @@ function BlockInput() {
         <div className="step block-box" id="step-container">
           <div className="block-header">Step</div>
           <div className="block-input">
+
+            <label htmlFor="step-input"></label>
+            <input type="text" id="step-input" list="step-options" />
+
+            <datalist id="step-options">
+              <option label="Ommited" value='' selected></option>
+              <option label="Assemblé" value='as'></option>
+              <option label="Ballonné" value='bn'></option>
+              <option label="Balloté" value='bt'></option>
+              <option label="Battement" value='bm'></option>
+              <option label="Basque (Pas de)" value='bs'></option>
+              <option label="Bourré (Pas de)" value='br'></option>
+              <option label="Brisé" value='bi'></option>
+              <option label="Cabriole" value='cb'></option>
+              <option label="Coupé" value='cp'></option>
+              <option label="Changement/Entrechat" value='ch'></option>
+              <option label="Chassé" value='cs'></option>
+              <option label="Chat (Pas de)" value='ct'></option>
+              <option label="Cheval (Pas de)" value='cv'></option>
+              <option label="Ciseaux (Pas de)" value='cx'></option>
+              <option label="Cloche" value='cl'></option>
+              <option label="Contretemps" value='cn'></option>
+              <option label="Deboulé" value='db'></option>
+              <option label="Degagé" value='dg'></option>
+              <option label="Detourné" value='dt'></option>
+              <option label="Developpé" value='dv'></option>
+              <option label="Decalé" value='dl'></option>
+              <option label="Echappé" value='ep'></option>
+              <option label="Elevé" value='ev'></option>
+              <option label="Emboité" value='eb'></option>
+              <option label="Enveloppé" value='en'></option>
+              <option label="Fait" value='fi'></option>
+              <option label="Flic" value='fc'></option>
+              <option label="Flic-Flac" value='ff'></option>
+              <option label="Fondú (Battement)" value='fn'></option>
+              <option label="Fouetté" value='ft'></option>
+              <option label="Frappé (Battement)" value='fp'></option>
+              <option label="Gargoulliade" value='gg'></option>
+              <option label="Glissade" value='gl'></option>
+              <option label="Jeté" value='jt'></option>
+              <option label="Jeté Entrelacé" value='je'></option>
+              <option label="Pas" value='pa'></option>
+              <option label="Poisson (Pas de)" value='pp'></option>
+              <option label="Polonaise (Pas de)" value='po'></option>
+              <option label="Possé" value='ps'></option>
+              <option label="Marché (Pas de)" value='pm'></option>
+              <option label="Penché" value='pn'></option>
+              <option label="Piqué" value='pq'></option>
+              <option label="Pirouette" value='py'></option>
+              <option label="Plié" value='pl'></option>
+              <option label="Pointé" value='pe'></option>
+              <option label="Promenade" value='pr'></option>
+              <option label="Pied Flex" value='px'></option>
+              <option label="Relevé" value='rv'></option>
+              <option label="Relevé Lent" value='rl'></option>
+              <option label="Renversé" value='rn'></option>
+              <option label="Reverence" value='re'></option>
+              <option label="Ronde de Corpe" value='rc'></option>
+              <option label="Ronde de Jambe" value='rj'></option>
+              <option label="Ronde Jeté" value='rt'></option>
+              <option label="Ronde de Pied" value='rp'></option>
+              <option label="Royale" value='ry'></option>
+              <option label="Sauter (Soubresaut)" value='sr'></option>
+              <option label="Sissone" value='sn'></option>
+              <option label="Soutenue" value='st'></option>
+              <option label="Soplesse" value='sp'></option>
+              <option label="Temps de Cuisse" value='tc'></option>
+              <option label="Temps de Fleche" value='tf'></option>
+              <option label="Temps Levé" value='tv'></option>
+              <option label="Temps Lié" value='tl'></option>
+              <option label="Tendú (Battement)" value='tn'></option>
+              <option label="Tombé" value='tb'></option>
+              <option label="Tour de Jambe" value='tj'></option>
+              <option label="Vals (Pas de)" value='vs'></option>
+              <option label="Tour" value='tr'></option>
+            </datalist>
+
+
           </div>
         </div>
         {/* End: Step Input */}
@@ -149,9 +226,7 @@ function BlockInput() {
         <div className="number block-box" id="number-container">
           <div className="block-header">Number</div>
           <div className="block-input">
-            <label htmlFor="number-input">
-              <input type="text" id="number-input" list="number-options" />
-            </label>
+
           </div>
         </div>
         {/* End: Number Input */}
