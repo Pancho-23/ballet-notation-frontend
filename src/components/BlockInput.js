@@ -226,6 +226,20 @@ function BlockInput() {
         <div className="number block-box" id="number-container">
           <div className="block-header">Number</div>
           <div className="block-input">
+            <label htmlFor="number-input"></label>
+
+            <input type="text" id="number-input" list="number-options" />
+
+            <datalist id="number-options">
+              <option label="Single/Ommited" value='' selected></option>
+              <option label="Double" value='2'></option>
+              <option label="Triple" value='3'></option>
+              <option label="Quadruple" value='4'></option>
+              <option label="Quintuple" value='5'></option>
+              <option label="Sixtuple" value='6'></option>
+              <option label="Seventuple" value='7'></option>
+              <option label="Eightuple" value='8'></option>
+            </datalist>
 
           </div>
         </div>
