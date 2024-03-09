@@ -113,7 +113,7 @@ function BlockInput() {
 
                 </div>
               </div>
-              <div className="h L3">
+              <div className="h L3 first-line">
                 <div className='titles'>Hip</div>
                 <div className="block-input">
                   <label htmlFor="hip-input"></label>
@@ -132,7 +132,7 @@ function BlockInput() {
                   </datalist>
                 </div>
               </div>
-              <div className="h L3">
+              <div className="h L3 first-line">
                 <div className='titles'>Feet</div>
                 <div className="block-input">
 
@@ -252,7 +252,7 @@ function BlockInput() {
               </div>
               <div className="h L3">
                 <div className='titles'>Number</div>
-                <div className="block-input">
+                <div className="block-input titles">
                   <label htmlFor="number-input"></label>
 
                   <input type="text" id="number-input" list="number-options" />
@@ -326,7 +326,7 @@ function BlockInput() {
                   </datalist>
                 </div>
               </div>
-              <div className="h L3">
+              <div className="h L3 third-line">
                 <div className='titles'>Spin</div>
                 <div className="block-input">
                   <label htmlFor="spin-input"></label>
@@ -339,7 +339,7 @@ function BlockInput() {
                   </datalist>
                 </div>
               </div>
-              <div className="h L3">
+              <div className="h L3 third-line">
                 <div className='titles'>Head</div>
                 <div className="block-input">
                   <label htmlFor="head-input"></label>

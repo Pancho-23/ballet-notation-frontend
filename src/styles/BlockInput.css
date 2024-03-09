@@ -35,10 +35,6 @@ input {
  
 }
 
-.add-block {
-  margin: 3px;
-}
-
 .varia > div > div {
   height: 20px;
 }
@@ -58,4 +54,12 @@ input {
 
 .titles {
   text-align: center;
+}
+
+.first-line {
+  padding-left: 16px;
+}
+
+.third-line {
+  padding-left: 35px;
 }
