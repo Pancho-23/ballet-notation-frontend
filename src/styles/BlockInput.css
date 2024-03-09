@@ -11,11 +11,9 @@ body {
   border: 1px solid gray;
   padding: 5px;
   margin: 0 auto;
-  width: 570px;
+  width: 550px;
   height: 180px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  
 }
 
 .L3 {
@@ -32,9 +30,13 @@ input {
 
 .h {
   display: inline-block;
-  padding: 2px;
+ 
 }
 
 .add-block {
   margin: 3px;
+}
+
+.varia > div > div {
+  height: 20px;
 }

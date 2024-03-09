@@ -442,74 +442,71 @@ function BlockInput() {
           </div>
           <div className="h L1">
             <div className="L2">Variants</div>
-            <div className="L2">
-              <div>
-                <div className="h">
+            <div className="L2 varia">
+              <div className="h">
+                <div>
                   <div className="h"><input type="checkbox" name="Demi" id="demi" value='D' /></div>
                   <div className="h">Demi</div>
                 </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' /></div>
-                  <div className="h">Quartier</div>
-                </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' /></div>
-                  <div className="h">Changement</div>
-                </div>
-              </div>
-              <div>
-                <div className="h">
+                <div>
                   <div className="h"><input type="checkbox" name="Petit" id='petit' value='T' /></div>
                   <div className="h">Petit</div>
                 </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' /></div>
-                  <div className="h">Grand</div>
-                </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' /></div>
-                  <div className="h">Fermé</div>
-                </div>
-              </div>
-              <div>
-                <div className="h">
+                <div>
                   <div className="h"><input type="checkbox" name="Plier" id='plier' value='P' /></div>
                   <div className="h">Plier</div>
                 </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' /></div>
-                  <div className="h">Etiré</div>
-                </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' /></div>
-                  <div className="h">En Tournant</div>
-                </div>
-              </div>
-              <div>
-                <div className="h">
+                <div>
                   <div className="h"><input type="checkbox" name="Plat" id='plat' value='L' /></div>
                   <div className="h">Plat</div>
                 </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' /></div>
-                  <div className="h">Relevé</div>
-                </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' /></div>
-                  <div className="h">Battus</div>
-                </div>
-              </div>
-              <div>
-                <div className="h">
+                <div>
                   <div className="h"><input type="checkbox" name="A Térre" id='aterre' value='R' /></div>
                   <div className="h">A Térre</div>
                 </div>
-                <div className="h">
-                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' /></div>
-                  <div className="h">En L'air</div>
+              </div>
+              <div className="h">
+                <div>
+                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' /></div>
+                  <div className="h">Quartier</div>
                 </div>
-                <div className="h">
-                  <button>Add Block</button>
+                <div>
+                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' /></div>
+                  <div className="h">Grand</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' /></div>
+                  <div className="h">Etiré</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' /></div>
+                  <div className="h">Relevé</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' /></div>
+                  <div className="h">En L'Air</div>
+                </div>
+              </div>
+              <div className="h">
+                <div>
+                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' /></div>
+                  <div className="h">Changement</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' /></div>
+                  <div className="h">Fermé</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' /></div>
+                  <div className="h">En Tournant</div>
+                </div>
+                <div>
+                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' /></div>
+                  <div className="h">Battus</div>
+                </div>
+                <div>
+                  <div className="h"></div>
+                  <div className="h"><button>Add Button</button></div>
                 </div>
               </div>
             </div>
