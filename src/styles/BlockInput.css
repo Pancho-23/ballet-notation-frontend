@@ -7,6 +7,20 @@ body {
   color: rgb(51, 50, 50);
 }
 
+.L0 {
+  border: 1px solid gray;
+  padding: 5px;
+  margin: 0 auto;
+  width: 570px;
+  height: 180px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.L3 {
+  padding: 3px;
+}
 
 input {
   width: 30px;
@@ -18,4 +32,9 @@ input {
 
 .h {
   display: inline-block;
+  padding: 2px;
+}
+
+.add-block {
+  margin: 3px;
 }
