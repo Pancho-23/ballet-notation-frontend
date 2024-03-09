@@ -12,8 +12,10 @@ body {
   padding: 5px;
   margin: 0 auto;
   width: 550px;
-  height: 180px;
-  
+  height: auto;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 
 .L3 {
@@ -39,4 +41,17 @@ input {
 
 .varia > div > div {
   height: 20px;
+}
+
+.variant-title {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.internal-box {
+  margin: 10px auto;
+}
+
+.button-box {
+  padding-left: 20px;
 }
