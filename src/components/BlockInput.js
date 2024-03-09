@@ -90,9 +90,9 @@ function BlockInput() {
 
         <div className="init L0">
           <div className="h L1">
-            <div className="L2">
+            <div className="L2 leftL2">
               <div className="h L3">
-                <div>Place</div>
+                <div className='titles'>Place</div>
                 <div className="block-input">
 
                   <label htmlFor="place-input"></label>
@@ -114,7 +114,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Hip</div>
+                <div className='titles'>Hip</div>
                 <div className="block-input">
                   <label htmlFor="hip-input"></label>
                   <input type="text" id="hip-input" list="hip-options" />
@@ -133,7 +133,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Feet</div>
+                <div className='titles'>Feet</div>
                 <div className="block-input">
 
                   <label htmlFor="feet-position-input"></label>
@@ -169,9 +169,9 @@ function BlockInput() {
                 </div>
               </div>
             </div>
-            <div className="L2">
+            <div className="L2 leftL2">
               <div className="h L3">
-                <div>Step</div>
+                <div className='titles'>Step</div>
                 <div className="block-input">
                   <label htmlFor="step-input"></label>
                   <input className="step" type="text" id="step-input" list="step-options" />
@@ -251,7 +251,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Number</div>
+                <div className='titles'>Number</div>
                 <div className="block-input">
                   <label htmlFor="number-input"></label>
 
@@ -270,7 +270,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Leg</div>
+                <div className='titles'>Leg</div>
                 <div className="block-input">
                   <label htmlFor="leg-form-input"></label>
                   <input type="text" id="leg-form-input" list="leg-form-options" />
@@ -303,9 +303,9 @@ function BlockInput() {
                 </div>
               </div>
             </div>
-            <div className="L2">
+            <div className="L2 leftL2">
               <div className="h L3">
-                <div>Direction</div>
+                <div className='titles'>Direction</div>
                 <div className="block-input">
                   <label htmlFor="direction-cardinal-input"></label>
                   <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" />
@@ -327,7 +327,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Spin</div>
+                <div className='titles'>Spin</div>
                 <div className="block-input">
                   <label htmlFor="spin-input"></label>
                   <input type="text" id="spin-input" list="spin-options" />
@@ -340,7 +340,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Head</div>
+                <div className='titles'>Head</div>
                 <div className="block-input">
                   <label htmlFor="head-input"></label>
                   <input type="text" id="head-input" list="head-options" />
@@ -359,9 +359,9 @@ function BlockInput() {
                 </div>
               </div>
             </div>
-            <div className="L2">
+            <div className="L2 leftL2">
               <div className="h L3">
-                <div>Left Arm</div>
+                <div className='titles'>Left Arm</div>
                 <div className="block-input">
                   <label htmlFor="leftarm-form-input"></label>
                   <input type="text" id="leftarm-position-input" list="leftarm-position-options" />
@@ -400,7 +400,7 @@ function BlockInput() {
                 </div>
               </div>
               <div className="h L3">
-                <div>Right Arm</div>
+                <div className='titles'>Right Arm</div>
                 <div className="block-input">
                   <label htmlFor="rightarm-form-input"></label>
                   <input type="text" id="rightarm-position-input" list="rightarm-position-options" />
@@ -505,7 +505,7 @@ function BlockInput() {
                   <div className="h">Battus</div>
                 </div>
                 <div className='internal-box button-box'>
-                  <div className="h"><button>Add Button</button></div>
+                  <div className="h"><button>Add Block</button></div>
                 </div>
               </div>
             </div>
