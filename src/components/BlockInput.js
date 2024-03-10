@@ -1,4 +1,5 @@
 import '../styles/BlockInput.css';
+import { useState } from 'react';
 
 function BlockInput() {
 
@@ -8,77 +9,92 @@ function BlockInput() {
     // Access the selected values directly from the input
 
 
-    const placeInput = document.getElementById('place-input').value;
-    const hipInput = document.getElementById('hip-input').value;
-    const feetPositionInput = document.getElementById('feet-position-input').value;
-    const feetOrderInput = document.getElementById('feet-order-input').value;
-    const feetOpenCloseInput = document.getElementById('feet-openClose-options').value;
-    const stepInput = document.getElementById('step-input').value;
-    const numberInput = document.getElementById('number-input').value;
-    const legFormInput = document.getElementById('leg-form-input').value;
-    const legCardinalInput = document.getElementById('leg-cardinal-input').value;
-    const legSideInput = document.getElementById('leg-side-input').value;
-    const directionCardinalInput = document.getElementById('direction-cardinal-input').value;
-    const directionSideInput = document.getElementById('direction-side-input').value;
-    const spinInput = document.getElementById('spin-input').value;
-    const leftArmPositionInput = document.getElementById('leftarm-position-input').value;
-    const leftArmSideInput = document.getElementById('leftarm-side-input').value;
-    const leftArmFormInput = document.getElementById('leftarm-form-input').value;
-    const rightArmPositionInput = document.getElementById('rightarm-position-input').value;
-    const rightArmSideInput = document.getElementById('rightarm-side-input').value;
-    const rightArmFormInput = document.getElementById('rightarm-form-input').value;
-    const headInput = document.getElementById('head-input').value;
+    let placeInput = document.getElementById('place-input').value;
+    let hipInput = document.getElementById('hip-input').value;
+    let feetPositionInput = document.getElementById('feet-position-input').value;
+    let feetOrderInput = document.getElementById('feet-order-input').value;
+    let feetOpenCloseInput = document.getElementById('feet-openClose-input').value;
+    let stepInput = document.getElementById('step-input').value;
+    let numberInput = document.getElementById('number-input').value;
+    let legFormInput = document.getElementById('leg-form-input').value;
+    let legCardinalInput = document.getElementById('leg-cardinal-input').value;
+    let legSideInput = document.getElementById('leg-side-input').value;
+    let directionCardinalInput = document.getElementById('direction-cardinal-input').value;
+    let directionSideInput = document.getElementById('direction-side-input').value;
+    let spinInput = document.getElementById('spin-input').value;
+    let leftArmPositionInput = document.getElementById('leftarm-position-input').value;
+    let leftArmSideInput = document.getElementById('leftarm-side-input').value;
+    let leftArmFormInput = document.getElementById('leftarm-form-input').value;
+    let rightArmPositionInput = document.getElementById('rightarm-position-input').value;
+    let rightArmSideInput = document.getElementById('rightarm-side-input').value;
+    let rightArmFormInput = document.getElementById('rightarm-form-input').value;
+    let headInput = document.getElementById('head-input').value;
 
 
     let variantInput = '';
 
+
     if (document.getElementById('demi').checked === true) {
-      variantInput += 'D'
+      variantInput += 'D';
     }
     if (document.getElementById('ferme').checked === true) {
-      variantInput += 'F'
+      variantInput += 'F';
     }
     if (document.getElementById('petit').checked === true) {
-      variantInput += 'T'
+      variantInput += 'T';
     }
     if (document.getElementById('grand').checked === true) {
-      variantInput += 'G'
+      variantInput += 'G';
     }
     if (document.getElementById('quartier').checked === true) {
-      variantInput += 'Q'
+      variantInput += 'Q';
     }
     if (document.getElementById('plat').checked === true) {
-      variantInput += 'L'
+      variantInput += 'L';
     }
     if (document.getElementById('releve').checked === true) {
-      variantInput += 'V'
+      variantInput += 'V';
     }
     if (document.getElementById('battus').checked === true) {
-      variantInput += 'B'
+      variantInput += 'D';
     }
     if (document.getElementById('changement').checked === true) {
-      variantInput += 'C'
+      variantInput += 'C';
     }
     if (document.getElementById('entournant').checked === true) {
-      variantInput += 'N'
+      variantInput += 'N';
     }
     if (document.getElementById('plier').checked === true) {
-      variantInput += 'P'
+      variantInput += 'P';
     }
     if (document.getElementById('etire').checked === true) {
-      variantInput += 'E'
+      variantInput += 'E';
     }
     if (document.getElementById('aterre').checked === true) {
-      variantInput += 'T'
+      variantInput += 'T';
     }
     if (document.getElementById('enlair').checked === true) {
-      variantInput += 'A'
+      variantInput += 'A';
     }
 
 
 
+    let finalBlock = placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantInput + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput;
 
-    const finalBlock = placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantInput + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput;
+    console.log('placeinput' + placeInput);
+    console.log('hipInput' + hipInput);
+    console.log('feetPositionInput' + feetPositionInput);
+    console.log('feetOrderInput' + feetOrderInput);
+    console.log('feetOpenCloseInput' + feetOpenCloseInput);
+    console.log('variantInput' + variantInput);
+
+
+
+    console.log(finalBlock);
+
+
+    // Clear All Inputs
+
 
   }
 
@@ -99,7 +115,7 @@ function BlockInput() {
                   <input type="text" id="place-input" list="place-options" />
 
                   <datalist id="place-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Center" value='0'></option>
                     <option label="Front-Left" value='1'></option>
                     <option label="Front" value='2'></option>
@@ -120,7 +136,7 @@ function BlockInput() {
                   <input type="text" id="hip-input" list="hip-options" />
 
                   <datalist id="hip-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Front Left" value='1'></option>
                     <option label="Front" value='2'></option>
                     <option label="Front Right" value='3'></option>
@@ -140,7 +156,7 @@ function BlockInput() {
                   <input type="text" id="feet-position-input" list="feet-position-options" />
 
                   <datalist id="feet-position-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="First Position" value='1'></option>
                     <option label="Second Position" value='2'></option>
                     <option label="Third Position" value='3'></option>
@@ -152,7 +168,7 @@ function BlockInput() {
                   <input type="text" id="feet-order-input" list="feet-order-options" />
 
                   <datalist id="feet-order-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Right Foot Front" value='+'></option>
                     <option label="Right Foot Back" value='-'></option>
                     <option label="Symmetric" value='='></option>
@@ -162,7 +178,7 @@ function BlockInput() {
                   <input type="text" id="feet-openClose-input" list="feet-openClose-options" />
 
                   <datalist id="feet-openClose-options">
-                    <option label="Opened Position (Usual)" value='' selected></option>
+                    <option label="Opened Position (Usual)" value=''></option>
                     <option label="Closed Position" value='¬'></option>
                   </datalist>
 
@@ -177,7 +193,7 @@ function BlockInput() {
                   <input className="step" type="text" id="step-input" list="step-options" />
 
                   <datalist id="step-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Assemblé" value='as'></option>
                     <option label="Ballonné" value='bn'></option>
                     <option label="Balloté" value='bt'></option>
@@ -258,7 +274,7 @@ function BlockInput() {
                   <input type="text" id="number-input" list="number-options" />
 
                   <datalist id="number-options">
-                    <option label="Single/Ommited" value='' selected></option>
+                    <option label="Single/Ommited" value=''></option>
                     <option label="Double" value='2'></option>
                     <option label="Triple" value='3'></option>
                     <option label="Quadruple" value='4'></option>
@@ -276,7 +292,7 @@ function BlockInput() {
                   <input type="text" id="leg-form-input" list="leg-form-options" />
 
                   <datalist id="leg-form-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Cou de Pied" value='#'></option>
                     <option label="Passé" value='$'></option>
                     <option label="Attitude" value='%'></option>
@@ -287,7 +303,7 @@ function BlockInput() {
                   <input type="text" id="leg-cardinal-input" list="leg-cardinal-options" />
 
                   <datalist id="leg-cardinal-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Front" value='+'></option>
                     <option label="Back" value='-'></option>
                     <option label="Side" value='='></option>
@@ -297,7 +313,7 @@ function BlockInput() {
                   <input type="text" id="leg-side-input" list="leg-side-options" />
 
                   <datalist id="leg-side-options">
-                    <option label="Right Leg" value='' selected></option>
+                    <option label="Right Leg" value=''></option>
                     <option label="Left Leg" value='!'></option>
                   </datalist>
                 </div>
@@ -311,7 +327,7 @@ function BlockInput() {
                   <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" />
 
                   <datalist id="direction-cardinal-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Front" value='+'></option>
                     <option label="Back" value='-'></option>
                     <option label="Side" value='='></option>
@@ -321,7 +337,7 @@ function BlockInput() {
                   <input type="text" id="direction-side-input" list="direction-side-options" />
 
                   <datalist id="direction-side-options">
-                    <option label="Right Leg / Ommited" value='' selected></option>
+                    <option label="Right Leg / Ommited" value=''></option>
                     <option label="Left Leg" value='!'></option>
                   </datalist>
                 </div>
@@ -333,7 +349,7 @@ function BlockInput() {
                   <input type="text" id="spin-input" list="spin-options" />
 
                   <datalist id="spin-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Clockwise" value='>'></option>
                     <option label="Counter-Clockwise" value='<'></option>
                   </datalist>
@@ -346,7 +362,7 @@ function BlockInput() {
                   <input type="text" id="head-input" list="head-options" />
 
                   <datalist id="head-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="En Dehors Left" value='1'></option>
                     <option label="Front" value='2'></option>
                     <option label="En Dehors Right" value='3'></option>
@@ -367,7 +383,7 @@ function BlockInput() {
                   <input type="text" id="leftarm-position-input" list="leftarm-position-options" />
 
                   <datalist id="leftarm-position-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Bras Bas" value='0'></option>
                     <option label="First Position" value='1'></option>
                     <option label="Second Position" value='2'></option>
@@ -384,7 +400,7 @@ function BlockInput() {
                   <input type="text" id="leftarm-side-input" list="leftarm-side-options" />
 
                   <datalist id="leftarm-side-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Right" value='?'></option>
                     <option label="Left" value='!'></option>
                   </datalist>
@@ -393,7 +409,7 @@ function BlockInput() {
                   <input type="text" id="leftarm-form-input" list="leftarm-form-options" />
 
                   <datalist id="leftarm-form-options">
-                    <option label="Normal" value='' selected></option>
+                    <option label="Normal" value=''></option>
                     <option label="Allongé" value='°'></option>
                     <option label="w/Partenaire" value='"'></option>
                   </datalist>
@@ -406,7 +422,7 @@ function BlockInput() {
                   <input type="text" id="rightarm-position-input" list="rightarm-position-options" />
 
                   <datalist id="rightarm-position-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Bras Bas" value='0'></option>
                     <option label="First Position" value='1'></option>
                     <option label="Second Position" value='2'></option>
@@ -423,7 +439,7 @@ function BlockInput() {
                   <input type="text" id="rightarm-side-input" list="rightarm-side-options" />
 
                   <datalist id="rightarm-side-options">
-                    <option label="Ommited" value='' selected></option>
+                    <option label="Ommited" value=''></option>
                     <option label="Right" value='?'></option>
                     <option label="Left" value='!'></option>
                   </datalist>
@@ -432,7 +448,7 @@ function BlockInput() {
                   <input type="text" id="rightarm-form-input" list="rightarm-form-options" />
 
                   <datalist id="rightarm-form-options">
-                    <option label="Normal" value='' selected></option>
+                    <option label="Normal" value=''></option>
                     <option label="Allongé" value='°'></option>
                     <option label="w/Partenaire" value='"'></option>
                   </datalist>
@@ -505,7 +521,7 @@ function BlockInput() {
                   <div className="h">Battus</div>
                 </div>
                 <div className='button-box'>
-                  <div className="h"><button>Add Block</button></div>
+                  <div className="h"><button onClick={handleSubmit}>Add Block</button></div>
                 </div>
               </div>
             </div>
