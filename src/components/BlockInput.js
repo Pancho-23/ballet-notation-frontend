@@ -1,5 +1,4 @@
 import '../styles/BlockInput.css';
-import { useState } from 'react';
 
 function BlockInput() {
 
@@ -81,19 +80,50 @@ function BlockInput() {
 
     let finalBlock = placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantInput + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput;
 
-    console.log('placeinput' + placeInput);
-    console.log('hipInput' + hipInput);
-    console.log('feetPositionInput' + feetPositionInput);
-    console.log('feetOrderInput' + feetOrderInput);
-    console.log('feetOpenCloseInput' + feetOpenCloseInput);
-    console.log('variantInput' + variantInput);
-
 
 
     console.log(finalBlock);
 
 
     // Clear All Inputs
+    document.getElementById('place-input').value = '';
+    document.getElementById('hip-input').value = '';
+    document.getElementById('feet-position-input').value = '';
+    document.getElementById('feet-order-input').value = '';
+    document.getElementById('feet-openClose-input').value = '';
+    document.getElementById('step-input').value = '';
+    document.getElementById('number-input').value = '';
+    document.getElementById('leg-form-input').value = '';
+    document.getElementById('leg-cardinal-input').value = '';
+    document.getElementById('leg-side-input').value = '';
+    document.getElementById('direction-cardinal-input').value = '';
+    document.getElementById('direction-side-input').value = '';
+    document.getElementById('spin-input').value = '';
+    document.getElementById('leftarm-position-input').value = '';
+    document.getElementById('leftarm-side-input').value = '';
+    document.getElementById('leftarm-form-input').value = '';
+    document.getElementById('rightarm-position-input').value = '';
+    document.getElementById('rightarm-side-input').value = '';
+    document.getElementById('rightarm-form-input').value = '';
+    document.getElementById('head-input').value = '';
+
+    //Set Variants to Unchecked
+    document.getElementById('demi').checked = false
+    document.getElementById('ferme').checked = false
+    document.getElementById('petit').checked = false
+    document.getElementById('grand').checked = false
+    document.getElementById('quartier').checked = false
+    document.getElementById('plat').checked = false
+    document.getElementById('releve').checked = false
+    document.getElementById('battus').checked = false
+    document.getElementById('changement').checked = false
+    document.getElementById('entournant').checked = false
+    document.getElementById('plier').checked = false
+    document.getElementById('etire').checked = false
+    document.getElementById('aterre').checked = false
+    document.getElementById('enlair').checked = false
+
+
 
 
   }
