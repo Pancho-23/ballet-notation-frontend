@@ -56,6 +56,7 @@ function BlockInput() {
   const [entournantValue, setEntournantValue] = useState('');
   const [battusValue, setBattusValue] = useState('');
 
+
   const handleInputChange = (event) => {
 
     if (event.target.id === 'place-input') {
@@ -235,6 +236,8 @@ function BlockInput() {
     setVariantValue(`${demiValue}${petitValue}${plierValue}${platValue}${aterreValue}${quartierValue}${grandValue}${etireValue}${releveValue}${enlairValue}${changementValue}${fermeValue}${entournantValue}${battusValue}`);
 
     setFinalBlock(`${placeInput}${hipInput}${feetPositionInput}${feetOrderInput}${feetOpenCloseInput}${variantValue}${stepInput}${numberInput}${legFormInput}${legCardinalInput}${legSideInput}${directionCardinalInput}${directionSideInput}${spinInput}${leftArmPositionInput}${leftArmSideInput}${leftArmFormInput}${rightArmPositionInput}${rightArmSideInput}${rightArmFormInput}${headInput}`);
+
+
 
 
   }
