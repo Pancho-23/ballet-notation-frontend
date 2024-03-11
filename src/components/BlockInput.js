@@ -1,132 +1,246 @@
+import { useState } from 'react';
 import '../styles/BlockInput.css';
 
 function BlockInput() {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [placeInput, setPlaceInput] = useState('');
+  const [hipInput, setHipInput] = useState('');
+  const [feetPositionInput, setFeetPositionInput] = useState('');
+  const [feetOrderInput, setFeetOrderInput] = useState('');
+  const [feetOpenCloseInput, setFeetOpenCloseInput] = useState('');
+  const [stepInput, setStepInput] = useState('');
+  const [numberInput, setNumberInput] = useState('');
+  const [legFormInput, setLegFormInput] = useState('');
+  const [legCardinalInput, setLegCardinalInput] = useState('');
+  const [legSideInput, setLegSideInput] = useState('');
+  const [directionCardinalInput, setDirectionCardinalInput] = useState('');
+  const [directionSideInput, setDirectionSideInput] = useState('');
+  const [spinInput, setSpinInput] = useState('');
+  const [headInput, setHeadInput] = useState('');
+  const [leftArmPositionInput, setLeftArmPositionInput] = useState('');
+  const [leftArmSideInput, setLeftArmSideInput] = useState('');
+  const [leftArmFormInput, setLeftArmFormInput] = useState('');
+  const [rightArmPositionInput, setRightArmPositionInput] = useState('');
+  const [rightArmSideInput, setRightArmSideInput] = useState('');
+  const [rightArmFormInput, setRightArmFormInput] = useState('');
+  const [variantValue, setVariantValue] = useState('');
+  const [finalBlock, setFinalBlock] = useState('');
 
-    // Access the selected values directly from the input
+  const [demiChecked, setDemiChecked] = useState(false);
+  const [petitChecked, setPetitChecked] = useState(false);
+  const [plierChecked, setPlierChecked] = useState(false);
+  const [platChecked, setPlatChecked] = useState(false);
+  const [aterreChecked, setAterreChecked] = useState(false);
+  const [quartierChecked, setQuartierChecked] = useState(false);
+  const [grandChecked, setGrandChecked] = useState(false);
+  const [etireChecked, setEtireChecked] = useState(false);
+  const [releveChecked, setReleveChecked] = useState(false);
+  const [enlairChecked, setEnlairChecked] = useState(false);
+  const [changementChecked, setChangementChecked] = useState(false);
+  const [fermeChecked, setFermeChecked] = useState(false);
+  const [entournantChecked, setEntournantChecked] = useState(false);
+  const [battusChecked, setBattusChecked] = useState(false);
 
+  const [demiValue, setDemiValue] = useState('');
+  const [petitValue, setPetitValue] = useState('');
+  const [plierValue, setPlierValue] = useState('');
+  const [platValue, setPlatValue] = useState('');
+  const [aterreValue, setAterreValue] = useState('');
+  const [quartierValue, setQuartierValue] = useState('');
+  const [grandValue, setGrandValue] = useState('');
+  const [etireValue, setEtireValue] = useState('');
+  const [releveValue, setReleveValue] = useState('');
+  const [enlairValue, setEnlairValue] = useState('');
+  const [changementValue, setChangementValue] = useState('');
+  const [fermeValue, setFermeValue] = useState('');
+  const [entournantValue, setEntournantValue] = useState('');
+  const [battusValue, setBattusValue] = useState('');
 
-    let placeInput = document.getElementById('place-input').value;
-    let hipInput = document.getElementById('hip-input').value;
-    let feetPositionInput = document.getElementById('feet-position-input').value;
-    let feetOrderInput = document.getElementById('feet-order-input').value;
-    let feetOpenCloseInput = document.getElementById('feet-openClose-input').value;
-    let stepInput = document.getElementById('step-input').value;
-    let numberInput = document.getElementById('number-input').value;
-    let legFormInput = document.getElementById('leg-form-input').value;
-    let legCardinalInput = document.getElementById('leg-cardinal-input').value;
-    let legSideInput = document.getElementById('leg-side-input').value;
-    let directionCardinalInput = document.getElementById('direction-cardinal-input').value;
-    let directionSideInput = document.getElementById('direction-side-input').value;
-    let spinInput = document.getElementById('spin-input').value;
-    let leftArmPositionInput = document.getElementById('leftarm-position-input').value;
-    let leftArmSideInput = document.getElementById('leftarm-side-input').value;
-    let leftArmFormInput = document.getElementById('leftarm-form-input').value;
-    let rightArmPositionInput = document.getElementById('rightarm-position-input').value;
-    let rightArmSideInput = document.getElementById('rightarm-side-input').value;
-    let rightArmFormInput = document.getElementById('rightarm-form-input').value;
-    let headInput = document.getElementById('head-input').value;
+  const handleInputChange = (event) => {
 
-
-    let variantInput = '';
-
-
-    if (document.getElementById('demi').checked === true) {
-      variantInput += 'D';
+    if (event.target.id === 'place-input') {
+      setPlaceInput(event.target.value);
     }
-    if (document.getElementById('ferme').checked === true) {
-      variantInput += 'F';
+    if (event.target.id === 'hip-input') {
+      setHipInput(event.target.value);
     }
-    if (document.getElementById('petit').checked === true) {
-      variantInput += 'T';
+    if (event.target.id === 'feet-position-input') {
+      setFeetPositionInput(event.target.value);
     }
-    if (document.getElementById('grand').checked === true) {
-      variantInput += 'G';
+    if (event.target.id === 'feet-order-input') {
+      setFeetOrderInput(event.target.value);
     }
-    if (document.getElementById('quartier').checked === true) {
-      variantInput += 'Q';
+    if (event.target.id === 'feet-openClose-input') {
+      setFeetOpenCloseInput(event.target.value);
     }
-    if (document.getElementById('plat').checked === true) {
-      variantInput += 'L';
+    if (event.target.id === 'step-input') {
+      setStepInput(event.target.value);
     }
-    if (document.getElementById('releve').checked === true) {
-      variantInput += 'V';
+    if (event.target.id === 'number-input') {
+      setNumberInput(event.target.value);
     }
-    if (document.getElementById('battus').checked === true) {
-      variantInput += 'D';
+    if (event.target.id === 'leg-form-input') {
+      setLegFormInput(event.target.value);
     }
-    if (document.getElementById('changement').checked === true) {
-      variantInput += 'C';
+    if (event.target.id === 'leg-cardinal-input') {
+      setLegCardinalInput(event.target.value);
     }
-    if (document.getElementById('entournant').checked === true) {
-      variantInput += 'N';
+    if (event.target.id === 'leg-side-input') {
+      setLegSideInput(event.target.value);
     }
-    if (document.getElementById('plier').checked === true) {
-      variantInput += 'P';
+    if (event.target.id === 'direction-cardinal-input') {
+      setDirectionCardinalInput(event.target.value);
     }
-    if (document.getElementById('etire').checked === true) {
-      variantInput += 'E';
+    if (event.target.id === 'direction-side-input') {
+      setDirectionSideInput(event.target.value);
     }
-    if (document.getElementById('aterre').checked === true) {
-      variantInput += 'T';
+    if (event.target.id === 'spin-input') {
+      setSpinInput(event.target.value);
     }
-    if (document.getElementById('enlair').checked === true) {
-      variantInput += 'A';
+    if (event.target.id === 'head-input') {
+      setHeadInput(event.target.value);
+    }
+    if (event.target.id === 'leftarm-position-input') {
+      setLeftArmPositionInput(event.target.value);
+    }
+    if (event.target.id === 'leftarm-side-input') {
+      setLeftArmSideInput(event.target.value);
+    }
+    if (event.target.id === 'leftarm-form-input') {
+      setLeftArmFormInput(event.target.value);
+    }
+    if (event.target.id === 'rightarm-position-input') {
+      setRightArmPositionInput(event.target.value);
+    }
+    if (event.target.id === 'rightarm-side-input') {
+      setRightArmSideInput(event.target.value);
+    }
+    if (event.target.id === 'rightarm-form-input') {
+      setRightArmFormInput(event.target.value);
     }
 
+    if (event.target.id === 'demi') {
+      setDemiChecked(!demiChecked);
+      if (!demiChecked) {
+        setDemiValue('D');
+      } else {
+        setDemiValue('');
+      }
+    }
+    if (event.target.id === 'petit') {
+      setPetitChecked(!petitChecked);
+      if (!petitChecked) {
+        setPetitValue('T');
+      } else {
+        setPetitValue('');
+      }
+    }
+    if (event.target.id === 'plier') {
+      setPlierChecked(!plierChecked);
+      if (!plierChecked) {
+        setPlierValue('P');
+      } else {
+        setPlierValue('');
+      }
+    }
+    if (event.target.id === 'plat') {
+      setPlatChecked(!platChecked);
+      if (!platChecked) {
+        setPlatValue('L');
+      } else {
+        setPlatValue('');
+      }
+    }
+    if (event.target.id === 'aterre') {
+      setAterreChecked(!aterreChecked);
+      if (!aterreChecked) {
+        setAterreValue('T');
+      } else {
+        setAterreValue('');
+      }
+    }
+    if (event.target.id === 'quartier') {
+      setQuartierChecked(!quartierChecked);
+      if (!quartierChecked) {
+        setQuartierValue('Q');
+      } else {
+        setQuartierValue('');
+      }
+    }
+    if (event.target.id === 'grand') {
+      setGrandChecked(!grandChecked);
+      if (!grandChecked) {
+        setGrandValue('G');
+      } else {
+        setGrandValue('');
+      }
+    }
+    if (event.target.id === 'etire') {
+      setEtireChecked(!etireChecked);
+      if (!etireChecked) {
+        setEtireValue('E');
+      } else {
+        setEtireValue('');
+      }
+    }
+    if (event.target.id === 'releve') {
+      setReleveChecked(!releveChecked);
+      if (!releveChecked) {
+        setReleveValue('V');
+      } else {
+        setReleveValue('');
+      }
+    }
+    if (event.target.id === 'enlair') {
+      setEnlairChecked(!enlairChecked);
+      if (!enlairChecked) {
+        setEnlairValue('A');
+      } else {
+        setEnlairValue('');
+      }
+    }
+    if (event.target.id === 'changement') {
+      setChangementChecked(!changementChecked);
+      if (!changementChecked) {
+        setChangementValue('C');
+      } else {
+        setChangementValue('');
+      }
+    }
+    if (event.target.id === 'ferme') {
+      setFermeChecked(!fermeChecked);
+      if (!fermeChecked) {
+        setFermeValue('F');
+      } else {
+        setFermeValue('');
+      }
+    }
+    if (event.target.id === 'entournant') {
+      setEntournantChecked(!entournantChecked);
+      if (!entournantChecked) {
+        setEntournantValue('N');
+      } else {
+        setEntournantValue('');
+      }
+    }
+    if (event.target.id === 'battus') {
+      setBattusChecked(!battusChecked);
+      if (!battusChecked) {
+        setBattusValue('B');
+      } else {
+        setBattusValue('');
+      }
+    }
 
+    setVariantValue(`${demiValue}${petitValue}${plierValue}${platValue}${aterreValue}${quartierValue}${grandValue}${etireValue}${releveValue}${enlairValue}${changementValue}${fermeValue}${entournantValue}${battusValue}`);
 
-    let finalBlock = placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantInput + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput;
-
-
-
-    console.log(finalBlock);
-
-
-    // Clear All Inputs
-    document.getElementById('place-input').value = '';
-    document.getElementById('hip-input').value = '';
-    document.getElementById('feet-position-input').value = '';
-    document.getElementById('feet-order-input').value = '';
-    document.getElementById('feet-openClose-input').value = '';
-    document.getElementById('step-input').value = '';
-    document.getElementById('number-input').value = '';
-    document.getElementById('leg-form-input').value = '';
-    document.getElementById('leg-cardinal-input').value = '';
-    document.getElementById('leg-side-input').value = '';
-    document.getElementById('direction-cardinal-input').value = '';
-    document.getElementById('direction-side-input').value = '';
-    document.getElementById('spin-input').value = '';
-    document.getElementById('leftarm-position-input').value = '';
-    document.getElementById('leftarm-side-input').value = '';
-    document.getElementById('leftarm-form-input').value = '';
-    document.getElementById('rightarm-position-input').value = '';
-    document.getElementById('rightarm-side-input').value = '';
-    document.getElementById('rightarm-form-input').value = '';
-    document.getElementById('head-input').value = '';
-
-    //Set Variants to Unchecked
-    document.getElementById('demi').checked = false
-    document.getElementById('ferme').checked = false
-    document.getElementById('petit').checked = false
-    document.getElementById('grand').checked = false
-    document.getElementById('quartier').checked = false
-    document.getElementById('plat').checked = false
-    document.getElementById('releve').checked = false
-    document.getElementById('battus').checked = false
-    document.getElementById('changement').checked = false
-    document.getElementById('entournant').checked = false
-    document.getElementById('plier').checked = false
-    document.getElementById('etire').checked = false
-    document.getElementById('aterre').checked = false
-    document.getElementById('enlair').checked = false
-
-
+    setFinalBlock(`${placeInput}${hipInput}${feetPositionInput}${feetOrderInput}${feetOpenCloseInput}${variantValue}${stepInput}${numberInput}${legFormInput}${legCardinalInput}${legSideInput}${directionCardinalInput}${directionSideInput}${spinInput}${leftArmPositionInput}${leftArmSideInput}${leftArmFormInput}${rightArmPositionInput}${rightArmSideInput}${rightArmFormInput}${headInput}`);
 
 
   }
+
+
+
 
   return (
 
@@ -142,7 +256,7 @@ function BlockInput() {
                 <div className="block-input">
 
                   <label htmlFor="place-input"></label>
-                  <input type="text" id="place-input" list="place-options" />
+                  <input type="text" id="place-input" list="place-options" value={placeInput} onChange={handleInputChange} />
 
                   <datalist id="place-options">
                     <option label="Ommited" value=''></option>
@@ -163,7 +277,7 @@ function BlockInput() {
                 <div className='titles  heads'>Hip</div>
                 <div className="block-input">
                   <label htmlFor="hip-input"></label>
-                  <input type="text" id="hip-input" list="hip-options" />
+                  <input type="text" id="hip-input" list="hip-options" value={hipInput} onChange={handleInputChange} />
 
                   <datalist id="hip-options">
                     <option label="Ommited" value=''></option>
@@ -183,7 +297,7 @@ function BlockInput() {
                 <div className="block-input">
 
                   <label htmlFor="feet-position-input"></label>
-                  <input type="text" id="feet-position-input" list="feet-position-options" />
+                  <input type="text" id="feet-position-input" list="feet-position-options" value={feetPositionInput} onChange={handleInputChange} />
 
                   <datalist id="feet-position-options">
                     <option label="Ommited" value=''></option>
@@ -195,7 +309,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="feet-order-input"></label>
-                  <input type="text" id="feet-order-input" list="feet-order-options" />
+                  <input type="text" id="feet-order-input" list="feet-order-options" value={feetOrderInput} onChange={handleInputChange} />
 
                   <datalist id="feet-order-options">
                     <option label="Ommited" value=''></option>
@@ -205,7 +319,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="feet-openClose-input"></label>
-                  <input type="text" id="feet-openClose-input" list="feet-openClose-options" />
+                  <input type="text" id="feet-openClose-input" list="feet-openClose-options" value={feetOpenCloseInput} onChange={handleInputChange} />
 
                   <datalist id="feet-openClose-options">
                     <option label="Opened Position (Usual)" value=''></option>
@@ -220,7 +334,7 @@ function BlockInput() {
                 <div className='titles heads'>Step</div>
                 <div className="block-input">
                   <label htmlFor="step-input"></label>
-                  <input className="step" type="text" id="step-input" list="step-options" />
+                  <input className="step" type="text" id="step-input" list="step-options" value={stepInput} onChange={handleInputChange} />
 
                   <datalist id="step-options">
                     <option label="Ommited" value=''></option>
@@ -301,7 +415,7 @@ function BlockInput() {
                 <div className="block-input titles">
                   <label htmlFor="number-input"></label>
 
-                  <input type="text" id="number-input" list="number-options" />
+                  <input type="text" id="number-input" list="number-options" value={numberInput} onChange={handleInputChange} />
 
                   <datalist id="number-options">
                     <option label="Single/Ommited" value=''></option>
@@ -319,7 +433,7 @@ function BlockInput() {
                 <div className='titles heads'>Leg</div>
                 <div className="block-input">
                   <label htmlFor="leg-form-input"></label>
-                  <input type="text" id="leg-form-input" list="leg-form-options" />
+                  <input type="text" id="leg-form-input" list="leg-form-options" value={legFormInput} onChange={handleInputChange} />
 
                   <datalist id="leg-form-options">
                     <option label="Ommited" value=''></option>
@@ -330,7 +444,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leg-cardinal-input"></label>
-                  <input type="text" id="leg-cardinal-input" list="leg-cardinal-options" />
+                  <input type="text" id="leg-cardinal-input" list="leg-cardinal-options" value={legCardinalInput} onChange={handleInputChange} />
 
                   <datalist id="leg-cardinal-options">
                     <option label="Ommited" value=''></option>
@@ -340,7 +454,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leg-side-input"></label>
-                  <input type="text" id="leg-side-input" list="leg-side-options" />
+                  <input type="text" id="leg-side-input" list="leg-side-options" value={legSideInput} onChange={handleInputChange} />
 
                   <datalist id="leg-side-options">
                     <option label="Right Leg" value=''></option>
@@ -354,7 +468,7 @@ function BlockInput() {
                 <div className='titles heads'>Direction</div>
                 <div className="block-input">
                   <label htmlFor="direction-cardinal-input"></label>
-                  <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" />
+                  <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" value={directionCardinalInput} onChange={handleInputChange} />
 
                   <datalist id="direction-cardinal-options">
                     <option label="Ommited" value=''></option>
@@ -364,7 +478,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="direction-side-input"></label>
-                  <input type="text" id="direction-side-input" list="direction-side-options" />
+                  <input type="text" id="direction-side-input" list="direction-side-options" value={directionSideInput} onChange={handleInputChange} />
 
                   <datalist id="direction-side-options">
                     <option label="Right Leg / Ommited" value=''></option>
@@ -376,7 +490,7 @@ function BlockInput() {
                 <div className='titles heads'>Spin</div>
                 <div className="block-input">
                   <label htmlFor="spin-input"></label>
-                  <input type="text" id="spin-input" list="spin-options" />
+                  <input type="text" id="spin-input" list="spin-options" value={spinInput} onChange={handleInputChange} />
 
                   <datalist id="spin-options">
                     <option label="Ommited" value=''></option>
@@ -389,7 +503,7 @@ function BlockInput() {
                 <div className='titles heads'>Head</div>
                 <div className="block-input">
                   <label htmlFor="head-input"></label>
-                  <input type="text" id="head-input" list="head-options" />
+                  <input type="text" id="head-input" list="head-options" value={headInput} onChange={handleInputChange} />
 
                   <datalist id="head-options">
                     <option label="Ommited" value=''></option>
@@ -410,7 +524,7 @@ function BlockInput() {
                 <div className='titles heads'>Left Arm</div>
                 <div className="block-input">
                   <label htmlFor="leftarm-form-input"></label>
-                  <input type="text" id="leftarm-position-input" list="leftarm-position-options" />
+                  <input type="text" id="leftarm-position-input" list="leftarm-position-options" value={leftArmPositionInput} onChange={handleInputChange} />
 
                   <datalist id="leftarm-position-options">
                     <option label="Ommited" value=''></option>
@@ -427,7 +541,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leftarm-side-input"></label>
-                  <input type="text" id="leftarm-side-input" list="leftarm-side-options" />
+                  <input type="text" id="leftarm-side-input" list="leftarm-side-options" value={leftArmSideInput} onChange={handleInputChange} />
 
                   <datalist id="leftarm-side-options">
                     <option label="Ommited" value=''></option>
@@ -436,7 +550,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leftarm-form-input"></label>
-                  <input type="text" id="leftarm-form-input" list="leftarm-form-options" />
+                  <input type="text" id="leftarm-form-input" list="leftarm-form-options" value={leftArmFormInput} onChange={handleInputChange} />
 
                   <datalist id="leftarm-form-options">
                     <option label="Normal" value=''></option>
@@ -449,7 +563,7 @@ function BlockInput() {
                 <div className='titles heads'>Right Arm</div>
                 <div className="block-input">
                   <label htmlFor="rightarm-form-input"></label>
-                  <input type="text" id="rightarm-position-input" list="rightarm-position-options" />
+                  <input type="text" id="rightarm-position-input" list="rightarm-position-options" value={rightArmPositionInput} onChange={handleInputChange} />
 
                   <datalist id="rightarm-position-options">
                     <option label="Ommited" value=''></option>
@@ -466,7 +580,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="rightarm-side-input"></label>
-                  <input type="text" id="rightarm-side-input" list="rightarm-side-options" />
+                  <input type="text" id="rightarm-side-input" list="rightarm-side-options" value={rightArmSideInput} onChange={handleInputChange} />
 
                   <datalist id="rightarm-side-options">
                     <option label="Ommited" value=''></option>
@@ -475,7 +589,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="rightarm-form-input"></label>
-                  <input type="text" id="rightarm-form-input" list="rightarm-form-options" />
+                  <input type="text" id="rightarm-form-input" list="rightarm-form-options" value={rightArmFormInput} onChange={handleInputChange} />
 
                   <datalist id="rightarm-form-options">
                     <option label="Normal" value=''></option>
@@ -491,67 +605,67 @@ function BlockInput() {
             <div className="L2 varia">
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Demi" id="demi" value='D' /></div>
+                  <div className="h"><input type="checkbox" name="Demi" id="demi" value='D' checked={demiChecked} onChange={handleInputChange} /></div>
                   <div className="h">Demi</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Petit" id='petit' value='T' /></div>
+                  <div className="h"><input type="checkbox" name="Petit" id='petit' value='T' checked={petitChecked} onChange={handleInputChange} /></div>
                   <div className="h">Petit</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Plier" id='plier' value='P' /></div>
+                  <div className="h"><input type="checkbox" name="Plier" id='plier' value='P' checked={plierChecked} onChange={handleInputChange} /></div>
                   <div className="h">Plier</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Plat" id='plat' value='L' /></div>
+                  <div className="h"><input type="checkbox" name="Plat" id='plat' value='L' checked={platChecked} onChange={handleInputChange} /></div>
                   <div className="h">Plat</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="A Térre" id='aterre' value='R' /></div>
+                  <div className="h"><input type="checkbox" name="A Térre" id='aterre' value='R' checked={aterreChecked} onChange={handleInputChange} /></div>
                   <div className="h">A Térre</div>
                 </div>
               </div >
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' /></div>
+                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' checked={quartierChecked} onChange={handleInputChange} /></div>
                   <div className="h">Quartier</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' /></div>
+                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' checked={grandChecked} onChange={handleInputChange} /></div>
                   <div className="h">Grand</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' /></div>
+                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' checked={etireChecked} onChange={handleInputChange} /></div>
                   <div className="h">Etiré</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' /></div>
+                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' checked={releveChecked} onChange={handleInputChange} /></div>
                   <div className="h">Relevé</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' /></div>
+                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' checked={enlairChecked} onChange={handleInputChange} /></div>
                   <div className="h">En L'Air</div>
                 </div>
               </div>
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' /></div>
+                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' checked={changementChecked} onChange={handleInputChange} /></div>
                   <div className="h">Changement</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' /></div>
+                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' checked={fermeChecked} onChange={handleInputChange} /></div>
                   <div className="h">Fermé</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' /></div>
+                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' checked={entournantChecked} onChange={handleInputChange} /></div>
                   <div className="h">En Tournant</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' /></div>
+                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' checked={battusChecked} onChange={handleInputChange} /></div>
                   <div className="h">Battus</div>
                 </div>
                 <div className='button-box'>
-                  <div className="h"><button onClick={handleSubmit}>Add Block</button></div>
+                  <div className="h"><button>Add Block</button></div>
                 </div>
               </div>
             </div>
@@ -561,11 +675,13 @@ function BlockInput() {
 
       </form>
 
-
-
-      <div className="currentblock">
+      <div>
+        Variant Value: {variantValue}
+        Final block: {finalBlock}
 
       </div>
+
+
 
     </div>
 
