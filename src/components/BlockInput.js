@@ -685,10 +685,7 @@ function BlockInput() {
 
       <div>
 
-        Variant Value: {variantValue}
         Final block: {finalBlock}
-        Demi: {demiValue}
-        Step: {stepInput}
 
 
       </div>
