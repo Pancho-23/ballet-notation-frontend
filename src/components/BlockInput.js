@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
 
 function BlockInput() {
@@ -233,14 +233,19 @@ function BlockInput() {
       }
     }
 
-    setVariantValue(`${demiValue}${petitValue}${plierValue}${platValue}${aterreValue}${quartierValue}${grandValue}${etireValue}${releveValue}${enlairValue}${changementValue}${fermeValue}${entournantValue}${battusValue}`);
-
-    setFinalBlock(`${placeInput}${hipInput}${feetPositionInput}${feetOrderInput}${feetOpenCloseInput}${variantValue}${stepInput}${numberInput}${legFormInput}${legCardinalInput}${legSideInput}${directionCardinalInput}${directionSideInput}${spinInput}${leftArmPositionInput}${leftArmSideInput}${leftArmFormInput}${rightArmPositionInput}${rightArmSideInput}${rightArmFormInput}${headInput}`);
-
-
-
-
   }
+
+  useEffect(() => {
+
+    setVariantValue(demiValue + petitValue + plierValue + platValue + aterreValue + quartierValue + grandValue + etireValue + releveValue + enlairValue + changementValue + fermeValue + entournantValue + battusValue);
+
+  }, [demiValue, petitValue, plierValue, platValue, aterreValue, quartierValue, grandValue, etireValue, releveValue, enlairValue, changementValue, fermeValue, entournantValue, battusValue]);
+
+  useEffect(() => {
+
+    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
+
+  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
 
 
 
