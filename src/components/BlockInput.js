@@ -245,19 +245,15 @@ function BlockInput() {
 
   useEffect(() => {
 
-    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
+    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
 
-  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, directionSideInput, leftArmPositionInput, leftArmSideInput, leftArmFormInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
+  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, directionSideInput, spinInput, leftArmPositionInput, leftArmSideInput, leftArmFormInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
 
 
   const handleAddBlock = (event) => {
     event.preventDefault();
 
-    if (currentPhrase === '') {
-      setCurrentPhrase(finalBlock);
-    } else {
-      setCurrentPhrase(currentPhrase + ' | ' + finalBlock);
-    }
+    setCurrentPhrase(currentPhrase + finalBlock + ' | ');
 
     setPlaceInput('');
     setHipInput('');
@@ -271,6 +267,7 @@ function BlockInput() {
     setLegSideInput('');
     setDirectionCardinalInput('');
     setDirectionSideInput('');
+    setSpinInput('');
     setLeftArmPositionInput('');
     setLeftArmSideInput('');
     setLeftArmSideInput('');
@@ -748,15 +745,19 @@ function BlockInput() {
 
       <div>
 
-        <div className="current-phrase">
-          <div className='h'>Current Phrase</div>
-          <div className='h'>{currentPhrase} </div>
-          <button>Add to Step</button>
+        <div className='phrase-container'>
+          <div className='phrase-tag'>Current Phrase</div>
+          <div className="current-phrase">
+            {currentPhrase}
+          </div>
+          <button className='add-phrase'>Add Phrase</button>
         </div>
 
-        <div className="current-block">
-          <div className='block-tag h'>Current Block:</div>
-          <div className='block-itself h'>{finalBlock}</div>
+        <div className='block-container'>
+          <div className='block-tag'>Current Block</div>
+          <div className="current-block">
+            {finalBlock}
+          </div>
         </div>
 
 

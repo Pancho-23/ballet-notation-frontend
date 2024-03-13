@@ -117,19 +117,16 @@ input[type="checkbox"] {
   margin-right: 4px;
 }
 
-/* Style the custom checkbox */
 input[type="checkbox"]:checked {
   background-color: #511661;;
   border-color: white;
 }
 
-/* Style the checkbox when hovered */
 input[type="checkbox"]:hover {
   background-color: white;
   border-color: #511661;
 }
 
-/* Style the checkbox when checked and hovered */
 input[type="checkbox"]:checked:hover {
   background-color: #511661;
   border-color: #511661;
@@ -139,17 +136,58 @@ input[type="checkbox"]:checked:hover {
   border: 2px solid #cb76dd;
   padding: 5px;
   margin: 0 auto;
-  width: 180px;
-  height: 195px;
+  width: 90px;
+  height: 23px;
   position: fixed;
-  bottom: 10px;
-  right: 600px;
+  bottom: 230px;
+  right: 10px;
   border-radius: 10px;
+  font-size: 18px;
 }
 
-.block-itself {
+
+.current-phrase {
   border: 2px solid #cb76dd;
-  width: 60px;
-  height: 25px;
+  padding: 5px;
+  margin: 0 auto;
+  width: 650px;
+  height: 23px;
+  position: fixed;
+  bottom: 10px;
+  right: 690px;
   border-radius: 10px;
+  font-size: 18px;
 }
+
+.phrase-tag {
+  position: fixed;
+  padding: 5px;
+  margin: 0 auto;
+  width: 650px;
+  height: 25px;
+  bottom: 40px;
+  right: 690px;
+  text-align: center;
+  color: #380b46;
+
+}
+
+.block-tag {
+  padding: 5px;
+  margin: 0 auto;
+  width: 90px;
+  height: 25px;
+  position: fixed;
+  bottom: 260px;
+  right: 10px;
+  text-align: center;
+  color: #380b46;
+}
+
+.add-phrase {
+  position: fixed;
+  bottom: 15px;
+  right: 585px;
+}
+
+
