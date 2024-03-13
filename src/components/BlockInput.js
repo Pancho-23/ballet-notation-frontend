@@ -56,6 +56,8 @@ function BlockInput() {
   const [entournantValue, setEntournantValue] = useState('');
   const [battusValue, setBattusValue] = useState('');
 
+  const [currentPhrase, setCurrentPhrase] = useState('');
+
 
   const handleInputChange = (event) => {
 
@@ -243,11 +245,72 @@ function BlockInput() {
 
   useEffect(() => {
 
-    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
+    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
 
-  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
+  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, directionSideInput, leftArmPositionInput, leftArmSideInput, leftArmFormInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
 
 
+  const handleAddBlock = (event) => {
+    event.preventDefault();
+
+    if (currentPhrase === '') {
+      setCurrentPhrase(finalBlock);
+    } else {
+      setCurrentPhrase(currentPhrase + ' | ' + finalBlock);
+    }
+
+    setPlaceInput('');
+    setHipInput('');
+    setFeetPositionInput('');
+    setFeetOrderInput('');
+    setFeetOpenCloseInput('');
+    setStepInput('');
+    setNumberInput('');
+    setLegFormInput('');
+    setLegCardinalInput('');
+    setLegSideInput('');
+    setDirectionCardinalInput('');
+    setDirectionSideInput('');
+    setLeftArmPositionInput('');
+    setLeftArmSideInput('');
+    setLeftArmSideInput('');
+    setRightArmPositionInput('');
+    setRightArmSideInput('');
+    setRightArmSideInput('');
+    setHeadInput('');
+
+    setDemiValue('');
+    setPetitValue('');
+    setPlierValue('');
+    setPlatValue('');
+    setAterreValue('');
+    setQuartierValue('');
+    setGrandValue('');
+    setEtireValue('');
+    setReleveValue('');
+    setEnlairValue('');
+    setChangementValue('');
+    setFermeValue('');
+    setEntournantValue('');
+    setBattusValue('');
+
+    setDemiChecked(false);
+    setPetitChecked(false);
+    setPlierChecked(false);
+    setPlatChecked(false);
+    setAterreChecked(false);
+    setQuartierChecked(false);
+    setGrandChecked(false);
+    setEtireChecked(false);
+    setReleveChecked(false);
+    setEnlairChecked(false);
+    setChangementChecked(false);
+    setFermeChecked(false);
+    setEntournantChecked(false);
+    setBattusChecked(false);
+
+
+  }
 
 
   return (
@@ -673,7 +736,7 @@ function BlockInput() {
                   <div className="h">Battus</div>
                 </div>
                 <div className='button-box'>
-                  <div className="h"><button>Add Block</button></div>
+                  <div className="h"><button onClick={handleAddBlock}>Add Block</button></div>
                 </div>
               </div>
             </div>
@@ -685,7 +748,17 @@ function BlockInput() {
 
       <div>
 
-        Final block: {finalBlock}
+        <div className="current-phrase">
+          <div className='h'>Current Phrase</div>
+          <div className='h'>{currentPhrase} </div>
+          <button>Add to Step</button>
+        </div>
+
+        <div className="current-block">
+          <div className='block-tag h'>Current Block:</div>
+          <div className='block-itself h'>{finalBlock}</div>
+        </div>
+
 
 
       </div>

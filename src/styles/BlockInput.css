@@ -134,3 +134,26 @@ input[type="checkbox"]:checked:hover {
   background-color: #511661;
   border-color: #511661;
 }
+
+.current-block {
+  border: 2px solid #cb76dd;
+  padding: 5px;
+  margin: 0 auto;
+  width: 180px;
+  height: 195px;
+  position: fixed;
+  bottom: 10px;
+  right: 600px;
+  border-radius: 10px;
+}
+
+.block-itself {
+  border: 2px solid #cb76dd;
+  width: 60px;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.block-tag {
+
+}
