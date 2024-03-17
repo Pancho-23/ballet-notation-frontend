@@ -56,7 +56,7 @@ function BlockInput() {
   const [entournantValue, setEntournantValue] = useState('');
   const [battusValue, setBattusValue] = useState('');
 
-  const [currentPhrase, setCurrentPhrase] = useState('');
+
 
 
   const handleInputChange = (event) => {
@@ -250,10 +250,7 @@ function BlockInput() {
   }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, directionSideInput, spinInput, leftArmPositionInput, leftArmSideInput, leftArmFormInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
 
 
-  const handleAddBlock = (event) => {
-    event.preventDefault();
-
-    setCurrentPhrase(currentPhrase + finalBlock + ' | ');
+  function ClearAllInputs() {
 
     setPlaceInput('');
     setHipInput('');
@@ -308,6 +305,25 @@ function BlockInput() {
 
 
   }
+
+  // Here we are defining the navigation Dynamic Variables (the ones pointing to parts of the Ballet Class Document)
+  const [navBlock, setNavBlock] = useState(0);
+  const [navPhrase, setNavPhrase] = useState(0);
+  const [navStep, setNavStep] = useState(0);
+
+
+  // Here we define the actual dynamic values showed to the user
+  const [currentBlock, setCurrentBlock] = useState('');
+  const [currentPhrase, setCurrentPhrase] = useState('');
+  const [currentStep, setCurrentStep] = useState('');
+  const [currentStage, setCurrentStage] = useState('');
+  const [currentKind, setCurrentKind] = useState('');
+
+  // We define the structure of the class, parts of which will be rendered to the user.
+  const [balletClass, setBalletClass] = useState({
+
+  })
+
 
 
   return (
@@ -733,7 +749,7 @@ function BlockInput() {
                   <div className="h">Battus</div>
                 </div>
                 <div className='button-box'>
-                  <div className="h"><button onClick={handleAddBlock}>Add Block</button></div>
+                  <div className="h"></div>
                 </div>
               </div>
             </div>
@@ -746,20 +762,62 @@ function BlockInput() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'>Current Phrase</div>
+          <div className='phrase-tag'><button className='back-phrase'>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase} /> <button className='forward-phrase'>&#10095;</button></div>
           <div className="current-phrase">
-            {currentPhrase}
           </div>
-          <button className='add-phrase'>Add Phrase</button>
         </div>
 
         <div className='block-container'>
-          <div className='block-tag'>Current Block</div>
+          <div className='block-tag'><button className='back-block'>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock} /> <button className='forward-block'>&#10095;</button></div>
           <div className="current-block">
-            {finalBlock}
+
           </div>
         </div>
 
+        <div>
+          <div className='step-tag'><button className='back-step'>&#10094;</button> Step <input className='nav-input' type='number' value={navStep} />&nbsp;
+
+            <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={currentStage} />
+            <datalist id="stage-options">
+              <option label="Ommited" value=''></option>
+              <option label="Warming" value='Warming'></option>
+              <option label="Plié" value='Plié'></option>
+              <option label="Battement Tendú" value='Battement Tendú'></option>
+              <option label="Battement Jeté" value='Battement Jeté'></option>
+              <option label="Ronde de Jambe" value='Ronde de Jambe'></option>
+              <option label="Battement Fondú" value='Battement Fondú'></option>
+              <option label="Battement Frappé" value='Battement Frappé'></option>
+              <option label="Adagio" value='Adagio'></option>
+              <option label="Grand Battement" value='Grand Battement'></option>
+              <option label="Waltz" value='Waltz'></option>
+              <option label="Petit Allegro" value='Petit Allegro'></option>
+              <option label="Allegro" value='Allegro'></option>
+              <option label="Batterie" value='Batterie'></option>
+              <option label="Sissone" value='Sissone'></option>
+              <option label="Grand Waltz" value='Grand Waltz'></option>
+              <option label="Grand Allegro" value='Grand Allegro'></option>
+              <option label="Coda" value='Coda'></option>
+            </datalist>
+            &nbsp;
+            <input className='kind-input' type="text" id="kind-input" list="kind-options" placeholder='Kind' value={currentKind} />
+            <datalist id="kind-options">
+              <option label="Ommited" value=''></option>
+              <option label="Bar" value='Bar'></option>
+              <option label="Center" value='Center'></option>
+            </datalist>
+            &nbsp;
+            <button className='forward-step'>&#10095;</button></div>
+          <div className='current-step'></div>
+        </div>
+
+        <button className='new-button'>New</button>
+        <button className='open-button'>Open</button>
+        <button className='save-button'>Save</button>
+
+        <div>
+          <div className='class-tag'> Master <input className='log log-master' type='text' />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' type='number' />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' type="number" />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' type='number' />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' type='text' /></div>
+          <div className='current-class'></div>
+        </div>
 
 
       </div>
@@ -767,8 +825,6 @@ function BlockInput() {
 
 
     </div>
-
-
 
 
 

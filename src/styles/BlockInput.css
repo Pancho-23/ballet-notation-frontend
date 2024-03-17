@@ -15,7 +15,7 @@ body {
   height: auto;
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 90px;
   border-radius: 10px;
 }
 
@@ -136,7 +136,7 @@ input[type="checkbox"]:checked:hover {
   border: 2px solid #cb76dd;
   padding: 5px;
   margin: 0 auto;
-  width: 90px;
+  width: 120px;
   height: 23px;
   position: fixed;
   bottom: 230px;
@@ -150,11 +150,11 @@ input[type="checkbox"]:checked:hover {
   border: 2px solid #cb76dd;
   padding: 5px;
   margin: 0 auto;
-  width: 650px;
+  width: 495px;
   height: 23px;
   position: fixed;
-  bottom: 10px;
-  right: 690px;
+  bottom: 230px;
+  right: 150px;
   border-radius: 10px;
   font-size: 18px;
 }
@@ -163,10 +163,10 @@ input[type="checkbox"]:checked:hover {
   position: fixed;
   padding: 5px;
   margin: 0 auto;
-  width: 650px;
+  width: 495px;
   height: 25px;
-  bottom: 40px;
-  right: 690px;
+  bottom: 265px;
+  right: 150px;
   text-align: center;
   color: #380b46;
 
@@ -175,19 +175,105 @@ input[type="checkbox"]:checked:hover {
 .block-tag {
   padding: 5px;
   margin: 0 auto;
-  width: 90px;
+  width: 120px;
   height: 25px;
   position: fixed;
-  bottom: 260px;
+  bottom: 265px;
   right: 10px;
   text-align: center;
   color: #380b46;
 }
 
-.add-phrase {
-  position: fixed;
-  bottom: 15px;
-  right: 585px;
+.nav-input {
+  width: 30px;
 }
 
+.current-step {
+  border: 2px solid #cb76dd;
+  padding: 5px;
+  margin: 0 auto;
+  width: 635px;
+  height: 200px;
+  position: fixed;
+  bottom: 300px;
+  right: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}
 
+.step-tag {
+  padding: 5px;
+  margin: 0 auto;
+  width: 635px;
+  height: 25px;
+  position: fixed;
+  bottom: 512px;
+  right: 10px;
+  text-align: center;
+  color: #380b46;
+}
+
+.new-button {
+  position: fixed;
+  right: 10px;
+  bottom: 180px;
+  width: 65px;
+  height: 35px;
+}
+
+.open-button {
+  position: fixed;
+  right: 10px;
+  bottom: 135px;
+  width: 65px;
+  height: 35px;
+}
+
+.save-button {
+  position: fixed;
+  right: 10px;
+  bottom: 90px;
+  width: 65px;
+  height: 35px;
+}
+
+.class-tag {
+  padding: 5px;
+  margin: 0 auto;
+  width: 670px;
+  height: 25px;
+  position: fixed;
+  bottom: 512px;
+  right: 670px;
+  text-align: center;
+  color: #380b46;
+}
+
+.current-class {
+  border: 2px solid #cb76dd;
+  padding: 5px;
+  margin: 0 auto;
+  width: 670px;
+  height: 490px;
+  position: fixed;
+  bottom: 10px;
+  right: 670px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.log-master, .log-country {
+  width: 125px;
+}
+
+.log-year {
+  width: 55px;
+}
+
+.log-mounth {
+  width: 35px;
+}
+
+.stage-input, .kind-input {
+  width: 100px;
+}
