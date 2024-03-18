@@ -286,61 +286,99 @@ function BlockInput() {
       setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'hip-input') {
-      setHipInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'feet-position-input') {
-      setFeetPositionInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'feet-order-input') {
-      setFeetOrderInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'feet-openClose-input') {
-      setFeetOpenCloseInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'step-input') {
-      setStepInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'number-input') {
-      setNumberInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leg-form-input') {
-      setLegFormInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leg-cardinal-input') {
-      setLegCardinalInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leg-side-input') {
-      setLegSideInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'direction-cardinal-input') {
-      setDirectionCardinalInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'direction-side-input') {
-      setDirectionSideInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'spin-input') {
-      setSpinInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'head-input') {
-      setHeadInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leftarm-position-input') {
-      setLeftArmPositionInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leftarm-side-input') {
-      setLeftArmSideInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'leftarm-form-input') {
-      setLeftArmFormInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'rightarm-position-input') {
-      setRightArmPositionInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'rightarm-side-input') {
-      setRightArmSideInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'rightarm-form-input') {
-      setRightArmFormInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm = event.target.value;
+      setBalletClass(updateBalletClass);
     }
 
     if (event.target.id === 'demi') {
