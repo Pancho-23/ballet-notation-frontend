@@ -493,6 +493,7 @@ function BlockInput() {
 
   }, [balletClass, variantValue, navBlock, navPhrase, navStep, demiValue, petitValue, plierValue, platValue, aterreValue, quartierValue, grandValue, etireValue, releveValue, enlairValue, changementValue, fermeValue, entournantValue, battusValue]);
 
+  //Navigation Buttons
 
 
   return (
@@ -513,15 +514,15 @@ function BlockInput() {
 
                   <datalist id="place-options">
                     <option label="Ommited" value=''></option>
-                    <option label="Center" value='0'></option>
-                    <option label="Front-Left" value='1'></option>
-                    <option label="Front" value='2'></option>
-                    <option label="Front-Right" value='3'></option>
-                    <option label="Right" value='4'></option>
-                    <option label="Back-Right" value='5'></option>
-                    <option label="Back" value='6'></option>
-                    <option label="Back-Left" value='7'></option>
-                    <option label="Left" value='8'></option>
+                    <option label="Center" value='0.'></option>
+                    <option label="Front-Left" value='1.'></option>
+                    <option label="Front" value='2.'></option>
+                    <option label="Front-Right" value='3.'></option>
+                    <option label="Right" value='4.'></option>
+                    <option label="Back-Right" value='5.'></option>
+                    <option label="Back" value='6.'></option>
+                    <option label="Back-Left" value='7.'></option>
+                    <option label="Left" value='8.'></option>
                   </datalist>
 
                 </div>
@@ -982,9 +983,11 @@ function BlockInput() {
           </div>
         </div>
 
-        <button className='new-button'>New</button>
-        <button className='open-button'>Open</button>
-        <button className='save-button'>Save</button>
+        <button className='new-button'>New Class</button>
+        <button className='open-button'>Open Class</button>
+        <button className='save-button'>Save Class</button>
+        <button className='new-phrase-button'>New Phrase</button>
+        <button className='new-step-button'>New Step</button>
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' type='text' />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' type='number' />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' type="number" />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' type='number' />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' type='text' /></div>

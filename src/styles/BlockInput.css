@@ -216,7 +216,7 @@ input[type="checkbox"]:checked:hover {
 .new-button {
   position: fixed;
   right: 10px;
-  bottom: 180px;
+  bottom: 190px;
   width: 65px;
   height: 35px;
 }
@@ -224,7 +224,7 @@ input[type="checkbox"]:checked:hover {
 .open-button {
   position: fixed;
   right: 10px;
-  bottom: 135px;
+  bottom: 145px;
   width: 65px;
   height: 35px;
 }
@@ -232,7 +232,23 @@ input[type="checkbox"]:checked:hover {
 .save-button {
   position: fixed;
   right: 10px;
-  bottom: 90px;
+  bottom: 100px;
+  width: 65px;
+  height: 35px;
+}
+
+.new-phrase-button {
+  position: fixed;
+  right: 10px;
+  bottom: 55px;
+  width: 65px;
+  height: 35px;
+}
+
+.new-step-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
   width: 65px;
   height: 35px;
 }
