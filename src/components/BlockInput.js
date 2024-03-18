@@ -56,13 +56,234 @@ function BlockInput() {
   const [entournantValue, setEntournantValue] = useState('');
   const [battusValue, setBattusValue] = useState('');
 
+  // We define the structure of the class, parts of which will be rendered to the user.
+  const [balletClass, setBalletClass] = useState({
+    master: '',
+    mounth: 1,
+    day: 1,
+    year: 2024,
+    country: '',
+    classBody: [
+      {
+        order: 1,
+        stage: '',
+        kind: '',
+        stepBody: [
+          {
+            order: 1,
+            phraseBody: [
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              }
+            ]
+          }
+        ]
+      }
+    ]
 
+  });
+
+  // Here we are defining the navigation Dynamic Variables (the ones pointing to parts of the Ballet Class Document)
+  const [navBlock, setNavBlock] = useState(0);
+  const [navPhrase, setNavPhrase] = useState(0);
+  const [navStep, setNavStep] = useState(0);
+
+
+  // Here we define the actual dynamic values showed to the user
+  const [currentBlock, setCurrentBlock] = useState('');
+  const [currentPhrase, setCurrentPhrase] = useState('');
+  const [currentStep, setCurrentStep] = useState('');
+  const [currentStage, setCurrentStage] = useState('');
+  const [currentKind, setCurrentKind] = useState('');
 
 
   const handleInputChange = (event) => {
 
     if (event.target.id === 'place-input') {
-      setPlaceInput(event.target.value);
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place = event.target.value;
+      setBalletClass(updateBalletClass);
     }
     if (event.target.id === 'hip-input') {
       setHipInput(event.target.value);
@@ -237,6 +458,7 @@ function BlockInput() {
 
   }
 
+
   useEffect(() => {
 
     setVariantValue(demiValue + petitValue + plierValue + platValue + aterreValue + quartierValue + grandValue + etireValue + releveValue + enlairValue + changementValue + fermeValue + entournantValue + battusValue);
@@ -245,84 +467,18 @@ function BlockInput() {
 
   useEffect(() => {
 
-    setFinalBlock(placeInput + hipInput + feetPositionInput + feetOrderInput + feetOpenCloseInput + variantValue + stepInput + numberInput + legFormInput + legCardinalInput + legSideInput + directionCardinalInput + directionSideInput + spinInput + leftArmPositionInput + leftArmSideInput + leftArmFormInput + rightArmPositionInput + rightArmSideInput + rightArmFormInput + headInput);
+    setCurrentBlock(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head);
 
-  }, [placeInput, hipInput, feetPositionInput, feetOrderInput, feetOpenCloseInput, variantValue, stepInput, numberInput, legFormInput, legCardinalInput, legSideInput, directionCardinalInput, directionSideInput, spinInput, leftArmPositionInput, leftArmSideInput, leftArmFormInput, rightArmPositionInput, rightArmSideInput, rightArmFormInput, headInput]);
-
-
-  function ClearAllInputs() {
-
-    setPlaceInput('');
-    setHipInput('');
-    setFeetPositionInput('');
-    setFeetOrderInput('');
-    setFeetOpenCloseInput('');
-    setStepInput('');
-    setNumberInput('');
-    setLegFormInput('');
-    setLegCardinalInput('');
-    setLegSideInput('');
-    setDirectionCardinalInput('');
-    setDirectionSideInput('');
-    setSpinInput('');
-    setLeftArmPositionInput('');
-    setLeftArmSideInput('');
-    setLeftArmSideInput('');
-    setRightArmPositionInput('');
-    setRightArmSideInput('');
-    setRightArmSideInput('');
-    setHeadInput('');
-
-    setDemiValue('');
-    setPetitValue('');
-    setPlierValue('');
-    setPlatValue('');
-    setAterreValue('');
-    setQuartierValue('');
-    setGrandValue('');
-    setEtireValue('');
-    setReleveValue('');
-    setEnlairValue('');
-    setChangementValue('');
-    setFermeValue('');
-    setEntournantValue('');
-    setBattusValue('');
-
-    setDemiChecked(false);
-    setPetitChecked(false);
-    setPlierChecked(false);
-    setPlatChecked(false);
-    setAterreChecked(false);
-    setQuartierChecked(false);
-    setGrandChecked(false);
-    setEtireChecked(false);
-    setReleveChecked(false);
-    setEnlairChecked(false);
-    setChangementChecked(false);
-    setFermeChecked(false);
-    setEntournantChecked(false);
-    setBattusChecked(false);
+  }, [balletClass]);
 
 
-  }
-
-  // Here we are defining the navigation Dynamic Variables (the ones pointing to parts of the Ballet Class Document)
-  const [navBlock, setNavBlock] = useState(0);
-  const [navPhrase, setNavPhrase] = useState(0);
-  const [navStep, setNavStep] = useState(0);
 
 
-  // Here we define the actual dynamic values showed to the user
-  const [currentBlock, setCurrentBlock] = useState('');
-  const [currentPhrase, setCurrentPhrase] = useState('');
-  const [currentStep, setCurrentStep] = useState('');
-  const [currentStage, setCurrentStage] = useState('');
-  const [currentKind, setCurrentKind] = useState('');
 
-  // We define the structure of the class, parts of which will be rendered to the user.
-  const [balletClass, setBalletClass] = useState({
 
-  })
+
+
+
 
 
 
@@ -340,7 +496,7 @@ function BlockInput() {
                 <div className="block-input">
 
                   <label htmlFor="place-input"></label>
-                  <input type="text" id="place-input" list="place-options" value={placeInput} onChange={handleInputChange} />
+                  <input type="text" id="place-input" list="place-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place} onChange={handleInputChange} />
 
                   <datalist id="place-options">
                     <option label="Ommited" value=''></option>
@@ -764,13 +920,14 @@ function BlockInput() {
         <div className='phrase-container'>
           <div className='phrase-tag'><button className='back-phrase'>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase} /> <button className='forward-phrase'>&#10095;</button></div>
           <div className="current-phrase">
+            {currentPhrase}
           </div>
         </div>
 
         <div className='block-container'>
           <div className='block-tag'><button className='back-block'>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock} /> <button className='forward-block'>&#10095;</button></div>
           <div className="current-block">
-
+            {currentBlock}
           </div>
         </div>
 
@@ -807,7 +964,9 @@ function BlockInput() {
             </datalist>
             &nbsp;
             <button className='forward-step'>&#10095;</button></div>
-          <div className='current-step'></div>
+          <div className='current-step'>
+            {currentStep}
+          </div>
         </div>
 
         <button className='new-button'>New</button>
