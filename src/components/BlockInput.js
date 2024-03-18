@@ -495,6 +495,83 @@ function BlockInput() {
 
   //Navigation Buttons
 
+  //Back Block
+  const handleBackBlock = () => {
+    setNavBlock(prevBlock => {
+      const nextBlockBody = balletClass.classBody[navStep]?.stepBody[navPhrase]?.phraseBody[navBlock - 1];
+      if (nextBlockBody !== undefined) {
+        return prevBlock - 1;
+      }
+      return prevBlock;
+    });
+  };
+
+  //Forward Block
+  const handleForwardBlock = () => {
+    setNavBlock(prevBlock => {
+      const nextBlockBody = balletClass.classBody[navStep]?.stepBody[navPhrase]?.phraseBody[navBlock + 1];
+      if (nextBlockBody !== undefined) {
+        return prevBlock + 1;
+      }
+      return prevBlock;
+    });
+  };
+
+  //Back Phrase
+  const handleBackPhrase = () => {
+    setNavPhrase(prevPhrase => {
+      const nextPhraseBody = balletClass.classBody[navStep]?.stepBody[navPhrase - 1];
+      if (nextPhraseBody !== undefined) {
+        return prevPhrase - 1;
+      }
+      return prevPhrase;
+    });
+  };
+
+  //Forward Phrase 
+  const handleForwardPhrase = () => {
+    setNavPhrase(prevPhrase => {
+      const nextPhraseBody = balletClass.classBody[navStep]?.stepBody[navPhrase + 1];
+      if (nextPhraseBody !== undefined) {
+        return prevPhrase + 1;
+      }
+      return prevPhrase;
+    });
+  };
+
+  //Back Step
+  const handleBackStep = () => {
+    setNavStep(prevStep => {
+      const nextStepBody = balletClass.classBody[navStep - 1];
+      if (nextStepBody !== undefined) {
+        return prevStep - 1;
+      }
+      return prevStep;
+    });
+  };
+
+  //Forward Step 
+  const handleForwardStep = () => {
+    setNavStep(prevStep => {
+      const nextStepBody = balletClass.classBody[navStep + 1];
+      if (nextStepBody !== undefined) {
+        return prevStep + 1;
+      }
+      return prevStep;
+    });
+  };
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
 
@@ -932,21 +1009,21 @@ function BlockInput() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'><button className='back-phrase'>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase} /> <button className='forward-phrase'>&#10095;</button></div>
+          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button></div>
           <div className="current-phrase">
             {currentPhrase}
           </div>
         </div>
 
         <div className='block-container'>
-          <div className='block-tag'><button className='back-block'>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock} /> <button className='forward-block'>&#10095;</button></div>
+          <div className='block-tag'><button className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
           <div className="current-block">
             {currentBlock}
           </div>
         </div>
 
         <div>
-          <div className='step-tag'><button className='back-step'>&#10094;</button> Step <input className='nav-input' type='number' value={navStep} />&nbsp;
+          <div className='step-tag'><button className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep} />&nbsp;
 
             <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={currentStage} />
             <datalist id="stage-options">
@@ -977,7 +1054,7 @@ function BlockInput() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button className='forward-step'>&#10095;</button></div>
+            <button className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
           <div className='current-step'>
             {currentStep}
           </div>
