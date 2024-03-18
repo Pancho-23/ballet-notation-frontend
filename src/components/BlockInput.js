@@ -986,8 +986,8 @@ function BlockInput() {
         <button className='new-button'>New Class</button>
         <button className='open-button'>Open Class</button>
         <button className='save-button'>Save Class</button>
-        <button className='new-phrase-button'>New Phrase</button>
-        <button className='new-step-button'>New Step</button>
+        <button className='new-phrase-button'>Add Phrase</button>
+        <button className='new-step-button'>Add Step</button>
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' type='text' />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' type='number' />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' type="number" />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' type='number' />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' type='text' /></div>
