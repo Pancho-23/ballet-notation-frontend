@@ -4,38 +4,6 @@ import '../styles/BlockInput.css';
 function BlockInput() {
 
 
-  const [variantValue, setVariantValue] = useState('');
-
-  const [demiChecked, setDemiChecked] = useState(false);
-  const [petitChecked, setPetitChecked] = useState(false);
-  const [plierChecked, setPlierChecked] = useState(false);
-  const [platChecked, setPlatChecked] = useState(false);
-  const [aterreChecked, setAterreChecked] = useState(false);
-  const [quartierChecked, setQuartierChecked] = useState(false);
-  const [grandChecked, setGrandChecked] = useState(false);
-  const [etireChecked, setEtireChecked] = useState(false);
-  const [releveChecked, setReleveChecked] = useState(false);
-  const [enlairChecked, setEnlairChecked] = useState(false);
-  const [changementChecked, setChangementChecked] = useState(false);
-  const [fermeChecked, setFermeChecked] = useState(false);
-  const [entournantChecked, setEntournantChecked] = useState(false);
-  const [battusChecked, setBattusChecked] = useState(false);
-
-  const [demiValue, setDemiValue] = useState('');
-  const [petitValue, setPetitValue] = useState('');
-  const [plierValue, setPlierValue] = useState('');
-  const [platValue, setPlatValue] = useState('');
-  const [aterreValue, setAterreValue] = useState('');
-  const [quartierValue, setQuartierValue] = useState('');
-  const [grandValue, setGrandValue] = useState('');
-  const [etireValue, setEtireValue] = useState('');
-  const [releveValue, setReleveValue] = useState('');
-  const [enlairValue, setEnlairValue] = useState('');
-  const [changementValue, setChangementValue] = useState('');
-  const [fermeValue, setFermeValue] = useState('');
-  const [entournantValue, setEntournantValue] = useState('');
-  const [battusValue, setBattusValue] = useState('');
-
   //Function to delete a letter from a string
   function deL(str, letterToDelete) {
     return str.split(letterToDelete).join('');
@@ -261,6 +229,7 @@ function BlockInput() {
   const [currentStep, setCurrentStep] = useState('');
   const [currentStage, setCurrentStage] = useState('');
   const [currentKind, setCurrentKind] = useState('');
+  const [currentClass, setCurrentClass] = useState('');
 
 
   const handleInputChange = (event) => {
@@ -515,7 +484,7 @@ function BlockInput() {
 
     setCurrentBlock(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head);
 
-  }, [balletClass, variantValue, navBlock, navPhrase, navStep, demiValue, petitValue, plierValue, platValue, aterreValue, quartierValue, grandValue, etireValue, releveValue, enlairValue, changementValue, fermeValue, entournantValue, battusValue]);
+  }, [balletClass, navBlock, navPhrase, navStep]);
 
   //Navigation Buttons
 

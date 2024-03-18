@@ -1,3 +1,0 @@
-balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('D')
-
-
