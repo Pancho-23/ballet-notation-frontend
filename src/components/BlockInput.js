@@ -761,14 +761,14 @@ function BlockInput() {
 
                   <datalist id="head-options">
                     <option label="Ommited" value=''></option>
-                    <option label="En Dehors Left" value='1'></option>
-                    <option label="Front" value='2'></option>
-                    <option label="En Dehors Right" value='3'></option>
-                    <option label="Profile Right" value='4'></option>
-                    <option label="En Dedans Right" value='5'></option>
-                    <option label="Down" value='6'></option>
-                    <option label="En Dedans Left" value='7'></option>
-                    <option label="Profile Left" value='8'></option>
+                    <option label="En Dehors Left" value='1*'></option>
+                    <option label="Front" value='2*'></option>
+                    <option label="En Dehors Right" value='3*'></option>
+                    <option label="Profile Right" value='4*'></option>
+                    <option label="En Dedans Right" value='5*'></option>
+                    <option label="Down" value='6*'></option>
+                    <option label="En Dedans Left" value='7*'></option>
+                    <option label="Profile Left" value='8*'></option>
                   </datalist>
                 </div>
               </div>
