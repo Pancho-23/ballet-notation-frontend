@@ -1,34 +1,3 @@
-//Forward Block
-  const handleForwardBlock = () => {
-    if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock + 1]) {
-      setNavBlock(prevBlock => prevBlock + 1);
-    }
-  };
+balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('D')
 
-//Back Phrase
-  const handleBackPhrase = () => {
-    if (navPhrase > 0) {
-      setNavPhrase(prevPhrase => prevPhrase - 1);
-    }
-  };
 
-  //Forward Phrase
-  const handleForwardPhrase = () => {
-    if (balletClass.classBody[navStep].stepBody[navPhrase + 1]) {
-      setNavPhrase(prevPhrase => prevPhrase + 1);
-    }
-  }
-
-  //Back Step
-  const handleBackStep = () => {
-    if (navStep > 0) {
-      setNavStep(prevStep => prevStep - 1);
-    }
-  }
-
-  //Forward Step
-  const handleForwardStep = () => {
-    if (balletClass.classBody[navStep + 1]) {
-      setNavStep(prevStep => prevStep + 1);
-    }
-  }

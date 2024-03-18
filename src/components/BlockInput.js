@@ -36,6 +36,11 @@ function BlockInput() {
   const [entournantValue, setEntournantValue] = useState('');
   const [battusValue, setBattusValue] = useState('');
 
+  //Function to delete a letter from a string
+  function deL(str, letterToDelete) {
+    return str.split(letterToDelete).join('');
+  };
+
   // We define the structure of the class, parts of which will be rendered to the user.
   const [balletClass, setBalletClass] = useState({
     master: '',
@@ -362,130 +367,149 @@ function BlockInput() {
     }
 
     if (event.target.id === 'demi') {
-      setDemiChecked(!demiChecked);
-      if (!demiChecked) {
-        setDemiValue('D');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('D')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setDemiValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'D');
+        setBalletClass(updateBalletClass);
       }
+
     }
     if (event.target.id === 'petit') {
-      setPetitChecked(!petitChecked);
-      if (!petitChecked) {
-        setPetitValue('T');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('T')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setPetitValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'T');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'plier') {
-      setPlierChecked(!plierChecked);
-      if (!plierChecked) {
-        setPlierValue('P');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('P')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setPlierValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'P');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'plat') {
-      setPlatChecked(!platChecked);
-      if (!platChecked) {
-        setPlatValue('L');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('L')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setPlatValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'L');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'aterre') {
-      setAterreChecked(!aterreChecked);
-      if (!aterreChecked) {
-        setAterreValue('T');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('R')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setAterreValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'R');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'quartier') {
-      setQuartierChecked(!quartierChecked);
-      if (!quartierChecked) {
-        setQuartierValue('Q');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('Q')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setQuartierValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'Q');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'grand') {
-      setGrandChecked(!grandChecked);
-      if (!grandChecked) {
-        setGrandValue('G');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('G')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setGrandValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'G');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'etire') {
-      setEtireChecked(!etireChecked);
-      if (!etireChecked) {
-        setEtireValue('E');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('E')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setEtireValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'E');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'releve') {
-      setReleveChecked(!releveChecked);
-      if (!releveChecked) {
-        setReleveValue('V');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('V')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setReleveValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'V');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'enlair') {
-      setEnlairChecked(!enlairChecked);
-      if (!enlairChecked) {
-        setEnlairValue('A');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('A')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setEnlairValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'A');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'changement') {
-      setChangementChecked(!changementChecked);
-      if (!changementChecked) {
-        setChangementValue('C');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('C')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setChangementValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'C');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'ferme') {
-      setFermeChecked(!fermeChecked);
-      if (!fermeChecked) {
-        setFermeValue('F');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('F')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setFermeValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'F');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'entournant') {
-      setEntournantChecked(!entournantChecked);
-      if (!entournantChecked) {
-        setEntournantValue('N');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('N')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setEntournantValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'N');
+        setBalletClass(updateBalletClass);
       }
     }
     if (event.target.id === 'battus') {
-      setBattusChecked(!battusChecked);
-      if (!battusChecked) {
-        setBattusValue('B');
+      const updateBalletClass = { ...balletClass };
+      if (!updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('B')) {
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants += event.target.value;
+        setBalletClass(updateBalletClass);
       } else {
-        setBattusValue('');
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = deL(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants, 'B');
+        setBalletClass(updateBalletClass);
       }
     }
 
   }
 
-
-  useEffect(() => {
-
-    setVariantValue(demiValue + petitValue + plierValue + platValue + aterreValue + quartierValue + grandValue + etireValue + releveValue + enlairValue + changementValue + fermeValue + entournantValue + battusValue);
-
-    const updateBalletClass = { ...balletClass };
-    updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants = variantValue;
-    setBalletClass(updateBalletClass);
-
-  }, [balletClass, navBlock, navPhrase, navStep, variantValue, demiValue, petitValue, plierValue, platValue, aterreValue, quartierValue, grandValue, etireValue, releveValue, enlairValue, changementValue, fermeValue, entournantValue, battusValue]);
 
   useEffect(() => {
 
@@ -1350,63 +1374,63 @@ function BlockInput() {
             <div className="L2 varia">
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Demi" id="demi" value='D' checked={demiChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Demi" id="demi" value='D' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('D')} onChange={handleInputChange} /></div>
                   <div className="h">Demi</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Petit" id='petit' value='T' checked={petitChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Petit" id='petit' value='T' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('T')} onChange={handleInputChange} /></div>
                   <div className="h">Petit</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Plier" id='plier' value='P' checked={plierChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Plier" id='plier' value='P' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('P')} onChange={handleInputChange} /></div>
                   <div className="h">Plier</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Plat" id='plat' value='L' checked={platChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Plat" id='plat' value='L' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('L')} onChange={handleInputChange} /></div>
                   <div className="h">Plat</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="A Térre" id='aterre' value='R' checked={aterreChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="A Térre" id='aterre' value='R' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('R')} onChange={handleInputChange} /></div>
                   <div className="h">A Térre</div>
                 </div>
               </div >
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' checked={quartierChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Quartier" id='quartier' value='Q' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('Q')} onChange={handleInputChange} /></div>
                   <div className="h">Quartier</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' checked={grandChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Grand" id='grand' value='G' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('G')} onChange={handleInputChange} /></div>
                   <div className="h">Grand</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' checked={etireChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Etiré" id='etire' value='E' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('E')} onChange={handleInputChange} /></div>
                   <div className="h">Etiré</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' checked={releveChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Relevé" id='releve' value='V' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('V')} onChange={handleInputChange} /></div>
                   <div className="h">Relevé</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' checked={enlairChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="En L'Air" id='enlair' value='A' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('A')} onChange={handleInputChange} /></div>
                   <div className="h">En L'Air</div>
                 </div>
               </div>
               <div className="h">
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' checked={changementChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Changement" id='changement' value='C' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('C')} onChange={handleInputChange} /></div>
                   <div className="h">Changement</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' checked={fermeChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Fermé" id='ferme' value='F' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('F')} onChange={handleInputChange} /></div>
                   <div className="h">Fermé</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' checked={entournantChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="En Tournant" id='entournant' value='N' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('N')} onChange={handleInputChange} /></div>
                   <div className="h">En Tournant</div>
                 </div>
                 <div className='internal-box'>
-                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' checked={battusChecked} onChange={handleInputChange} /></div>
+                  <div className="h"><input type="checkbox" name="Battus" id='battus' value='B' checked={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants.includes('B')} onChange={handleInputChange} /></div>
                   <div className="h">Battus</div>
                 </div>
                 <div className='button-box'>
