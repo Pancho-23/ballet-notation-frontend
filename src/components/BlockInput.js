@@ -514,15 +514,15 @@ function BlockInput() {
 
                   <datalist id="place-options">
                     <option label="Ommited" value=''></option>
-                    <option label="Center" value='0.'></option>
-                    <option label="Front-Left" value='1.'></option>
-                    <option label="Front" value='2.'></option>
-                    <option label="Front-Right" value='3.'></option>
-                    <option label="Right" value='4.'></option>
-                    <option label="Back-Right" value='5.'></option>
-                    <option label="Back" value='6.'></option>
-                    <option label="Back-Left" value='7.'></option>
-                    <option label="Left" value='8.'></option>
+                    <option label="Center" value='0;'></option>
+                    <option label="Front-Left" value='1;'></option>
+                    <option label="Front" value='2;'></option>
+                    <option label="Front-Right" value='3;'></option>
+                    <option label="Right" value='4;'></option>
+                    <option label="Back-Right" value='5;'></option>
+                    <option label="Back" value='6;'></option>
+                    <option label="Back-Left" value='7;'></option>
+                    <option label="Left" value='8;'></option>
                   </datalist>
 
                 </div>
@@ -535,14 +535,14 @@ function BlockInput() {
 
                   <datalist id="hip-options">
                     <option label="Ommited" value=''></option>
-                    <option label="Front Left" value='1'></option>
-                    <option label="Front" value='2'></option>
-                    <option label="Front Right" value='3'></option>
-                    <option label="Right" value='4'></option>
-                    <option label="Back Right" value='5'></option>
-                    <option label="Back" value='6'></option>
-                    <option label="Back Left" value='7'></option>
-                    <option label="Left" value='8'></option>
+                    <option label="Front Left" value='1:'></option>
+                    <option label="Front" value='2:'></option>
+                    <option label="Front Right" value='3:'></option>
+                    <option label="Right" value='4:'></option>
+                    <option label="Back Right" value='5:'></option>
+                    <option label="Back" value='6:'></option>
+                    <option label="Back Left" value='7:'></option>
+                    <option label="Left" value='8:'></option>
                   </datalist>
                 </div>
               </div>
@@ -673,13 +673,13 @@ function BlockInput() {
 
                   <datalist id="number-options">
                     <option label="Single/Ommited" value=''></option>
-                    <option label="Double" value='2'></option>
-                    <option label="Triple" value='3'></option>
-                    <option label="Quadruple" value='4'></option>
-                    <option label="Quintuple" value='5'></option>
-                    <option label="Sixtuple" value='6'></option>
-                    <option label="Seventuple" value='7'></option>
-                    <option label="Eightuple" value='8'></option>
+                    <option label="Double" value='2.'></option>
+                    <option label="Triple" value='3.'></option>
+                    <option label="Quadruple" value='4.'></option>
+                    <option label="Quintuple" value='5.'></option>
+                    <option label="Sixtuple" value='6.'></option>
+                    <option label="Seventuple" value='7.'></option>
+                    <option label="Eightuple" value='8.'></option>
                   </datalist>
                 </div>
               </div>
