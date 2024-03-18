@@ -1009,7 +1009,7 @@ function BlockInput() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button></div>
+          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button></div>
           <div className="current-phrase">
             {currentPhrase}
           </div>
@@ -1023,7 +1023,7 @@ function BlockInput() {
         </div>
 
         <div>
-          <div className='step-tag'><button className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep} />&nbsp;
+          <div className='step-tag'><button className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
 
             <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={currentStage} />
             <datalist id="stage-options">
@@ -1060,7 +1060,7 @@ function BlockInput() {
           </div>
         </div>
 
-        <button className='new-button'>New Class</button>
+        <button className='new-button'>Reset Class</button>
         <button className='open-button'>Open Class</button>
         <button className='save-button'>Save Class</button>
         <button className='new-phrase-button'>Add Phrase</button>
