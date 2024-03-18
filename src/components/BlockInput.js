@@ -3,28 +3,8 @@ import '../styles/BlockInput.css';
 
 function BlockInput() {
 
-  const [placeInput, setPlaceInput] = useState('');
-  const [hipInput, setHipInput] = useState('');
-  const [feetPositionInput, setFeetPositionInput] = useState('');
-  const [feetOrderInput, setFeetOrderInput] = useState('');
-  const [feetOpenCloseInput, setFeetOpenCloseInput] = useState('');
-  const [stepInput, setStepInput] = useState('');
-  const [numberInput, setNumberInput] = useState('');
-  const [legFormInput, setLegFormInput] = useState('');
-  const [legCardinalInput, setLegCardinalInput] = useState('');
-  const [legSideInput, setLegSideInput] = useState('');
-  const [directionCardinalInput, setDirectionCardinalInput] = useState('');
-  const [directionSideInput, setDirectionSideInput] = useState('');
-  const [spinInput, setSpinInput] = useState('');
-  const [headInput, setHeadInput] = useState('');
-  const [leftArmPositionInput, setLeftArmPositionInput] = useState('');
-  const [leftArmSideInput, setLeftArmSideInput] = useState('');
-  const [leftArmFormInput, setLeftArmFormInput] = useState('');
-  const [rightArmPositionInput, setRightArmPositionInput] = useState('');
-  const [rightArmSideInput, setRightArmSideInput] = useState('');
-  const [rightArmFormInput, setRightArmFormInput] = useState('');
+
   const [variantValue, setVariantValue] = useState('');
-  const [finalBlock, setFinalBlock] = useState('');
 
   const [demiChecked, setDemiChecked] = useState(false);
   const [petitChecked, setPetitChecked] = useState(false);
@@ -515,9 +495,6 @@ function BlockInput() {
 
 
 
-
-
-
   return (
 
     <div className='main-container'>
@@ -553,7 +530,7 @@ function BlockInput() {
                 <div className='titles  heads'>Hip</div>
                 <div className="block-input">
                   <label htmlFor="hip-input"></label>
-                  <input type="text" id="hip-input" list="hip-options" value={hipInput} onChange={handleInputChange} />
+                  <input type="text" id="hip-input" list="hip-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip} onChange={handleInputChange} />
 
                   <datalist id="hip-options">
                     <option label="Ommited" value=''></option>
@@ -573,7 +550,7 @@ function BlockInput() {
                 <div className="block-input">
 
                   <label htmlFor="feet-position-input"></label>
-                  <input type="text" id="feet-position-input" list="feet-position-options" value={feetPositionInput} onChange={handleInputChange} />
+                  <input type="text" id="feet-position-input" list="feet-position-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition} onChange={handleInputChange} />
 
                   <datalist id="feet-position-options">
                     <option label="Ommited" value=''></option>
@@ -585,7 +562,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="feet-order-input"></label>
-                  <input type="text" id="feet-order-input" list="feet-order-options" value={feetOrderInput} onChange={handleInputChange} />
+                  <input type="text" id="feet-order-input" list="feet-order-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder} onChange={handleInputChange} />
 
                   <datalist id="feet-order-options">
                     <option label="Ommited" value=''></option>
@@ -595,7 +572,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="feet-openClose-input"></label>
-                  <input type="text" id="feet-openClose-input" list="feet-openClose-options" value={feetOpenCloseInput} onChange={handleInputChange} />
+                  <input type="text" id="feet-openClose-input" list="feet-openClose-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose} onChange={handleInputChange} />
 
                   <datalist id="feet-openClose-options">
                     <option label="Opened Position (Usual)" value=''></option>
@@ -610,7 +587,7 @@ function BlockInput() {
                 <div className='titles heads'>Step</div>
                 <div className="block-input">
                   <label htmlFor="step-input"></label>
-                  <input className="step" type="text" id="step-input" list="step-options" value={stepInput} onChange={handleInputChange} />
+                  <input className="step" type="text" id="step-input" list="step-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step} onChange={handleInputChange} />
 
                   <datalist id="step-options">
                     <option label="Ommited" value=''></option>
@@ -691,7 +668,7 @@ function BlockInput() {
                 <div className="block-input titles">
                   <label htmlFor="number-input"></label>
 
-                  <input type="text" id="number-input" list="number-options" value={numberInput} onChange={handleInputChange} />
+                  <input type="text" id="number-input" list="number-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number} onChange={handleInputChange} />
 
                   <datalist id="number-options">
                     <option label="Single/Ommited" value=''></option>
@@ -709,7 +686,7 @@ function BlockInput() {
                 <div className='titles heads'>Leg</div>
                 <div className="block-input">
                   <label htmlFor="leg-form-input"></label>
-                  <input type="text" id="leg-form-input" list="leg-form-options" value={legFormInput} onChange={handleInputChange} />
+                  <input type="text" id="leg-form-input" list="leg-form-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm} onChange={handleInputChange} />
 
                   <datalist id="leg-form-options">
                     <option label="Ommited" value=''></option>
@@ -720,7 +697,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leg-cardinal-input"></label>
-                  <input type="text" id="leg-cardinal-input" list="leg-cardinal-options" value={legCardinalInput} onChange={handleInputChange} />
+                  <input type="text" id="leg-cardinal-input" list="leg-cardinal-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal} onChange={handleInputChange} />
 
                   <datalist id="leg-cardinal-options">
                     <option label="Ommited" value=''></option>
@@ -730,7 +707,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leg-side-input"></label>
-                  <input type="text" id="leg-side-input" list="leg-side-options" value={legSideInput} onChange={handleInputChange} />
+                  <input type="text" id="leg-side-input" list="leg-side-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide} onChange={handleInputChange} />
 
                   <datalist id="leg-side-options">
                     <option label="Right Leg" value=''></option>
@@ -744,7 +721,7 @@ function BlockInput() {
                 <div className='titles heads'>Direction</div>
                 <div className="block-input">
                   <label htmlFor="direction-cardinal-input"></label>
-                  <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" value={directionCardinalInput} onChange={handleInputChange} />
+                  <input type="text" id="direction-cardinal-input" list="direction-cardinal-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal} onChange={handleInputChange} />
 
                   <datalist id="direction-cardinal-options">
                     <option label="Ommited" value=''></option>
@@ -754,7 +731,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="direction-side-input"></label>
-                  <input type="text" id="direction-side-input" list="direction-side-options" value={directionSideInput} onChange={handleInputChange} />
+                  <input type="text" id="direction-side-input" list="direction-side-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide} onChange={handleInputChange} />
 
                   <datalist id="direction-side-options">
                     <option label="Right Leg / Ommited" value=''></option>
@@ -766,7 +743,7 @@ function BlockInput() {
                 <div className='titles heads'>Spin</div>
                 <div className="block-input">
                   <label htmlFor="spin-input"></label>
-                  <input type="text" id="spin-input" list="spin-options" value={spinInput} onChange={handleInputChange} />
+                  <input type="text" id="spin-input" list="spin-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin} onChange={handleInputChange} />
 
                   <datalist id="spin-options">
                     <option label="Ommited" value=''></option>
@@ -779,7 +756,7 @@ function BlockInput() {
                 <div className='titles heads'>Head</div>
                 <div className="block-input">
                   <label htmlFor="head-input"></label>
-                  <input type="text" id="head-input" list="head-options" value={headInput} onChange={handleInputChange} />
+                  <input type="text" id="head-input" list="head-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head} onChange={handleInputChange} />
 
                   <datalist id="head-options">
                     <option label="Ommited" value=''></option>
@@ -800,7 +777,7 @@ function BlockInput() {
                 <div className='titles heads'>Left Arm</div>
                 <div className="block-input">
                   <label htmlFor="leftarm-form-input"></label>
-                  <input type="text" id="leftarm-position-input" list="leftarm-position-options" value={leftArmPositionInput} onChange={handleInputChange} />
+                  <input type="text" id="leftarm-position-input" list="leftarm-position-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition} onChange={handleInputChange} />
 
                   <datalist id="leftarm-position-options">
                     <option label="Ommited" value=''></option>
@@ -817,7 +794,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leftarm-side-input"></label>
-                  <input type="text" id="leftarm-side-input" list="leftarm-side-options" value={leftArmSideInput} onChange={handleInputChange} />
+                  <input type="text" id="leftarm-side-input" list="leftarm-side-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide} onChange={handleInputChange} />
 
                   <datalist id="leftarm-side-options">
                     <option label="Ommited" value=''></option>
@@ -826,7 +803,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="leftarm-form-input"></label>
-                  <input type="text" id="leftarm-form-input" list="leftarm-form-options" value={leftArmFormInput} onChange={handleInputChange} />
+                  <input type="text" id="leftarm-form-input" list="leftarm-form-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm} onChange={handleInputChange} />
 
                   <datalist id="leftarm-form-options">
                     <option label="Normal" value=''></option>
@@ -839,7 +816,7 @@ function BlockInput() {
                 <div className='titles heads'>Right Arm</div>
                 <div className="block-input">
                   <label htmlFor="rightarm-form-input"></label>
-                  <input type="text" id="rightarm-position-input" list="rightarm-position-options" value={rightArmPositionInput} onChange={handleInputChange} />
+                  <input type="text" id="rightarm-position-input" list="rightarm-position-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition} onChange={handleInputChange} />
 
                   <datalist id="rightarm-position-options">
                     <option label="Ommited" value=''></option>
@@ -856,7 +833,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="rightarm-side-input"></label>
-                  <input type="text" id="rightarm-side-input" list="rightarm-side-options" value={rightArmSideInput} onChange={handleInputChange} />
+                  <input type="text" id="rightarm-side-input" list="rightarm-side-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide} onChange={handleInputChange} />
 
                   <datalist id="rightarm-side-options">
                     <option label="Ommited" value=''></option>
@@ -865,7 +842,7 @@ function BlockInput() {
                   </datalist>
 
                   <label htmlFor="rightarm-form-input"></label>
-                  <input type="text" id="rightarm-form-input" list="rightarm-form-options" value={rightArmFormInput} onChange={handleInputChange} />
+                  <input type="text" id="rightarm-form-input" list="rightarm-form-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm} onChange={handleInputChange} />
 
                   <datalist id="rightarm-form-options">
                     <option label="Normal" value=''></option>
