@@ -526,6 +526,9 @@ function BlockInput() {
       }
       return prevPhrase;
     });
+
+    setNavBlock(0);
+
   };
 
   //Forward Phrase 
@@ -537,6 +540,8 @@ function BlockInput() {
       }
       return prevPhrase;
     });
+
+    setNavBlock(0);
   };
 
   //Back Step
@@ -548,6 +553,9 @@ function BlockInput() {
       }
       return prevStep;
     });
+
+    setNavBlock(0);
+    setNavPhrase(0);
   };
 
   //Forward Step 
@@ -559,14 +567,420 @@ function BlockInput() {
       }
       return prevStep;
     });
+
+    setNavBlock(0);
+    setNavPhrase(0);
   };
 
 
+  // Add Phrase to the Class and Add Step to the Class Button Handlers
 
+  const handleAddPhrase = () => {
+    const updateBalletClass = { ...balletClass };
+    updateBalletClass.classBody[navStep].stepBody.push(
+      {
+        order: navPhrase + 1,
+        phraseBody: [
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          },
+          {
+            place: '',
+            hip: '',
+            feetPosition: '',
+            feetOrder: '',
+            feetOpenClose: '',
+            variants: '',
+            step: '',
+            number: '',
+            legForm: '',
+            legCardinal: '',
+            legSide: '',
+            directionCardinal: '',
+            directionSide: '',
+            spin: '',
+            leftArmPosition: '',
+            leftArmSide: '',
+            leftArmForm: '',
+            rightArmPosition: '',
+            rightArmSide: '',
+            rightArmForm: '',
+            head: ''
+          }
+        ]
+      }
+    );
 
+    setBalletClass(updateBalletClass);
 
+    setNavBlock(0);
+  };
 
+  const handleAddStep = () => {
+    const updateBalletClass = { ...balletClass };
+    updateBalletClass.classBody.push(
+      {
+        order: navStep + 1,
+        stage: '',
+        kind: '',
+        stepBody: [
+          {
+            order: 1,
+            phraseBody: [
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              },
+              {
+                place: '',
+                hip: '',
+                feetPosition: '',
+                feetOrder: '',
+                feetOpenClose: '',
+                variants: '',
+                step: '',
+                number: '',
+                legForm: '',
+                legCardinal: '',
+                legSide: '',
+                directionCardinal: '',
+                directionSide: '',
+                spin: '',
+                leftArmPosition: '',
+                leftArmSide: '',
+                leftArmForm: '',
+                rightArmPosition: '',
+                rightArmSide: '',
+                rightArmForm: '',
+                head: ''
+              }
+            ]
+          }
+        ]
+      }
+    );
 
+    setBalletClass(updateBalletClass);
+
+    setNavBlock(0);
+    setNavPhrase(0);
+
+  };
 
 
 
@@ -1063,8 +1477,8 @@ function BlockInput() {
         <button className='new-button'>Reset Class</button>
         <button className='open-button'>Open Class</button>
         <button className='save-button'>Save Class</button>
-        <button className='new-phrase-button'>Add Phrase</button>
-        <button className='new-step-button'>Add Step</button>
+        <button className='new-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
+        <button className='new-step-button' onClick={handleAddStep}>Add Step</button>
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' type='text' />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' type='number' />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' type="number" />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' type='number' />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' type='text' /></div>
