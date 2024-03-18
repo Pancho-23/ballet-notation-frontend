@@ -291,5 +291,24 @@ input[type="checkbox"]:checked:hover {
 }
 
 .stage-input, .kind-input {
+  width: 150px;
+}
+
+.kind-input {
   width: 100px;
+}
+
+#place-input, #hip-input, #head-input {
+  width: 35px;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; 
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

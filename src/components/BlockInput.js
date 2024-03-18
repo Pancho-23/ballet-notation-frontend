@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
+import { convertToRoman } from '../appFunctions';
+import { deL } from '../appFunctions';
 
 function BlockInput() {
 
-
-  //Function to delete a letter from a string
-  function deL(str, letterToDelete) {
-    return str.split(letterToDelete).join('');
-  };
 
   // We define the structure of the class, parts of which will be rendered to the user.
   const [balletClass, setBalletClass] = useState({
@@ -227,8 +224,6 @@ function BlockInput() {
   const [currentBlock, setCurrentBlock] = useState('');
   const [currentPhrase, setCurrentPhrase] = useState('');
   const [currentStep, setCurrentStep] = useState('');
-  const [currentStage, setCurrentStage] = useState('');
-  const [currentKind, setCurrentKind] = useState('');
   const [currentClass, setCurrentClass] = useState('');
 
 
@@ -477,6 +472,19 @@ function BlockInput() {
       }
     }
 
+    if (event.target.id === 'stage-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stage = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+    if (event.target.id === 'kind-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].kind = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+
   }
 
   function coordinatesBlock(navBlock, navPhrase, navStep) {
@@ -487,12 +495,19 @@ function BlockInput() {
     return coordinatesBlock(0, navPhrase, navStep) + ' | ' + coordinatesBlock(1, navPhrase, navStep) + ' | ' + coordinatesBlock(2, navPhrase, navStep) + ' | ' + coordinatesBlock(3, navPhrase, navStep) + ' | ' + coordinatesBlock(4, navPhrase, navStep) + ' | ' + coordinatesBlock(5, navPhrase, navStep) + ' | ' + coordinatesBlock(6, navPhrase, navStep) + ' | ' + coordinatesBlock(7, navPhrase, navStep) + ' | ';
   };
 
+  function coordinatesStep(navStep) {
+
+  }
+
+
 
   useEffect(() => {
 
     setCurrentBlock(coordinatesBlock(navBlock, navPhrase, navStep));
 
     setCurrentPhrase(coordinatesPhrase(navPhrase, navStep));
+
+
 
   }, [balletClass, navBlock, navPhrase, navStep]);
 
@@ -1444,7 +1459,7 @@ function BlockInput() {
         <div>
           <div className='step-tag'><button className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
 
-            <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={currentStage} />
+            <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={balletClass.classBody[navStep].stage} onChange={handleInputChange} />
             <datalist id="stage-options">
               <option label="Ommited" value=''></option>
               <option label="Warming" value='Warming'></option>
@@ -1466,7 +1481,7 @@ function BlockInput() {
               <option label="Coda" value='Coda'></option>
             </datalist>
             &nbsp;
-            <input className='kind-input' type="text" id="kind-input" list="kind-options" placeholder='Kind' value={currentKind} />
+            <input className='kind-input' type="text" id="kind-input" list="kind-options" placeholder='Kind' value={balletClass.classBody[navStep].kind} onChange={handleInputChange} />
             <datalist id="kind-options">
               <option label="Ommited" value=''></option>
               <option label="Bar" value='Bar'></option>
