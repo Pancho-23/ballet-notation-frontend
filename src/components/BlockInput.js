@@ -541,11 +541,11 @@ function BlockInput() {
     let phrasePart = '';
     let index = 0;
     while (index < balletClass.classBody[navStep].stepBody.length) {
-      phrasePart += `${convertToRoman(index + 1)}\t\t${coordinatesPhrase(index, navStep)} \n`;
+      phrasePart += `${convertToRoman(index + 1)}\t\t${coordinatesPhrase(index, navStep)}\n`;
       index++
     }
 
-    let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n ${phrasePart}\n\n`;
+    let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n${phrasePart}\n\n`;
 
     return finalPart;
   };
@@ -554,11 +554,11 @@ function BlockInput() {
     let stepPart = '';
     let index = 0;
     while (index < balletClass.classBody.length) {
-      stepPart += `${coordinatesStepText(index)}  ---\n\n`;
+      stepPart += `${coordinatesStepText(index)}---\n\n`;
       index++
     }
 
-    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n${stepPart}`;
+    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\n${stepPart}`;
 
     return finalPart;
   };
