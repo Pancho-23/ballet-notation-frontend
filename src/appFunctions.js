@@ -41,7 +41,7 @@ export function between(FIRST, LAST, INPUT) {
   const BETWEEN = INPUT.substring(startIndex, endIndex);
   return BETWEEN;
 
-}
+};
 
 //Function to Read a TXT File and Transform it into a Ballet Class Object
 export function stringToBallet(string) {
@@ -49,6 +49,4 @@ export function stringToBallet(string) {
   while (string.includes(`Step ${stepLength + 1}`)) {
     stepLength++;
   }
-
-
 };
