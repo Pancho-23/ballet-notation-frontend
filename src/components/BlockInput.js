@@ -9,7 +9,7 @@ function BlockInput() {
   // We define the structure of the class, parts of which will be rendered to the user.
   const [balletClass, setBalletClass] = useState({
     master: '',
-    mounth: 1,
+    mounth: 'January',
     day: 1,
     year: 2024,
     country: '',
@@ -484,6 +484,37 @@ function BlockInput() {
       setBalletClass(updateBalletClass);
     }
 
+    //Here the Catalog Inputs
+
+    if (event.target.id === 'master-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.master = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+    if (event.target.id === 'mounth-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.mounth = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+    if (event.target.id === 'day-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.day = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+    if (event.target.id === 'year-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.year = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
+
+    if (event.target.id === 'country-input') {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.country = event.target.value;
+      setBalletClass(updateBalletClass);
+    }
 
   }
 
@@ -502,9 +533,21 @@ function BlockInput() {
       phrasePart = phrasePart.concat([<div className='roman-div'>{convertToRoman(index + 1)}</div>, `${coordinatesPhrase(index, navStep)}`, <br />]);
       index++
     }
-    return phrasePart;
+
+    let finalPart = [`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, <br />].concat(phrasePart);
+
+    return finalPart;
   }
 
+  function coordinatesClass() {
+    let stepPart = [<span>Master:&nbsp;&nbsp;</span>, <div className='master-div'>{balletClass.master}</div>, <br />, <span>Date:&nbsp;&nbsp;</span>, <div className='mounth-div'>{balletClass.mounth}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='day-div'>{balletClass.day}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='year-div'>{balletClass.year}</div>, <br />, <span>Country:&nbsp;&nbsp;</span>, <div className='country-div'>{balletClass.country}</div>, <br />, `---`, <br />, <br />];
+    let index = 0;
+    while (index < balletClass.classBody.length) {
+      stepPart = stepPart.concat([coordinatesStep(index), <br />, `---`, <br />, <br />]);
+      index++
+    }
+    return stepPart;
+  }
 
 
   useEffect(() => {
@@ -513,7 +556,9 @@ function BlockInput() {
 
     setCurrentPhrase(coordinatesPhrase(navPhrase, navStep));
 
-    setCurrentStep([`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, `---`, <br />].concat(coordinatesStep(navStep)));
+    setCurrentStep(coordinatesStep(navStep));
+
+    setCurrentClass(coordinatesClass());
 
 
   }, [balletClass, navBlock, navPhrase, navStep]);
@@ -1508,7 +1553,24 @@ function BlockInput() {
         <button className='new-step-button' onClick={handleAddStep}>Add Step</button>
 
         <div>
-          <div className='class-tag'> Master <input className='log log-master' type='text' />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' type='number' />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' type="number" />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' type='number' />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' type='text' /></div>
+          <div className='class-tag'> Master <input className='log log-master' id='master-input' type='text' value={balletClass.master} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' id='mounth-input' type='text' list="mounth-options" value={balletClass.mounth} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' id='day-input' type="number" value={balletClass.day} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' id='year-input' type='number' value={balletClass.year} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' id='country-input' type='text' value={balletClass.country} onChange={handleInputChange} /></div>
+
+          <datalist id="mounth-options">
+            <option label="Ommited" value=''></option>
+            <option label="January" value='January'></option>
+            <option label="February" value='February'></option>
+            <option label="March" value='March'></option>
+            <option label="April" value='April'></option>
+            <option label="May" value='May'></option>
+            <option label="June" value='June'></option>
+            <option label="July" value='July'></option>
+            <option label="August" value='August'></option>
+            <option label="September" value='September'></option>
+            <option label="October" value='October'></option>
+            <option label="November" value='November'></option>
+            <option label="December" value='December'></option>
+          </datalist>
+
           <div className='current-class'>
             {currentClass}
           </div>
