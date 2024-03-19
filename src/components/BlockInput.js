@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { convertToRoman } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -529,77 +529,25 @@ function BlockInput() {
 
   }
 
-  function coordinatesBlock(navBlock, navPhrase, navStep) {
-    return balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].variants + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm + balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head;
-  };
 
-  function coordinatesPhrase(navPhrase, navStep) {
-    return coordinatesBlock(0, navPhrase, navStep) + ' | ' + coordinatesBlock(1, navPhrase, navStep) + ' | ' + coordinatesBlock(2, navPhrase, navStep) + ' | ' + coordinatesBlock(3, navPhrase, navStep) + ' | ' + coordinatesBlock(4, navPhrase, navStep) + ' | ' + coordinatesBlock(5, navPhrase, navStep) + ' | ' + coordinatesBlock(6, navPhrase, navStep) + ' | ' + coordinatesBlock(7, navPhrase, navStep) + ' | ';
-  };
 
-  function coordinatesStepText(navStep) {
-    let phrasePart = '';
-    let index = 0;
-    while (index < balletClass.classBody[navStep].stepBody.length) {
-      phrasePart += `${convertToRoman(index + 1)}\t${coordinatesPhrase(index, navStep)}\n`;
-      index++
-    }
 
-    let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n${phrasePart}\n\n`;
 
-    return finalPart;
-  };
-
-  function coordinatesClassText() {
-    let stepPart = '';
-    let index = 0;
-    while (index < balletClass.classBody.length) {
-      stepPart += `${coordinatesStepText(index)}---\n\n`;
-      index++
-    }
-
-    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\n${stepPart}`;
-
-    return finalPart;
-  };
-
-  function coordinatesStep(navStep) {
-    let phrasePart = [];
-    let index = 0;
-    while (index < balletClass.classBody[navStep].stepBody.length) {
-      phrasePart = phrasePart.concat([<div className='roman-div'>{convertToRoman(index + 1)}</div>, `${coordinatesPhrase(index, navStep)}`, <br />]);
-      index++
-    }
-
-    let finalPart = [`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, <br />].concat(phrasePart);
-
-    return finalPart;
-  };
-
-  function coordinatesClass() {
-    let stepPart = [<span>Master:&nbsp;&nbsp;</span>, <div className='master-div'>{balletClass.master}</div>, <br />, <span>Date:&nbsp;&nbsp;</span>, <div className='mounth-div'>{balletClass.mounth}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='day-div'>{balletClass.day}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='year-div'>{balletClass.year}</div>, <br />, <span>Country:&nbsp;&nbsp;</span>, <div className='country-div'>{balletClass.country}</div>, <br />, `---`, <br />, <br />];
-    let index = 0;
-    while (index < balletClass.classBody.length) {
-      stepPart = stepPart.concat([coordinatesStep(index), <br />, `---`, <br />, <br />]);
-      index++
-    }
-    return stepPart;
-  };
 
 
   useEffect(() => {
 
-    setCurrentBlock(coordinatesBlock(navBlock, navPhrase, navStep));
+    setCurrentBlock(balletBlockText(navBlock, navPhrase, navStep, balletClass));
 
-    setCurrentPhrase(coordinatesPhrase(navPhrase, navStep));
+    setCurrentPhrase(balletPhraseText(navPhrase, navStep, balletClass));
 
-    setCurrentStep(coordinatesStep(navStep));
+    setCurrentStep(coordinatesStepJSX(navStep, balletClass));
 
-    setCurrentClass(coordinatesClass());
+    setCurrentClass(coordinatesClassJSX(balletClass));
 
-    setCurrentStepText(coordinatesStepText(navStep));
+    setCurrentStepText(balletStepText(navStep, balletClass));
 
-    setCurrentClassText(coordinatesClassText());
+    setCurrentClassText(balletClassText(balletClass));
 
 
   }, [balletClass, navBlock, navPhrase, navStep]);
