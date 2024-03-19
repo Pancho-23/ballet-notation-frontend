@@ -223,7 +223,7 @@ function BlockInput() {
   // Here we define the actual dynamic values showed to the user
   const [currentBlock, setCurrentBlock] = useState('');
   const [currentPhrase, setCurrentPhrase] = useState('');
-  const [currentStep, setCurrentStep] = useState('');
+  const [currentStep, setCurrentStep] = useState([]);
   const [currentClass, setCurrentClass] = useState('');
 
 
@@ -496,7 +496,13 @@ function BlockInput() {
   };
 
   function coordinatesStep(navStep) {
-
+    let phrasePart = [];
+    let index = 0;
+    while (index < balletClass.classBody[navStep].stepBody.length) {
+      phrasePart = phrasePart.concat([<div className='roman-div'>{convertToRoman(index + 1)}</div>, `${coordinatesPhrase(index, navStep)}`, <br />]);
+      index++
+    }
+    return phrasePart;
   }
 
 
@@ -507,6 +513,7 @@ function BlockInput() {
 
     setCurrentPhrase(coordinatesPhrase(navPhrase, navStep));
 
+    setCurrentStep([`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, `---`, <br />].concat(coordinatesStep(navStep)));
 
 
   }, [balletClass, navBlock, navPhrase, navStep]);
