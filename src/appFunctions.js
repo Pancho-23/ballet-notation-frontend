@@ -33,7 +33,22 @@ export function deL(str, letterToDelete) {
   return str.split(letterToDelete).join('');
 };
 
+// Function Between, Gives the first String between the FIRST and LAST Strings Inputed of the String INPUT
+export function between(FIRST, LAST, INPUT) {
+  const startIndex = INPUT.indexOf(FIRST) + FIRST.length;
+  const subINPUT = INPUT.substring(startIndex, INPUT.length - 1);
+  const endIndex = subINPUT.indexOf(LAST) + INPUT.length - subINPUT.length;
+  const BETWEEN = INPUT.substring(startIndex, endIndex);
+  return BETWEEN;
+
+}
+
 //Function to Read a TXT File and Transform it into a Ballet Class Object
-export function txtToBallet() {
+export function stringToBallet(string) {
+  let stepLength = 1;
+  while (string.includes(`Step ${stepLength + 1}`)) {
+    stepLength++;
+  }
+
 
 };

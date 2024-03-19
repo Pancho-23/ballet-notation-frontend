@@ -541,7 +541,7 @@ function BlockInput() {
     let phrasePart = '';
     let index = 0;
     while (index < balletClass.classBody[navStep].stepBody.length) {
-      phrasePart += `${convertToRoman(index + 1)}\t\t${coordinatesPhrase(index, navStep)}\n`;
+      phrasePart += `${convertToRoman(index + 1)}\t${coordinatesPhrase(index, navStep)}\n`;
       index++
     }
 
