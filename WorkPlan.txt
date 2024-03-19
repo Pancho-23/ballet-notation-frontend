@@ -10,6 +10,8 @@ WorkLog
 
 Plan:
 
+0) Number Input Stretched (it's short)
+
 1) Save Step Utility and Button + Reset Class + Open Class Utility (Read Class from Text Function)
 
 2) JSON database (Node.js + Express) for the entire class and for the Steps

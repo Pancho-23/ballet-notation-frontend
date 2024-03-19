@@ -32,3 +32,8 @@ export function convertToRoman(num) {
 export function deL(str, letterToDelete) {
   return str.split(letterToDelete).join('');
 };
+
+//Function to Read a TXT File and Transform it into a Ballet Class Object
+export function txtToBallet() {
+
+};
