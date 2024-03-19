@@ -758,7 +758,6 @@ function BlockInput() {
 
                   <datalist id="leftarm-side-options">
                     <option label="Ommited" value=''></option>
-                    <option label="Right" value='?'></option>
                     <option label="Left" value='!'></option>
                   </datalist>
 
@@ -798,7 +797,6 @@ function BlockInput() {
                   <datalist id="rightarm-side-options">
                     <option label="Ommited" value=''></option>
                     <option label="Right" value='?'></option>
-                    <option label="Left" value='!'></option>
                   </datalist>
 
                   <label htmlFor="rightarm-form-input"></label>
