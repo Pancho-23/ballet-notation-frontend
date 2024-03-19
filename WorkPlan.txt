@@ -1,8 +1,8 @@
 WorkLog
 
-12/3 : Completed Block Functionality + Add Block Button with Clearing
+12/3/2024 : Completed Block Functionality + Add Block Button with Clearing
 
-19/3: Structure and Style of the Complete Ballet Notation Sheet Complete,
+19/3/2024 : Structure and Style of the Complete Ballet Notation Sheet Complete,
       Logic of the Notation Sheet
       Object Structure of the Step and of the Class (Step should have: Master, Year, Country, Place, Stage)
       Save Class Utility
@@ -10,7 +10,7 @@ WorkLog
 
 Plan:
 
-1) Save Step Utility and Button + Reset Class + Open Class Utility
+1) Save Step Utility and Button + Reset Class + Open Class Utility (Read Class from Text Function)
 
 2) JSON database (Node.js + Express) for the entire class and for the Steps
 
