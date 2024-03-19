@@ -226,6 +226,9 @@ function BlockInput() {
   const [currentStep, setCurrentStep] = useState([]);
   const [currentClass, setCurrentClass] = useState('');
 
+  const [currentStepText, setCurrentClassText] = useState('');
+  const [currentClassText, setCurrentStepText] = useState('');
+
 
   const handleInputChange = (event) => {
 
@@ -1055,6 +1058,15 @@ function BlockInput() {
   };
 
 
+  const handleSaveClass = () => {
+    const textToSave = currentClassText;
+    const file = new Blob([textToSave], { type: 'text/plain' });
+    const fileURL = URL.createObjectURL(file);
+    const element = document.createElement("a");
+    element.href = fileURL;
+    element.download = `${balletClass.master}.${balletClass.mounth}.${balletClass.day}.${balletClass.year}.txt`;
+    element.click();
+  }
 
 
 
@@ -1548,7 +1560,7 @@ function BlockInput() {
 
         <button className='new-button'>Reset Class</button>
         <button className='open-button'>Open Class</button>
-        <button className='save-button'>Save Class</button>
+        <button className='save-button' onClick={handleSaveClass}>Save Class</button>
         <button className='new-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
         <button className='new-step-button' onClick={handleAddStep}>Add Step</button>
 
