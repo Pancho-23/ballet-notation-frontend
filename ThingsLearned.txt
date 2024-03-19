@@ -11,7 +11,11 @@ Modify updateObject properties normally, then setObject(updateObject)
 
 5) In defining a dynamic array identify objects inside with unique keys.
 
+<<<<<<< HEAD
 6) setFunction of useState accept the prevObject as an argument setObject(prevObject => {
   //Code and modify the prevObject to get modifiedObject
   return modifiedObject;
 })
+=======
+6) 
+>>>>>>> 0a48cdb229e5124aee7ba3b0fa286a809ca4139e
