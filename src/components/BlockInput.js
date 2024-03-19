@@ -558,7 +558,7 @@ function BlockInput() {
       index++
     }
 
-    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\n${stepPart}`;
+    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\${stepPart}`;
 
     return finalPart;
   };
