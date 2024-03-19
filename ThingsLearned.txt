@@ -1,0 +1,17 @@
+Things Learned
+
+1) To render a string with jumps in JSX line it must be done by rendering an array and <br /> or a div or a span.
+
+2) To modify a dynamic object in React must be done INMUTABLY: first const updateObject = {...Object}
+Modify updateObject properties normally, then setObject(updateObject)
+
+3) Literals preserve spaces and jumps in line WHEN READ AS TEXT (not when do as HTML or JSX).
+
+4) Use the useEffect with dependecies when a dynamic value depends on others. Include all dependencies.
+
+5) In defining a dynamic array identify objects inside with unique keys.
+
+6) setFunction of useState accept the prevObject as an argument setObject(prevObject => {
+  //Code and modify the prevObject to get modifiedObject
+  return modifiedObject;
+})
