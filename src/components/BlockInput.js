@@ -23,6 +23,7 @@ function BlockInput() {
             order: 1,
             phraseBody: [
               {
+                order: 1,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -46,6 +47,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 2,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -69,6 +71,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 3,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -92,6 +95,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 4,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -115,6 +119,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 5,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -138,6 +143,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 6,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -161,6 +167,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 7,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -184,6 +191,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 8,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -226,8 +234,8 @@ function BlockInput() {
   const [currentStep, setCurrentStep] = useState([]);
   const [currentClass, setCurrentClass] = useState('');
 
-  const [currentStepText, setCurrentClassText] = useState('');
-  const [currentClassText, setCurrentStepText] = useState('');
+  const [currentStepText, setCurrentStepText] = useState('');
+  const [currentClassText, setCurrentClassText] = useState('');
 
 
   const handleInputChange = (event) => {
@@ -529,6 +537,32 @@ function BlockInput() {
     return coordinatesBlock(0, navPhrase, navStep) + ' | ' + coordinatesBlock(1, navPhrase, navStep) + ' | ' + coordinatesBlock(2, navPhrase, navStep) + ' | ' + coordinatesBlock(3, navPhrase, navStep) + ' | ' + coordinatesBlock(4, navPhrase, navStep) + ' | ' + coordinatesBlock(5, navPhrase, navStep) + ' | ' + coordinatesBlock(6, navPhrase, navStep) + ' | ' + coordinatesBlock(7, navPhrase, navStep) + ' | ';
   };
 
+  function coordinatesStepText(navStep) {
+    let phrasePart = '';
+    let index = 0;
+    while (index < balletClass.classBody[navStep].stepBody.length) {
+      phrasePart += `${convertToRoman(index + 1)}\t\t${coordinatesPhrase(index, navStep)} \n`;
+      index++
+    }
+
+    let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n ${phrasePart}\n\n`;
+
+    return finalPart;
+  };
+
+  function coordinatesClassText() {
+    let stepPart = '';
+    let index = 0;
+    while (index < balletClass.classBody.length) {
+      stepPart += `${coordinatesStepText(index)}  ---\n\n`;
+      index++
+    }
+
+    let finalPart = `Master:  ${balletClass.master} \nDate: ${balletClass.mounth}  ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\n${stepPart}`;
+
+    return finalPart;
+  };
+
   function coordinatesStep(navStep) {
     let phrasePart = [];
     let index = 0;
@@ -540,7 +574,7 @@ function BlockInput() {
     let finalPart = [`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, <br />].concat(phrasePart);
 
     return finalPart;
-  }
+  };
 
   function coordinatesClass() {
     let stepPart = [<span>Master:&nbsp;&nbsp;</span>, <div className='master-div'>{balletClass.master}</div>, <br />, <span>Date:&nbsp;&nbsp;</span>, <div className='mounth-div'>{balletClass.mounth}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='day-div'>{balletClass.day}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='year-div'>{balletClass.year}</div>, <br />, <span>Country:&nbsp;&nbsp;</span>, <div className='country-div'>{balletClass.country}</div>, <br />, `---`, <br />, <br />];
@@ -550,7 +584,7 @@ function BlockInput() {
       index++
     }
     return stepPart;
-  }
+  };
 
 
   useEffect(() => {
@@ -562,6 +596,10 @@ function BlockInput() {
     setCurrentStep(coordinatesStep(navStep));
 
     setCurrentClass(coordinatesClass());
+
+    setCurrentStepText(coordinatesStepText(navStep));
+
+    setCurrentClassText(coordinatesClassText());
 
 
   }, [balletClass, navBlock, navPhrase, navStep]);
@@ -654,9 +692,10 @@ function BlockInput() {
     const updateBalletClass = { ...balletClass };
     updateBalletClass.classBody[navStep].stepBody.push(
       {
-        order: navPhrase + 1,
+        order: updateBalletClass.classBody[navStep].stepBody.length + 1,
         phraseBody: [
           {
+            order: 1,
             place: '',
             hip: '',
             feetPosition: '',
@@ -680,6 +719,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 2,
             place: '',
             hip: '',
             feetPosition: '',
@@ -703,6 +743,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 3,
             place: '',
             hip: '',
             feetPosition: '',
@@ -726,6 +767,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 4,
             place: '',
             hip: '',
             feetPosition: '',
@@ -749,6 +791,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 5,
             place: '',
             hip: '',
             feetPosition: '',
@@ -772,6 +815,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 6,
             place: '',
             hip: '',
             feetPosition: '',
@@ -795,6 +839,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 7,
             place: '',
             hip: '',
             feetPosition: '',
@@ -818,6 +863,7 @@ function BlockInput() {
             head: ''
           },
           {
+            order: 8,
             place: '',
             hip: '',
             feetPosition: '',
@@ -853,7 +899,7 @@ function BlockInput() {
     const updateBalletClass = { ...balletClass };
     updateBalletClass.classBody.push(
       {
-        order: navStep + 1,
+        order: updateBalletClass.classBody.length + 1,
         stage: '',
         kind: '',
         stepBody: [
@@ -861,6 +907,7 @@ function BlockInput() {
             order: 1,
             phraseBody: [
               {
+                order: 1,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -884,6 +931,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 2,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -907,6 +955,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 3,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -930,6 +979,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 4,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -953,6 +1003,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 5,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -976,6 +1027,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 6,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -999,6 +1051,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 7,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -1022,6 +1075,7 @@ function BlockInput() {
                 head: ''
               },
               {
+                order: 8,
                 place: '',
                 hip: '',
                 feetPosition: '',

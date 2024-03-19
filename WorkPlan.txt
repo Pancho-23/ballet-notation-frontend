@@ -1,0 +1,22 @@
+WorkLog
+
+12/3 : Completed Block Functionality + Add Block Button with Clearing
+
+19/3: Structure and Style of the Complete Ballet Notation Sheet Complete,
+      Logic of the Notation Sheet
+      Object Structure of the Step and of the Class (Step should have: Master, Year, Country, Place, Stage)
+      Save Class Utility
+
+
+Plan:
+
+1) Save Step Utility and Button + Reset Class + Open Class Utility
+
+2) JSON database (Node.js + Express) for the entire class and for the Steps
+
+3) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
+  3.1) Routing
+  3.2) Content of each Page
+  3.3) Style of each Page
+  3.4) Start Documentation for Usage
+  3.5) Comment all Code until this point
