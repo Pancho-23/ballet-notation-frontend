@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -531,10 +531,6 @@ function BlockInput() {
 
 
 
-
-
-
-
   useEffect(() => {
 
     setCurrentBlock(balletBlockText(navBlock, navPhrase, navStep, balletClass));
@@ -844,215 +840,11 @@ function BlockInput() {
   };
 
   const handleAddStep = () => {
-    const updateBalletClass = { ...balletClass };
-    updateBalletClass.classBody.push(
-      {
-        order: updateBalletClass.classBody.length + 1,
-        stage: '',
-        kind: '',
-        stepBody: [
-          {
-            order: 1,
-            phraseBody: [
-              {
-                order: 1,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 2,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 3,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 4,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 5,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 6,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 7,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              },
-              {
-                order: 8,
-                place: '',
-                hip: '',
-                feetPosition: '',
-                feetOrder: '',
-                feetOpenClose: '',
-                variants: '',
-                step: '',
-                number: '',
-                legForm: '',
-                legCardinal: '',
-                legSide: '',
-                directionCardinal: '',
-                directionSide: '',
-                spin: '',
-                leftArmPosition: '',
-                leftArmSide: '',
-                leftArmForm: '',
-                rightArmPosition: '',
-                rightArmSide: '',
-                rightArmForm: '',
-                head: ''
-              }
-            ]
-          }
-        ]
-      }
-    );
+    const updateBalletClass = { ...balletClass }
 
-    setBalletClass(updateBalletClass);
+    const newBalletClass = AddStepToBalletClass(updateBalletClass);
+
+    setBalletClass(newBalletClass);
 
     setNavBlock(0);
     setNavPhrase(0);

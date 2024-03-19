@@ -113,3 +113,222 @@ export function coordinatesClassJSX(balletClass) {
   }
   return stepPart;
 };
+
+// Adds another Step Into a Ballet Class Object
+export function AddStepToBalletClass(balletClass) {
+  balletClass.classBody.push(
+    {
+      order: balletClass.classBody.length + 1,
+      stage: '',
+      kind: '',
+      stepBody: [
+        {
+          order: 1,
+          phraseBody: [
+            {
+              order: 1,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 2,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 3,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 4,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 5,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 6,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 7,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            },
+            {
+              order: 8,
+              place: '',
+              hip: '',
+              feetPosition: '',
+              feetOrder: '',
+              feetOpenClose: '',
+              variants: '',
+              step: '',
+              number: '',
+              legForm: '',
+              legCardinal: '',
+              legSide: '',
+              directionCardinal: '',
+              directionSide: '',
+              spin: '',
+              leftArmPosition: '',
+              leftArmSide: '',
+              leftArmForm: '',
+              rightArmPosition: '',
+              rightArmSide: '',
+              rightArmForm: '',
+              head: ''
+            }
+          ]
+        }
+      ]
+    }
+  );
+
+  return balletClass;
+}
+
+//Now I want a Function to transform a String into a Ballet Class (provided the String is Properly Formatted)
+export function balletStringToObject(balletString) {
+
+  //First We create an initial Ballet Object to work with
+
+}
