@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass, AddPhraseToStep, initBalletClass } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -13,7 +13,6 @@ function BlockInput() {
   const [navBlock, setNavBlock] = useState(0);
   const [navPhrase, setNavPhrase] = useState(0);
   const [navStep, setNavStep] = useState(0);
-
 
   // Here we define the actual dynamic values showed to the user
   const [currentBlock, setCurrentBlock] = useState('');
@@ -448,7 +447,7 @@ function BlockInput() {
     const fileURL = URL.createObjectURL(file);
     const element = document.createElement("a");
     element.href = fileURL;
-    element.download = `${balletClass.master}.${balletClass.mounth}.${balletClass.day}.${balletClass.year}.txt`;
+    element.download = `${balletClass.master} - ${balletClass.mounth} ${balletClass.day} ${balletClass.year}.txt`;
     element.click();
   }
 
@@ -941,7 +940,7 @@ function BlockInput() {
         </div>
 
         <button className='new-button'>Reset Class</button>
-        <button className='open-button'>Open Class</button>
+        <button className='open-button' >Open Class</button>
         <button className='save-button' onClick={handleSaveClass}>Save Class</button>
         <button className='new-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
         <button className='new-step-button' onClick={handleAddStep}>Add Step</button>

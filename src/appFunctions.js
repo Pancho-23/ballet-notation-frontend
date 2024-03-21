@@ -89,7 +89,7 @@ export function balletBlockText(navBlock, navPhrase, navStep, balletClass) {
 
 // Gets the pointed Phrase and transforms it into a String
 export function balletPhraseText(navPhrase, navStep, balletClass) {
-  return balletBlockText(0, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(1, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(2, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(3, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(4, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(5, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(6, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(7, navPhrase, navStep, balletClass) + ' | ';
+  return balletBlockText(0, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(1, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(2, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(3, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(4, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(5, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(6, navPhrase, navStep, balletClass) + ' | ' + balletBlockText(7, navPhrase, navStep, balletClass) + ' |';
 };
 
 // Gets the pointed Step and trnasforms it into a String
@@ -101,7 +101,7 @@ export function balletStepText(navStep, balletClass) {
     index++
   }
 
-  let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n${phrasePart}\n\n`;
+  let finalPart = `Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}\n\n${phrasePart}\n`;
 
   return finalPart;
 };
@@ -115,7 +115,7 @@ export function balletClassText(balletClass) {
     index++
   }
 
-  let finalPart = `Master: ${balletClass.master} \nDate: ${balletClass.mounth} ${balletClass.day} ${balletClass.year} \nCountry: ${balletClass.country}  \n---\n\n${stepPart}`;
+  let finalPart = `Master: ${balletClass.master}\nDate: ${balletClass.mounth} ${balletClass.day} ${balletClass.year}\nCountry: ${balletClass.country}\n---\n\n${stepPart}`;
 
   return finalPart;
 };
@@ -782,8 +782,7 @@ export function initBalletClass() {
 }
 
 
-// We will go from the ground up, First we need a function that takes a Block in String and the
-// Order and gives us the Object
+// Function that takes a Block in String and the Order and gives us the Object
 export function stringBlockToObject(blockString, blockOrder) {
   let initBlock = {
     order: 1,
@@ -824,7 +823,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.hip = hipMatch ? hipMatch[0] : '';
 
   //Feet 
-  const feetRegex = /(1|2|3|4|5)(\+|\-|=|'')(¬|'')/;
+  const feetRegex = /(1|2|3|4|5)(\+|-|=|'')(¬|'')/;
   let feetMatch = blockString.match(feetRegex);
   let Feet = feetMatch ? feetMatch[0] : '';
 
@@ -834,7 +833,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.feetPosition = feetPositionMatch ? feetPositionMatch[0] : '';
 
   //Feet Order
-  const feetOrderRegex = /\+|\-|=/;
+  const feetOrderRegex = /\+|-|=/;
   let feetOrderMatch = Feet.match(feetOrderRegex);
   initBlock.feetOrder = feetOrderMatch ? feetOrderMatch[0] : '';
 
@@ -854,7 +853,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.number = numberMatch ? numberMatch[0] : '';
 
   //Leg 
-  const legRegex = /(#|\$|%|\/)(\+|\-|\=|'')(!|'')/;
+  const legRegex = /(#|\$|%|\/)(\+|-|=|'')(!|'')/;
   let legMatch = blockString.match(legRegex);
   let Leg = legMatch ? legMatch[0] : '';
 
@@ -864,7 +863,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.legForm = legFormMatch ? legFormMatch[0] : '';
 
   //Leg Cardinal
-  const legCardinalRegex = /\+|\-|\=/;
+  const legCardinalRegex = /\+|-|=/;
   let legCardinalMatch = Leg.match(legCardinalRegex);
   initBlock.legCardinal = legCardinalMatch ? legCardinalMatch[0] : '';
 
@@ -874,12 +873,12 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.legSide = legSideMatch ? legSideMatch[0] : '';
 
   //Direction 
-  const directionRegex = /(\+|\-|\=)(!|'')/;
+  const directionRegex = /(\+|-|=)(!|'')/;
   let directionMatch = blockString.match(directionRegex);
   let Direction = directionMatch ? directionMatch[0] : '';
 
   //Direction Cardinal
-  const directionCardinalRegex = /\+|\-|\=/;
+  const directionCardinalRegex = /\+|-|=/;
   let directionCardinalMatch = Direction.match(directionCardinalRegex);
   initBlock.directionCardinal = directionCardinalMatch ? directionCardinalMatch[0] : '';
 
@@ -947,223 +946,86 @@ export function stringBlockToObject(blockString, blockOrder) {
 
 };
 
-//Now we need a function that takes a Phrase String and gives us a Phrase Object
+//Function that takes a Phrase String and gives us a Phrase Object
 export function stringPhraseToObject(phraseString) {
-  let initPhrase = {
-    order: 1,
+
+  let phraseRegex = /(.*)\t(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|/;
+  let phraseMatch = phraseString.match(phraseRegex);
+
+
+  const phraseObject = {
+    order: romanToNumber(phraseMatch[1]),
     phraseBody: [
-      {
-        order: 1,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 2,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 3,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 4,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 5,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 6,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 7,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      },
-      {
-        order: 8,
-        place: '',
-        hip: '',
-        feetPosition: '',
-        feetOrder: '',
-        feetOpenClose: '',
-        variants: '',
-        step: '',
-        number: '',
-        legForm: '',
-        legCardinal: '',
-        legSide: '',
-        directionCardinal: '',
-        directionSide: '',
-        spin: '',
-        leftArmPosition: '',
-        leftArmSide: '',
-        leftArmForm: '',
-        rightArmPosition: '',
-        rightArmSide: '',
-        rightArmForm: '',
-        head: ''
-      }
+      stringBlockToObject(phraseMatch[2], 1),
+      stringBlockToObject(phraseMatch[3], 2),
+      stringBlockToObject(phraseMatch[4], 3),
+      stringBlockToObject(phraseMatch[5], 4),
+      stringBlockToObject(phraseMatch[6], 5),
+      stringBlockToObject(phraseMatch[7], 6),
+      stringBlockToObject(phraseMatch[8], 7),
+      stringBlockToObject(phraseMatch[9], 8)
     ]
   };
 
-  // Let's find the Order of the Phrase
-  let phraseRegex = /[A-Z]+\t/;
-  let orderMatch = phraseString.match(phraseRegex);
-  let Order = orderMatch ? orderMatch[0] : '';
-  initPhrase.order = romanToNumber(deL(Order, '\t'));
-
+  return phraseObject;
 
 
 };
 
+// Function that transforms a Step in String Format into an Step Object
+export function stringStepToObject(stringStep) {
 
-//Now I want a Function to transform a String into a Ballet Class (provided the String is Properly Formatted)
-export function balletStringToObject(balletString) {
+  const initStep = {
+    order: 1,
+    stage: '',
+    kind: '',
+    stepBody: []
+  };
+
+  let stepRegex = /Step (\d+) : (.*) : (.*)\n\n(.*)\n\n---/;
+  let stepMatch = stringStep.match(stepRegex);
+  initStep.order = stepMatch[1];
+  initStep.stage = stepMatch[2];
+  initStep.kind = stepMatch[3];
+
+  let bodyStepString = stepMatch[4];
+
+  let stepArray = bodyStepString.split('\n');
+  initStep.stepBody = stepArray.map(stringPhraseToObject);
+
+  return initStep;
+
+};
+
+
+//Function to transform a String into a Ballet Class (provided the String is Properly Formatted)
+export function balletStringToObject(stringBallet) {
 
   //First We Initialize the Ballet Class
-  let initClass = initBalletClass();
+  const initClass = {
+    master: '',
+    mounth: 'January',
+    day: 1,
+    year: 2024,
+    country: '',
+    classBody: []
+  };
 
-  //We want to know how many Steps does the 
+  let classRegex = /Master: (.*)\nDate: (.*) (.*) (.*)\nCountry: (.*)\n---\n\n(.*)\n\n$/;
+  let balletMatch = stringBallet.match(classRegex);
+
+  initClass.master = balletMatch[1];
+  initClass.mounth = balletMatch[2];
+  initClass.day = balletMatch[3];
+  initClass.year = balletMatch[4];
+  initClass.country = balletMatch[5];
+
+  let bodyClassString = balletMatch[6];
+
+  let classArray = bodyClassString.split('\n\n');
+  initClass.classBody = classArray.map(stringStepToObject);
+
+  return initClass;
+
 
 };
