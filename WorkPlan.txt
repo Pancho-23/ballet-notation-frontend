@@ -1,5 +1,7 @@
 WorkLog
 
+7/3/2024: Project Started
+
 12/3/2024 : Completed Block Functionality + Add Block Button with Clearing
 
 19/3/2024 : Structure and Style of the Complete Ballet Notation Sheet Complete,
@@ -7,12 +9,13 @@ WorkLog
       Object Structure of the Step and of the Class (Step should have: Master, Year, Country, Place, Stage)
       Save Class Utility
 
+21/03/2024: Typos Corrections, Pre-rendering, Functions String to Object(Block, Phrase, Step, Class)
+      preparing to create the Open Class Utility
+
 
 Plan:
 
-0) Number Input Stretched (it's short)
-
-1) Save Step Utility and Button + Reset Class + Open Class Utility (Read Class from Text Function)
+1) Complete Missing Buttons (Deletes + Disable Navs) + Reset Class + Open Class Utility (Read Class from Text Function)
 
 2) JSON database (Node.js + Express) for the entire class and for the Steps
 
