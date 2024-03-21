@@ -16,3 +16,5 @@ the <pre></pre> to surround it. Dont forget to take of the margin and padding of
   //Code and modify the prevObject to get modifiedObject
   return modifiedObject;
 })
+
+7) [\s\S]* is the regex for anycharacter INCLUDING newlines and tabs.
