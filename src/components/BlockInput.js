@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass, AddPhraseToStep, initBalletClass } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
