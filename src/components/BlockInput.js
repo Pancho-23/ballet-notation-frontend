@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, coordinatesStepJSX, coordinatesClassJSX, AddStepToBalletClass, AddPhraseToStep, initBalletClass } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -17,8 +17,6 @@ function BlockInput() {
   // Here we define the actual dynamic values showed to the user
   const [currentBlock, setCurrentBlock] = useState('');
   const [currentPhrase, setCurrentPhrase] = useState('');
-  const [currentStep, setCurrentStep] = useState([]);
-  const [currentClass, setCurrentClass] = useState('');
 
   const [currentStepText, setCurrentStepText] = useState('');
   const [currentClassText, setCurrentClassText] = useState('');
@@ -322,10 +320,6 @@ function BlockInput() {
     setCurrentBlock(balletBlockText(navBlock, navPhrase, navStep, balletClass));
 
     setCurrentPhrase(balletPhraseText(navPhrase, navStep, balletClass));
-
-    setCurrentStep(coordinatesStepJSX(navStep, balletClass));
-
-    setCurrentClass(coordinatesClassJSX(balletClass));
 
     setCurrentStepText(balletStepText(navStep, balletClass));
 
@@ -890,14 +884,14 @@ function BlockInput() {
         <div className='phrase-container'>
           <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button></div>
           <div className="current-phrase">
-            {currentPhrase}
+            <pre>{currentPhrase}</pre>
           </div>
         </div>
 
         <div className='block-container'>
           <div className='block-tag'><button className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
           <div className="current-block">
-            {currentBlock}
+            <pre>{currentBlock}</pre>
           </div>
         </div>
 
@@ -935,7 +929,7 @@ function BlockInput() {
             &nbsp;
             <button className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
           <div className='current-step'>
-            {currentStep}
+            <pre>{currentStepText}</pre>
           </div>
         </div>
 
@@ -964,9 +958,7 @@ function BlockInput() {
             <option label="December" value='December'></option>
           </datalist>
 
-          <div className='current-class'>
-            {currentClass}
-          </div>
+          <div className='current-class'><pre>{currentClassText}</pre></div>
         </div>
 
 

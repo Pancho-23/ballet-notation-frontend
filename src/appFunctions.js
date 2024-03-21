@@ -120,30 +120,7 @@ export function balletClassText(balletClass) {
   return finalPart;
 };
 
-//Points to the Class and Gives a JSX FORMATTED of the Step To be Displayed
-export function coordinatesStepJSX(navStep, balletClass) {
-  let phrasePart = [];
-  let index = 0;
-  while (index < balletClass.classBody[navStep].stepBody.length) {
-    phrasePart = phrasePart.concat([<div className='roman-div'>{convertToRoman(index + 1)}</div>, `${balletPhraseText(index, navStep, balletClass)}`, <br />]);
-    index++
-  }
 
-  let finalPart = [`Step ${navStep + 1} : ${balletClass.classBody[navStep].stage} : ${balletClass.classBody[navStep].kind}`, <br />, <br />].concat(phrasePart);
-
-  return finalPart;
-};
-
-//Gives a JSX FORMATTED of the Class To be Displayed
-export function coordinatesClassJSX(balletClass) {
-  let stepPart = [<span>Master:&nbsp;&nbsp;</span>, <div className='master-div'>{balletClass.master}</div>, <br />, <span>Date:&nbsp;&nbsp;</span>, <div className='mounth-div'>{balletClass.mounth}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='day-div'>{balletClass.day}</div>, <span>&nbsp;&nbsp;&nbsp;</span>, <div className='year-div'>{balletClass.year}</div>, <br />, <span>Country:&nbsp;&nbsp;</span>, <div className='country-div'>{balletClass.country}</div>, <br />, `---`, <br />, <br />];
-  let index = 0;
-  while (index < balletClass.classBody.length) {
-    stepPart = stepPart.concat([coordinatesStepJSX(index, balletClass), <br />, `---`, <br />, <br />]);
-    index++
-  }
-  return stepPart;
-};
 
 // Adds another Step Into a Ballet Class Object
 export function AddStepToBalletClass(balletClass) {

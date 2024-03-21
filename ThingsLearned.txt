@@ -5,7 +5,8 @@ Things Learned
 2) To modify a dynamic object in React must be done INMUTABLY: first const updateObject = {...Object}
 Modify updateObject properties normally, then setObject(updateObject)
 
-3) Literals preserve spaces and jumps in line WHEN READ AS TEXT (not when do as HTML or JSX).
+3) Literals preserve spaces and jumps in line WHEN READ AS TEXT (not when do as HTML or JSX). You have to use 
+the <pre></pre> to surround it. Dont forget to take of the margin and padding of the pre element in the css.
 
 4) Use the useEffect with dependecies when a dynamic value depends on others. Include all dependencies.
 
