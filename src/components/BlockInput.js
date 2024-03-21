@@ -21,7 +21,6 @@ function BlockInput() {
   const [currentStepText, setCurrentStepText] = useState('');
   const [currentClassText, setCurrentClassText] = useState('');
 
-
   const handleInputChange = (event) => {
 
     if (event.target.id === 'place-input') {
@@ -760,7 +759,7 @@ function BlockInput() {
                   <datalist id="leftarm-form-options">
                     <option label="Normal" value=''></option>
                     <option label="Allongé" value='°'></option>
-                    <option label="w/Partenaire" value='"'></option>
+                    <option label="w/Partenaire" value="'"></option>
                   </datalist>
                 </div>
               </div>
@@ -798,7 +797,7 @@ function BlockInput() {
                   <datalist id="rightarm-form-options">
                     <option label="Normal" value=''></option>
                     <option label="Allongé" value='°'></option>
-                    <option label="w/Partenaire" value='"'></option>
+                    <option label="w/Partenaire" value="'"></option>
                   </datalist>
                 </div>
               </div>

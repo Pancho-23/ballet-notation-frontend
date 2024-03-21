@@ -800,7 +800,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.hip = hipMatch ? hipMatch[0] : '';
 
   //Feet 
-  const feetRegex = /(1|2|3|4|5)(\+|-|=)(¬|'')/;
+  const feetRegex = /(1|2|3|4|5)(\+|-|=)¬?/;
   let feetMatch = blockString.match(feetRegex);
   let Feet = feetMatch ? feetMatch[0] : '';
 
@@ -830,7 +830,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.number = numberMatch ? numberMatch[0] : '';
 
   //Leg 
-  const legRegex = /(#|\$|%|\/)(\+|-|=)(!|'')/;
+  const legRegex = /(#|\$|%|\/)(\+|-|=)!?/;
   let legMatch = blockString.match(legRegex);
   let Leg = legMatch ? legMatch[0] : '';
 
@@ -850,7 +850,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.legSide = legSideMatch ? legSideMatch[0] : '';
 
   //Direction 
-  const directionRegex = /(\+|-|=)(!|'')/;
+  const directionRegex = /(\+|-|=)!+/;
   let directionMatch = blockString.match(directionRegex);
   let Direction = directionMatch ? directionMatch[0] : '';
 
@@ -860,7 +860,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.directionCardinal = directionCardinalMatch ? directionCardinalMatch[0] : '';
 
   //Direction Side
-  const directionSideRegex = /!/;
+  const directionSideRegex = /!+/;
   let directionSideMatch = Direction.match(directionSideRegex);
   initBlock.directionSide = directionSideMatch ? directionSideMatch[0] : '';
 
@@ -875,7 +875,7 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.head = headMatch ? headMatch[0] : '';
 
   //LeftArm 
-  const leftArmRegex = /(0|1|2|3|4|5|6|7|8|9)!(°|"|'')/;
+  const leftArmRegex = /(0|1|2|3|4|5|6|7|8|9)![°']+/;
   let leftArmMatch = blockString.match(leftArmRegex);
   let LeftArm = leftArmMatch ? leftArmMatch[0] : '';
 
@@ -890,12 +890,12 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.leftArmSide = leftArmSideMatch ? leftArmSideMatch[0] : '';
 
   //LeftArm Form
-  const leftArmFormRegex = /°|"|''/;
+  const leftArmFormRegex = /[°']+/;
   let leftArmFormMatch = LeftArm.match(leftArmFormRegex);
   initBlock.leftArmForm = leftArmFormMatch ? leftArmFormMatch[0] : '';
 
   //RightArm 
-  const rightArmRegex = /(0|1|2|3|4|5|6|7|8|9)(\?)(°|"|'')/;
+  const rightArmRegex = /(0|1|2|3|4|5|6|7|8|9)(\?)[°']+/;
   let rightArmMatch = blockString.match(rightArmRegex);
   let RightArm = rightArmMatch ? rightArmMatch[0] : '';
 
@@ -910,12 +910,12 @@ export function stringBlockToObject(blockString, blockOrder) {
   initBlock.rightArmSide = rightArmSideMatch ? rightArmSideMatch[0] : '';
 
   //RightArm Form
-  const rightArmFormRegex = /°|"|''/;
+  const rightArmFormRegex = /[°']+/;
   let rightArmFormMatch = RightArm.match(rightArmFormRegex);
   initBlock.rightArmForm = rightArmFormMatch ? rightArmFormMatch[0] : '';
 
   //Variants
-  const variantsRegex = /(D|'')(T|'')(P|'')(L|'')(R|'')(Q|'')(G|'')(E|'')(V|'')(A|'')(C|'')(F|'')(N|'')(B|'')/;
+  const variantsRegex = /[DTPLRQGEVACFNB]+/;
   let variantsMatch = blockString.match(variantsRegex);
   initBlock.variants = variantsMatch ? variantsMatch[0] : '';
 
