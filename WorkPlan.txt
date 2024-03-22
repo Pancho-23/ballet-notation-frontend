@@ -26,4 +26,6 @@ Plan:
   2.4) Start Documentation for Usage
   2.5) Comment all Code until this point
 
-3) JSON database (Node.js + Express) for the entire class and for the Steps
+3) Adapt Code for catalogging porpose
+
+4) JSON database (Node.js + Express) for the entire class and for the Steps
