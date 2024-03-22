@@ -931,6 +931,18 @@ function BlockInput() {
 
   };
 
+  const handleDeletePhrase = () => {
+    if (balletClass.classBody[navStep].stepBody.length > 1) {
+      const updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stepBody.pop();
+      setNavBlock(0);
+      setNavPhrase(0);
+      setBalletClass(updateBalletClass);
+    }
+
+  };
+
+
 
 
 
@@ -1435,6 +1447,7 @@ function BlockInput() {
         <button className='reset-step-button' onClick={handleResetStep}>Reset Step</button>
         <button className='reset-class-button' onClick={handleResetClass}>Reset Class</button>
         <button className='delete-step-button' onClick={handleDeleteStep}>Delete Step</button>
+        <button className='delete-phrase-button' onClick={handleDeletePhrase}>Delete Phrase</button>
 
 
 
