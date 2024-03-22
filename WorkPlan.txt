@@ -17,13 +17,13 @@ WorkLog
 
 Plan:
 
-1) Complete Missing Buttons (Deletes + Disable Navs) + Reset Class
+1) Complete Missing Buttons (Deletes + Disable Navs) + Reset Class + key navigation and Shortcuts
 
-2) JSON database (Node.js + Express) for the entire class and for the Steps
+2) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
+  2.1) Routing
+  2.2) Content of each Page
+  2.3) Style of each Page
+  2.4) Start Documentation for Usage
+  2.5) Comment all Code until this point
 
-3) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
-  3.1) Routing
-  3.2) Content of each Page
-  3.3) Style of each Page
-  3.4) Start Documentation for Usage
-  3.5) Comment all Code until this point
+3) JSON database (Node.js + Express) for the entire class and for the Steps

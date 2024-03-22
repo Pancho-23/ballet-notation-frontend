@@ -225,7 +225,18 @@ input[type="checkbox"]:checked:hover {
   color: #380b46;
 }
 
-.new-button {
+.open-class-button {
+  /*11*/
+  position: fixed;
+  right: 70px;
+  bottom: 190px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.save-class-button {
+  /*12*/
   position: fixed;
   right: 10px;
   bottom: 190px;
@@ -234,41 +245,109 @@ input[type="checkbox"]:checked:hover {
   font-size: 15px;
 }
 
-.open-button {
+.open-step-button {
+  /*21*/
   position: fixed;
-  right: 10px;
-  bottom: 145px;
+  right: 70px;
+  bottom: 153px;
   width: 58px;
   height: 35px;
   font-size: 15px;
 }
 
-.save-button {
+.save-step-button {
+  /*22*/
   position: fixed;
   right: 10px;
-  bottom: 100px;
+  bottom: 153px;
   width: 58px;
   height: 35px;
   font-size: 15px;
 }
 
-.new-phrase-button {
+.add-phrase-button {
+  /*31*/
   position: fixed;
-  right: 10px;
-  bottom: 55px;
+  right: 70px;
+  bottom: 116px;
   width: 58px;
   height: 35px;
   font-size: 15px;
 }
 
-.new-step-button {
+.delete-phrase-button {
+  /*32*/
   position: fixed;
   right: 10px;
-  bottom: 10px;
+  bottom: 116px;
   width: 58px;
   height: 35px;
   font-size: 15px;
 }
+
+.add-step-button {
+  /*41*/
+  position: fixed;
+  right: 70px;
+  bottom: 79px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.delete-step-button {
+  /*42*/
+  position: fixed;
+  right: 10px;
+  bottom: 79px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.reset-block-button {
+  /*51*/
+  position: fixed;
+  right: 70px;
+  bottom: 42px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.reset-phrase-button {
+  /*52*/
+  position: fixed;
+  right: 10px;
+  bottom: 42px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.reset-step-button {
+  /*61*/
+  position: fixed;
+  right: 70px;
+  bottom: 5px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+.reset-class-button {
+  /*62*/
+  position: fixed;
+  right: 10px;
+  bottom: 5px;
+  width: 58px;
+  height: 35px;
+  font-size: 15px;
+}
+
+
+
+
 
 .class-tag {
   padding: 5px;

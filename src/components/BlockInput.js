@@ -950,14 +950,24 @@ function BlockInput() {
           </div>
         </div>
 
-        <button className='new-button'>Reset Class</button>
+        <button className='reset-class-button'>Reset Class</button>
 
-        <button className='open-button' onClick={handleLoadFile}>Open Class</button>
+        <button className='open-class-button' onClick={handleLoadFile}>Open Class</button>
         <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
 
-        <button className='save-button' onClick={handleSaveClass}>Save Class</button>
-        <button className='new-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
-        <button className='new-step-button' onClick={handleAddStep}>Add Step</button>
+        <button className='save-class-button' onClick={handleSaveClass}>Save Class</button>
+        <button className='add-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
+        <button className='add-step-button' onClick={handleAddStep}>Add Step</button>
+
+        <button className='delete-step-button'>Delete Step</button>
+        <button className='delete-phrase-button'>Delete Phrase</button>
+        <button className='reset-block-button'>Reset Block</button>
+        <button className='delete-step-button'>Delete Step</button>
+        <button className='reset-phrase-button'>Reset Phrase</button>
+        <button className='delete-step-button'>Delete Step</button>
+        <button className='reset-step-button'>Reset Step</button>
+        <button className='save-step-button'>Save Step</button>
+        <button className='open-step-button'>Open Step</button>
 
 
 
