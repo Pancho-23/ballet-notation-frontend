@@ -453,14 +453,24 @@ function BlockInput() {
 
 
   const handleSaveClass = () => {
-    const textToSave = currentClassText;
-    const file = new Blob([textToSave], { type: 'text/plain' });
-    const fileURL = URL.createObjectURL(file);
-    const element = document.createElement("a");
-    element.href = fileURL;
-    element.download = `${balletClass.master} - ${balletClass.mounth} ${balletClass.day} ${balletClass.year}.txt`;
-    element.click();
-  }
+    let textClassToSave = currentClassText;
+    let classFile = new Blob([textClassToSave], { type: 'text/plain' });
+    let fileURL = URL.createObjectURL(classFile);
+    let classElement = document.createElement("a");
+    classElement.href = fileURL;
+    classElement.download = `Class File - ${balletClass.master} - ${balletClass.mounth} ${balletClass.day} ${balletClass.year}.txt`;
+    classElement.click();
+  };
+
+  const handleSaveStep = () => {
+    let textStepToSave = currentStepText;
+    let stepFile = new Blob([textStepToSave], { type: 'text/plain' });
+    let fileURL = URL.createObjectURL(stepFile);
+    let stepElement = document.createElement("a");
+    stepElement.href = fileURL;
+    stepElement.download = `Step File - ${balletClass.classBody[navStep].kind} ${balletClass.classBody[navStep].stage} - ${balletClass.master} - ${balletClass.mounth} ${balletClass.day} ${balletClass.year}.txt`;
+    stepElement.click();
+  };
 
 
   const handleResetBlock = () => {
@@ -1448,6 +1458,7 @@ function BlockInput() {
         <button className='reset-class-button' onClick={handleResetClass}>Reset Class</button>
         <button className='delete-step-button' onClick={handleDeleteStep}>Delete Step</button>
         <button className='delete-phrase-button' onClick={handleDeletePhrase}>Delete Phrase</button>
+        <button className='save-step-button' onClick={handleSaveStep}>Save Step</button>
 
 
 
