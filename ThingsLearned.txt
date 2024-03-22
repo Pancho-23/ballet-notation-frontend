@@ -18,3 +18,7 @@ the <pre></pre> to surround it. Dont forget to take of the margin and padding of
 })
 
 7) [\s\S]* is the regex for anycharacter INCLUDING newlines and tabs.
+
+8) For solutions first CHATGPT, THEN Stackoverflow FORUM.
+
+9) SAVE THE PROGRESS IN EACH TINY WORKING FUNCTIONALITY ADDED!!!!
