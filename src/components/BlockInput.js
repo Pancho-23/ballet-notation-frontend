@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -22,7 +22,7 @@ function BlockInput() {
   const [currentClassText, setCurrentClassText] = useState('');
 
   //TEXT LOADER
-  const handleFileChange = (event) => {
+  const handleClassChange = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
 
@@ -33,8 +33,29 @@ function BlockInput() {
     reader.readAsText(file);
   };
 
-  const handleLoadFile = () => {
-    document.querySelector('input[type="file"]').click();
+  const handleOpenClass = () => {
+    document.querySelector('#open-class').click();
+  };
+  //TEXT LOADER
+
+  //TEXT LOADER
+  const handleStepChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      let updateBalletClass = { ...balletClass };
+      updateBalletClass.classBody[navStep].stage = stringStepToObject(e.target.result).stage;
+      updateBalletClass.classBody[navStep].kind = stringStepToObject(e.target.result).kind;
+      updateBalletClass.classBody[navStep].stepBody = stringStepToObject(e.target.result).stepBody;
+      setBalletClass(updateBalletClass);
+    };
+
+    reader.readAsText(file);
+  };
+
+  const handleOpenStep = () => {
+    document.querySelector('#open-step').click();
   };
   //TEXT LOADER
 
@@ -1444,8 +1465,11 @@ function BlockInput() {
 
 
 
-        <button className='open-class-button' onClick={handleLoadFile}>Open Class</button>
-        <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
+        <button className='open-class-button' onClick={handleOpenClass}>Open Class</button>
+        <input id="open-class" type="file" value="" onChange={handleClassChange} style={{ display: 'none' }} />
+
+        <button className='open-step-button' onClick={handleOpenStep}>Open Step</button>
+        <input id="open-step" type="file" value="" onChange={handleStepChange} style={{ display: 'none' }} />
 
         <button className='save-class-button' onClick={handleSaveClass}>Save Class</button>
         <button className='add-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
