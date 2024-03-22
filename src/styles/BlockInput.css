@@ -11,11 +11,11 @@ body {
   border: 2px solid #cb76dd;
   padding: 5px;
   margin: 0 auto;
-  width: 555px;
+  width: 515px;
   height: auto;
   position: fixed;
   bottom: 10px;
-  right: 90px;
+  right: 130px;
   border-radius: 10px;
 }
 
@@ -53,13 +53,14 @@ input {
 }
 
 .varia > div {
-  margin: auto 10px;
+  margin: auto 5px;
 }
 
 .variant-title {
   padding-top: 10px;
   text-align: center;
 }
+
 
 .internal-box {
   margin: 10px auto;
@@ -228,40 +229,45 @@ input[type="checkbox"]:checked:hover {
   position: fixed;
   right: 10px;
   bottom: 190px;
-  width: 65px;
+  width: 58px;
   height: 35px;
+  font-size: 15px;
 }
 
 .open-button {
   position: fixed;
   right: 10px;
   bottom: 145px;
-  width: 65px;
+  width: 58px;
   height: 35px;
+  font-size: 15px;
 }
 
 .save-button {
   position: fixed;
   right: 10px;
   bottom: 100px;
-  width: 65px;
+  width: 58px;
   height: 35px;
+  font-size: 15px;
 }
 
 .new-phrase-button {
   position: fixed;
   right: 10px;
   bottom: 55px;
-  width: 65px;
+  width: 58px;
   height: 35px;
+  font-size: 15px;
 }
 
 .new-step-button {
   position: fixed;
   right: 10px;
   bottom: 10px;
-  width: 65px;
+  width: 58px;
   height: 35px;
+  font-size: 15px;
 }
 
 .class-tag {
