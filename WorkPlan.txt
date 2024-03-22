@@ -12,7 +12,7 @@ WorkLog
 21/03/24: Typos Corrections, Pre-rendering, Functions String to Object(Block, Phrase, Step, Class)
       preparing to create the Open Class Utility
 
-22/03/24: Open Class Functionality DONE, HARD BUT REGUARDING!!!
+22/03/24: Open Class Functionality DONE, HARD BUT REWARDING!!!
 
 
 Plan:
