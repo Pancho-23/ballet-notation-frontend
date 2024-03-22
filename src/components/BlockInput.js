@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -20,6 +20,24 @@ function BlockInput() {
 
   const [currentStepText, setCurrentStepText] = useState('');
   const [currentClassText, setCurrentClassText] = useState('');
+
+  //TEXT LOADER
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      setBalletClass(balletStringToObject(e.target.result));
+    };
+
+    reader.readAsText(file);
+  };
+
+  const handleLoadFile = () => {
+    document.querySelector('input[type="file"]').click();
+  };
+  //TEXT LOADER
+
 
   const handleInputChange = (event) => {
 
@@ -933,10 +951,15 @@ function BlockInput() {
         </div>
 
         <button className='new-button'>Reset Class</button>
-        <button className='open-button' >Open Class</button>
+
+        <button className='open-button' onClick={handleLoadFile}>Open Class</button>
+        <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
+
         <button className='save-button' onClick={handleSaveClass}>Save Class</button>
         <button className='new-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
         <button className='new-step-button' onClick={handleAddStep}>Add Step</button>
+
+
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' id='master-input' type='text' value={balletClass.master} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' id='mounth-input' type='text' list="mounth-options" value={balletClass.mounth} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' id='day-input' type="number" value={balletClass.day} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' id='year-input' type='number' value={balletClass.year} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' id='country-input' type='text' value={balletClass.country} onChange={handleInputChange} /></div>

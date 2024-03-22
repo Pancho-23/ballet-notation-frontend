@@ -959,7 +959,7 @@ export function stringStepToObject(stringStep) {
     stepBody: []
   };
 
-  let stepRegex = /Step (\d+) : (.*) : (.*)\n\n([\s\S]*)\n\n---/;
+  let stepRegex = /Step (\d+) : (.*) : (.*)\n\n([\s\S]*)\n\n/;
   let stepMatch = stringStep.match(stepRegex);
   initStep.order = stepMatch[1];
   initStep.stage = stepMatch[2];
@@ -999,7 +999,7 @@ export function balletStringToObject(stringBallet) {
 
   let bodyClassString = balletMatch[6];
 
-  let classArray = bodyClassString.split('\n\n');
+  let classArray = bodyClassString.split('---\n\n');
   initClass.classBody = classArray.map(stringStepToObject);
 
   return initClass;
