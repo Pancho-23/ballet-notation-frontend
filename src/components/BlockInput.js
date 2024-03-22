@@ -906,7 +906,18 @@ function BlockInput() {
 
     setBalletClass(updateBalletClass);
 
-  }
+  };
+
+  const handleResetClass = () => {
+    let updateBalletClass = { ...balletClass };
+    updateBalletClass = initBalletClass();
+
+    setNavBlock(0);
+    setNavPhrase(0);
+    setNavStep(0);
+
+    setBalletClass(updateBalletClass);
+  };
 
 
 
@@ -1408,6 +1419,7 @@ function BlockInput() {
         <button className='reset-block-button' onClick={handleResetBlock}>Reset Block</button>
         <button className='reset-phrase-button' onClick={handleResetPhrase}>Reset Phrase</button>
         <button className='reset-step-button' onClick={handleResetStep}>Reset Step</button>
+        <button className='reset-class-button' onClick={handleResetClass}>Reset Class</button>
 
 
 
