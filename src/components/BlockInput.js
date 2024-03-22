@@ -463,6 +463,35 @@ function BlockInput() {
   }
 
 
+  const handleResetBlock = () => {
+    const updateBalletClass = { ...balletClass };
+    updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock] = {
+      order: navBlock + 1,
+      place: '',
+      hip: '',
+      feetPosition: '',
+      feetOrder: '',
+      feetOpenClose: '',
+      variants: '',
+      step: '',
+      number: '',
+      legForm: '',
+      legCardinal: '',
+      legSide: '',
+      directionCardinal: '',
+      directionSide: '',
+      spin: '',
+      leftArmPosition: '',
+      leftArmSide: '',
+      leftArmForm: '',
+      rightArmPosition: '',
+      rightArmSide: '',
+      rightArmForm: '',
+      head: ''
+    };
+    setBalletClass(updateBalletClass);
+  };
+
 
 
   return (
@@ -950,7 +979,7 @@ function BlockInput() {
           </div>
         </div>
 
-        <button className='reset-class-button'>Reset Class</button>
+
 
         <button className='open-class-button' onClick={handleLoadFile}>Open Class</button>
         <input type="file" onChange={handleFileChange} style={{ display: 'none' }} />
@@ -959,15 +988,10 @@ function BlockInput() {
         <button className='add-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
         <button className='add-step-button' onClick={handleAddStep}>Add Step</button>
 
-        <button className='delete-step-button'>Delete Step</button>
-        <button className='delete-phrase-button'>Delete Phrase</button>
-        <button className='reset-block-button'>Reset Block</button>
-        <button className='delete-step-button'>Delete Step</button>
-        <button className='reset-phrase-button'>Reset Phrase</button>
-        <button className='delete-step-button'>Delete Step</button>
-        <button className='reset-step-button'>Reset Step</button>
-        <button className='save-step-button'>Save Step</button>
-        <button className='open-step-button'>Open Step</button>
+
+        <button className='reset-block-button' onClick={handleResetBlock}>Reset Block</button>
+
+
 
 
 
