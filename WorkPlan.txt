@@ -14,10 +14,12 @@ WorkLog
 
 22/03/24: Open Class Functionality DONE, HARD BUT REWARDING!!!
 
+22/03/24: Missing Buttons Added and functionalities
+
 
 Plan:
 
-1) Complete Missing Buttons (Deletes + Disable Navs) + Reset Class + key navigation and Shortcuts
+1) Disable Navs + Key navigation + Shortcuts
 
 2) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
   2.1) Routing
