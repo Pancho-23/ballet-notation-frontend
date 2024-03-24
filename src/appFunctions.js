@@ -858,11 +858,18 @@ export function initBlock() {
 
 
 // Function that takes a Block in String and the Order and gives us the Object
-export function stringBlockToObject(blockString, blockOrder) {
+export function stringBlockToObject(blockString, blockOrder, blockDivision, blockLastOnDivision) {
   let block = initBlock();
 
-  //Order (Provided by the user - second argument)
+  //Order (Provided by the user)
   block.order = blockOrder;
+
+  //Division (Provided by the user)
+  block.division = blockDivision;
+
+  //Last On Division (Provided by the user)
+  block.lastOnDivision = blockLastOnDivision;
+
 
   //Place
   const placeRegex = /0;|1;|2;|3;|4;|5;|6;|7;|8;/;
@@ -998,6 +1005,116 @@ export function stringBlockToObject(blockString, blockOrder) {
 
 };
 
+//Function that take a Time String and the Order (1-8) and gives an array of the block Objects
+export function timeStringToBlockObjectArray(timeString, order) {
+
+  let firstDivisionArray = timeString.split(/(?<!,),(?!,)/);
+
+  console.log("First Division Array", firstDivisionArray);
+
+  //CASE 1: NO COMMAS NO SPLIT, single object and BlockString
+  if (firstDivisionArray.length === 1) {
+    return [stringBlockToObject(timeString, order, 0, false)];
+  }
+
+  //CASE 2: ONE COMMA, ONE SPLIT
+  else if (firstDivisionArray.length === 2) {
+    let firstHalf = [];
+    let secondHalf = [];
+
+    let secondDivisionArray1 = firstDivisionArray[0].split(/,,/);
+    //CASE 2.1.1: NO SUBSPLIT IN THE FIRST PART
+    if (secondDivisionArray1.length === 1) {
+      firstHalf = [stringBlockToObject(secondDivisionArray1[0], order, 1, false)];
+    }
+    //CASE 2.1.2: SINGLE SPLIT IN THE FIRST PART
+    else if (secondDivisionArray1.length === 2) {
+      firstHalf = [stringBlockToObject(secondDivisionArray1[0], order, 2, false), stringBlockToObject(secondDivisionArray1[1], order + 0.25, 2, true)];
+    }
+    //CASE 3.1.3: DOUBLE SPLIT IN THE FIRST PART
+    else {
+      firstHalf = [stringBlockToObject(secondDivisionArray1[0], order, 1, false), stringBlockToObject(secondDivisionArray1[1], order + 0.165, 2, false), stringBlockToObject(secondDivisionArray1[2], order + 0.33, 2, true)];
+    }
+
+    console.log("First Half", firstHalf);
+
+    let secondDivisionArray2 = firstDivisionArray[1].split(/,,/);
+    //CASE 2.2.1: NO SUBSPLIT IN THE SECOND PART
+    if (secondDivisionArray2.length === 1) {
+      secondHalf = [stringBlockToObject(secondDivisionArray2[0], order + 0.5, 1, true)];
+    }
+    //CASE 2.2.2: SINGLE SPLIT IN THE SECOND PART
+    else if (secondDivisionArray2.length === 2) {
+      secondHalf = [stringBlockToObject(secondDivisionArray2[0], order + 0.5, 2, false), stringBlockToObject(secondDivisionArray2[1], order + 0.75, 2, true)];
+    }
+    //CASE 3.2.3: DOUBLE SPLIT IN THE SECOND PART
+    else {
+      secondHalf = [stringBlockToObject(secondDivisionArray2[0], order + 0.5, 2, false), stringBlockToObject(secondDivisionArray2[1], order + 0.665, 2, false), stringBlockToObject(secondDivisionArray2[2], order + 0.83, 2, true)];
+    }
+
+    console.log("Second Half", secondHalf);
+
+    return [...firstHalf, ...secondHalf];
+
+  }
+
+  else {
+    //CASE 3: TWO COMMAS, TWO SPLITS
+    let firstThird = [];
+    let secondThird = [];
+    let thirdThird = [];
+
+    let secondDivisionArray1 = firstDivisionArray[0].split(/,,/);
+    //CASE 3.1.1: NO SUBSPLIT IN THE FIRST PART
+    if (secondDivisionArray1.length === 1) {
+      firstThird = [stringBlockToObject(secondDivisionArray1[0], order, 1, false)];
+    }
+    //CASE 3.1.2: SINGLE SPLIT IN THE FIRST PART
+    else if (secondDivisionArray1.length === 2) {
+      firstThird = [stringBlockToObject(secondDivisionArray1[0], order, 2, false), stringBlockToObject(secondDivisionArray1[1], order + 0.165, 2, true)];
+    }
+    //CASE 3.1.3: DOUBLE SPLIT IN THE FIRST PART
+    else {
+      firstThird = [stringBlockToObject(secondDivisionArray1[0], order, 2, false), stringBlockToObject(secondDivisionArray1[1], order + 0.11, 2, false), stringBlockToObject(secondDivisionArray1[2], order + 0.22, 2, true)];
+    }
+
+
+    let secondDivisionArray2 = firstDivisionArray[1].split(/,,/);
+    //CASE 3.2.1: NO SUBSPLIT IN THE SECOND PART
+    if (secondDivisionArray2.length === 1) {
+      secondThird = [stringBlockToObject(secondDivisionArray2[0], order + 0.33, 1, false)];
+    }
+    //CASE 3.2.2: SINGLE SPLIT IN THE SECOND PART
+    else if (secondDivisionArray2.length === 2) {
+      secondThird = [stringBlockToObject(secondDivisionArray2[0], order + 0.33, 2, false), stringBlockToObject(secondDivisionArray2[1], order + 0.495, 2, true)];
+    }
+    //CASE 3.2.3: DOUBLE SPLIT IN THE SECOND PART
+    else {
+      secondThird = [stringBlockToObject(secondDivisionArray2[0], order + 0.33, 2, false), stringBlockToObject(secondDivisionArray2[1], order + 0.44, 2, false), stringBlockToObject(secondDivisionArray2[2], order + 0.55, 2, true)];
+    }
+
+
+    let secondDivisionArray3 = firstDivisionArray[2].split(/,,/);
+    //CASE 3.3.1: NO SUBSPLIT IN THE THIRD PART
+    if (secondDivisionArray3.length === 1) {
+      thirdThird = [stringBlockToObject(secondDivisionArray3[0], order + 0.66, 1, true)];
+    }
+    //CASE 3.3.2: SINGLE SPLIT IN THE THIRD PART
+    else if (secondDivisionArray3.length === 2) {
+      thirdThird = [stringBlockToObject(secondDivisionArray3[0], order + 0.66, 2, false), stringBlockToObject(secondDivisionArray3[1], order + 0.825, 2, true)];
+    }
+    //CASE 3.3.3: DOUBLE SPLIT IN THE THIRD PART
+    else {
+      thirdThird = [stringBlockToObject(secondDivisionArray3[0], order + 0.66, 2, false), stringBlockToObject(secondDivisionArray3[1], order + 0.77, 2, false), stringBlockToObject(secondDivisionArray3[2], order + 0.88, 2, true)];
+    }
+
+    return [...firstThird, ...secondThird, ...thirdThird];
+
+  }
+
+
+};
+
 //Function that takes a Phrase String and gives us a Phrase Object
 export function stringPhraseToObject(phraseString) {
 
@@ -1005,17 +1122,24 @@ export function stringPhraseToObject(phraseString) {
   let phraseMatch = phraseString.match(phraseRegex);
 
 
+  console.log("Phrase Match 1", phraseMatch[1]);
+  console.log("Phrase Match 2", phraseMatch[2]);
+  console.log("Phrase Match 3", phraseMatch[3]);
+  console.log("Time of phraseMatch[2]", timeStringToBlockObjectArray(phraseMatch[2], 1));
+  console.log("Time of phraseMatch[3]", timeStringToBlockObjectArray(phraseMatch[3], 2));
+
+
   const phraseObject = {
     order: romanToNumber(phraseMatch[1]),
     phraseBody: [
-      stringBlockToObject(phraseMatch[2], 1),
-      stringBlockToObject(phraseMatch[3], 2),
-      stringBlockToObject(phraseMatch[4], 3),
-      stringBlockToObject(phraseMatch[5], 4),
-      stringBlockToObject(phraseMatch[6], 5),
-      stringBlockToObject(phraseMatch[7], 6),
-      stringBlockToObject(phraseMatch[8], 7),
-      stringBlockToObject(phraseMatch[9], 8)
+      ...timeStringToBlockObjectArray(phraseMatch[2], 1),
+      ...timeStringToBlockObjectArray(phraseMatch[3], 2),
+      ...timeStringToBlockObjectArray(phraseMatch[4], 3),
+      ...timeStringToBlockObjectArray(phraseMatch[5], 4),
+      ...timeStringToBlockObjectArray(phraseMatch[6], 5),
+      ...timeStringToBlockObjectArray(phraseMatch[7], 6),
+      ...timeStringToBlockObjectArray(phraseMatch[8], 7),
+      ...timeStringToBlockObjectArray(phraseMatch[9], 8)
     ]
   };
 

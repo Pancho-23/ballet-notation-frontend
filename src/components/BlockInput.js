@@ -38,8 +38,6 @@ function BlockInput() {
   };
   //TEXT LOADER
 
-  console.log("Phrase", balletClass.classBody[navStep].stepBody[navPhrase].phraseBody);
-
   //TEXT LOADER
   const handleStepChange = (event) => {
     const file = event.target.files[0];
