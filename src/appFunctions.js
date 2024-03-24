@@ -1211,11 +1211,13 @@ export function Division2(phrase, index) {
 
   if (phrase[index].division < 2) {
 
+
     let firstBlock = phrase[index];
     let secondBlock = initBlock();
+    secondBlock.division = firstBlock.division;
 
-    firstBlock.division = phrase[index].division + 1;
-    secondBlock.division = phrase[index].division + 1;
+    firstBlock.division += 1;
+    secondBlock.division += 1;
 
     firstBlock.lastOnDivision = false;
     secondBlock.lastOnDivision = true;
@@ -1251,10 +1253,12 @@ export function Division3(phrase, index) {
     let firstBlock = phrase[index];
     let secondBlock = initBlock();
     let thirdBlock = initBlock();
+    secondBlock.division = firstBlock.division;
+    thirdBlock.division = firstBlock.division;
 
-    firstBlock.division = phrase[index].division + 1;
-    secondBlock.division = phrase[index].division + 1;
-    thirdBlock.division = phrase[index].division + 1;
+    firstBlock.division += 1;
+    secondBlock.division += 1;
+    thirdBlock.division += 1;
 
     firstBlock.lastOnDivision = false;
     secondBlock.lastOnDivision = false;
