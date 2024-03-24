@@ -498,6 +498,7 @@ function BlockInput() {
     const updateBalletClass = { ...balletClass };
     updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock] = {
       order: navBlock + 1,
+      division: updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].division,
       lastOnDivision: updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].lastOnDivision,
       place: '',
       hip: '',
@@ -531,6 +532,7 @@ function BlockInput() {
       phraseBody: [
         {
           order: 1,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -556,6 +558,7 @@ function BlockInput() {
         },
         {
           order: 2,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -581,6 +584,7 @@ function BlockInput() {
         },
         {
           order: 3,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -606,6 +610,7 @@ function BlockInput() {
         },
         {
           order: 4,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -631,6 +636,7 @@ function BlockInput() {
         },
         {
           order: 5,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -656,6 +662,7 @@ function BlockInput() {
         },
         {
           order: 6,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -681,6 +688,7 @@ function BlockInput() {
         },
         {
           order: 7,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -706,6 +714,7 @@ function BlockInput() {
         },
         {
           order: 8,
+          division: 0,
           lastOnDivision: false,
           place: '',
           hip: '',
@@ -747,6 +756,7 @@ function BlockInput() {
           phraseBody: [
             {
               order: 1,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -772,6 +782,7 @@ function BlockInput() {
             },
             {
               order: 2,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -797,6 +808,7 @@ function BlockInput() {
             },
             {
               order: 3,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -822,6 +834,7 @@ function BlockInput() {
             },
             {
               order: 4,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -847,6 +860,7 @@ function BlockInput() {
             },
             {
               order: 5,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -872,6 +886,7 @@ function BlockInput() {
             },
             {
               order: 6,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -897,6 +912,7 @@ function BlockInput() {
             },
             {
               order: 7,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',
@@ -922,6 +938,7 @@ function BlockInput() {
             },
             {
               order: 8,
+              division: 0,
               lastOnDivision: false,
               place: '',
               hip: '',

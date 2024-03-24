@@ -1211,7 +1211,7 @@ export function Division2(phrase, index) {
 
   if (phrase[index].division < 2) {
 
-    let firstBlock = initBlock();
+    let firstBlock = phrase[index];
     let secondBlock = initBlock();
 
     firstBlock.division = phrase[index].division + 1;
@@ -1248,7 +1248,7 @@ export function Division3(phrase, index) {
 
   if (phrase[index].division < 2) {
 
-    let firstBlock = initBlock();
+    let firstBlock = phrase[index];
     let secondBlock = initBlock();
     let thirdBlock = initBlock();
 
