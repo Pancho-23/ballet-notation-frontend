@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/BlockInput.css';
-import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject } from '../appFunctions';
+import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
 
 function BlockInput() {
@@ -37,6 +37,8 @@ function BlockInput() {
     document.querySelector('#open-class').click();
   };
   //TEXT LOADER
+
+  console.log("Phrase", balletClass.classBody[navStep].stepBody[navPhrase].phraseBody);
 
   //TEXT LOADER
   const handleStepChange = (event) => {
@@ -498,6 +500,7 @@ function BlockInput() {
     const updateBalletClass = { ...balletClass };
     updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock] = {
       order: navBlock + 1,
+      lastOnDivision: updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].lastOnDivision,
       place: '',
       hip: '',
       feetPosition: '',
@@ -530,6 +533,7 @@ function BlockInput() {
       phraseBody: [
         {
           order: 1,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -554,6 +558,7 @@ function BlockInput() {
         },
         {
           order: 2,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -578,6 +583,7 @@ function BlockInput() {
         },
         {
           order: 3,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -602,6 +608,7 @@ function BlockInput() {
         },
         {
           order: 4,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -626,6 +633,7 @@ function BlockInput() {
         },
         {
           order: 5,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -650,6 +658,7 @@ function BlockInput() {
         },
         {
           order: 6,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -674,6 +683,7 @@ function BlockInput() {
         },
         {
           order: 7,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -698,6 +708,7 @@ function BlockInput() {
         },
         {
           order: 8,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -738,6 +749,7 @@ function BlockInput() {
           phraseBody: [
             {
               order: 1,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -762,6 +774,7 @@ function BlockInput() {
             },
             {
               order: 2,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -786,6 +799,7 @@ function BlockInput() {
             },
             {
               order: 3,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -810,6 +824,7 @@ function BlockInput() {
             },
             {
               order: 4,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -834,6 +849,7 @@ function BlockInput() {
             },
             {
               order: 5,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -858,6 +874,7 @@ function BlockInput() {
             },
             {
               order: 6,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -882,6 +899,7 @@ function BlockInput() {
             },
             {
               order: 7,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -906,6 +924,7 @@ function BlockInput() {
             },
             {
               order: 8,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -973,7 +992,18 @@ function BlockInput() {
 
   };
 
+  //Handling DIVISION BUTTONS
+  const handleDivision2 = () => {
+    const updateBalletClass = { ...balletClass };
+    updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody = Division2(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody, navBlock);
+    setBalletClass(updateBalletClass);
+  };
 
+  const handleDivision3 = () => {
+    const updateBalletClass = { ...balletClass };
+    updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody = Division3(updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody, navBlock);
+    setBalletClass(updateBalletClass);
+  };
 
 
 
@@ -1485,7 +1515,8 @@ function BlockInput() {
         <button className='save-step-button' onClick={handleSaveStep}>Save Step</button>
 
 
-
+        <button className="add-division-2" onClick={handleDivision2}>Add Division 2</button>
+        <button className="add-division-3" onClick={handleDivision3}>Add Division 3</button>
 
 
         <div>

@@ -89,7 +89,27 @@ export function balletBlockText(navBlock, navPhrase, navStep, balletClass) {
 
 // Gets the pointed Phrase and transforms it into a String
 export function balletPhraseText(navPhrase, navStep, balletClass) {
-  return balletBlockText(0, navPhrase, navStep, balletClass) + '|' + balletBlockText(1, navPhrase, navStep, balletClass) + '|' + balletBlockText(2, navPhrase, navStep, balletClass) + '|' + balletBlockText(3, navPhrase, navStep, balletClass) + '|' + balletBlockText(4, navPhrase, navStep, balletClass) + '|' + balletBlockText(5, navPhrase, navStep, balletClass) + '|' + balletBlockText(6, navPhrase, navStep, balletClass) + '|' + balletBlockText(7, navPhrase, navStep, balletClass) + '|';
+  let index = 0;
+  let phrase = '';
+  while (index < balletClass.classBody[navStep].stepBody[navPhrase].phraseBody.length) {
+    if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 0 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === false) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + '|';
+    } else if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 0 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === true) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + ',';
+    } else if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 1 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === false) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + ',';
+    } else if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 1 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === true) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + '|';
+    } else if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 2 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === false) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + ',,';
+    } else if (balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].division === 2 && balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].lastOnDivision === true && Math.floor(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index].order) !== Math.floor(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[index + 1].order)) {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + '|';
+    } else {
+      phrase += balletBlockText(index, navPhrase, navStep, balletClass) + ',';
+    }
+    index++
+  }
+  return phrase;
 };
 
 // Gets the pointed Step and trnasforms it into a String
@@ -135,6 +155,8 @@ export function AddStepToBalletClass(balletClass) {
           phraseBody: [
             {
               order: 1,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -159,6 +181,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 2,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -183,6 +207,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 3,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -207,6 +233,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 4,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -231,6 +259,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 5,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -255,6 +285,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 6,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -279,6 +311,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 7,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -303,6 +337,8 @@ export function AddStepToBalletClass(balletClass) {
             },
             {
               order: 8,
+              division: 0,
+              lastOnDivision: false,
               place: '',
               hip: '',
               feetPosition: '',
@@ -341,6 +377,8 @@ export function AddPhraseToStep(navStep, balletClass) {
       phraseBody: [
         {
           order: 1,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -365,6 +403,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 2,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -389,6 +429,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 3,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -413,6 +455,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 4,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -437,6 +481,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 5,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -461,6 +507,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 6,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -485,6 +533,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 7,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -509,6 +559,8 @@ export function AddPhraseToStep(navStep, balletClass) {
         },
         {
           order: 8,
+          division: 0,
+          lastOnDivision: false,
           place: '',
           hip: '',
           feetPosition: '',
@@ -557,6 +609,8 @@ export function initBalletClass() {
             phraseBody: [
               {
                 order: 1,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -581,6 +635,8 @@ export function initBalletClass() {
               },
               {
                 order: 2,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -605,6 +661,8 @@ export function initBalletClass() {
               },
               {
                 order: 3,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -629,6 +687,8 @@ export function initBalletClass() {
               },
               {
                 order: 4,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -653,6 +713,8 @@ export function initBalletClass() {
               },
               {
                 order: 5,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -677,6 +739,8 @@ export function initBalletClass() {
               },
               {
                 order: 6,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -701,6 +765,8 @@ export function initBalletClass() {
               },
               {
                 order: 7,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -725,6 +791,8 @@ export function initBalletClass() {
               },
               {
                 order: 8,
+                division: 0,
+                lastOnDivision: false,
                 place: '',
                 hip: '',
                 feetPosition: '',
@@ -758,11 +826,11 @@ export function initBalletClass() {
   return initClass;
 }
 
-
-// Function that takes a Block in String and the Order and gives us the Object
-export function stringBlockToObject(blockString, blockOrder) {
+export function initBlock() {
   let initBlock = {
     order: 1,
+    division: 0,
+    lastOnDivision: false,
     place: '',
     hip: '',
     feetPosition: '',
@@ -784,20 +852,27 @@ export function stringBlockToObject(blockString, blockOrder) {
     rightArmSide: '',
     rightArmForm: '',
     head: ''
-  }
+  };
+  return initBlock;
+};
+
+
+// Function that takes a Block in String and the Order and gives us the Object
+export function stringBlockToObject(blockString, blockOrder) {
+  let block = initBlock();
 
   //Order (Provided by the user - second argument)
-  initBlock.order = blockOrder;
+  block.order = blockOrder;
 
   //Place
   const placeRegex = /0;|1;|2;|3;|4;|5;|6;|7;|8;/;
   let placeMatch = blockString.match(placeRegex);
-  initBlock.place = placeMatch ? placeMatch[0] : '';
+  block.place = placeMatch ? placeMatch[0] : '';
 
   //Hip
   const hipRegex = /1:|2:|3:|4:|5:|6:|7:|8:/;
   let hipMatch = blockString.match(hipRegex);
-  initBlock.hip = hipMatch ? hipMatch[0] : '';
+  block.hip = hipMatch ? hipMatch[0] : '';
 
   //Feet 
   const feetRegex = /(1|2|3|4|5)(\+|-|=)¬?/;
@@ -807,27 +882,27 @@ export function stringBlockToObject(blockString, blockOrder) {
   //Feet Position
   const feetPositionRegex = /1|2|3|4|5/;
   let feetPositionMatch = Feet.match(feetPositionRegex);
-  initBlock.feetPosition = feetPositionMatch ? feetPositionMatch[0] : '';
+  block.feetPosition = feetPositionMatch ? feetPositionMatch[0] : '';
 
   //Feet Order
   const feetOrderRegex = /\+|-|=/;
   let feetOrderMatch = Feet.match(feetOrderRegex);
-  initBlock.feetOrder = feetOrderMatch ? feetOrderMatch[0] : '';
+  block.feetOrder = feetOrderMatch ? feetOrderMatch[0] : '';
 
   //Feet OpenClose
   const feetOpenCloseRegex = /¬/;
   let feetOpenCloseMatch = Feet.match(feetOpenCloseRegex);
-  initBlock.feetOpenClose = feetOpenCloseMatch ? feetOpenCloseMatch[0] : '';
+  block.feetOpenClose = feetOpenCloseMatch ? feetOpenCloseMatch[0] : '';
 
   //Step
   const stepRegex = /as|bn|bt|bm|bs|br|bi|cb|cp|ch|cs|ct|cv|cx|cl|cn|db|dg|dt|dv|dl|ep|ev|eb|en|fi|fc|ff|fn|ft|fp|gg|gl|jt|je|pa|pp|po|ps|pm|pn|pq|py|pl|pe|pr|px|rv|rl|rn|re|rc|rj|rt|rp|ry|sr|sn|st|sp|tc|tf|tv|tl|tn|tb|tj|vs|tr/;
   let stepMatch = blockString.match(stepRegex);
-  initBlock.step = stepMatch ? stepMatch[0] : '';
+  block.step = stepMatch ? stepMatch[0] : '';
 
   //Number
   const numberRegex = /1\.|2\.|3\.|4\.|5\.|6\.|7\.|8\./;
   let numberMatch = blockString.match(numberRegex);
-  initBlock.number = numberMatch ? numberMatch[0] : '';
+  block.number = numberMatch ? numberMatch[0] : '';
 
   //Leg 
   const legRegex = /(#|\$|%|\/)(\+|-|=)!?/;
@@ -837,17 +912,17 @@ export function stringBlockToObject(blockString, blockOrder) {
   //Leg Form
   const legFormRegex = /#|\$|%|\//;
   let legFormMatch = Leg.match(legFormRegex);
-  initBlock.legForm = legFormMatch ? legFormMatch[0] : '';
+  block.legForm = legFormMatch ? legFormMatch[0] : '';
 
   //Leg Cardinal
   const legCardinalRegex = /\+|-|=/;
   let legCardinalMatch = Leg.match(legCardinalRegex);
-  initBlock.legCardinal = legCardinalMatch ? legCardinalMatch[0] : '';
+  block.legCardinal = legCardinalMatch ? legCardinalMatch[0] : '';
 
   //Leg Side
   const legSideRegex = /!/;
   let legSideMatch = Leg.match(legSideRegex);
-  initBlock.legSide = legSideMatch ? legSideMatch[0] : '';
+  block.legSide = legSideMatch ? legSideMatch[0] : '';
 
   //Direction 
   const directionRegex = /(\+|-|=)!+/;
@@ -857,22 +932,22 @@ export function stringBlockToObject(blockString, blockOrder) {
   //Direction Cardinal
   const directionCardinalRegex = /\+|-|=/;
   let directionCardinalMatch = Direction.match(directionCardinalRegex);
-  initBlock.directionCardinal = directionCardinalMatch ? directionCardinalMatch[0] : '';
+  block.directionCardinal = directionCardinalMatch ? directionCardinalMatch[0] : '';
 
   //Direction Side
   const directionSideRegex = /!+/;
   let directionSideMatch = Direction.match(directionSideRegex);
-  initBlock.directionSide = directionSideMatch ? directionSideMatch[0] : '';
+  block.directionSide = directionSideMatch ? directionSideMatch[0] : '';
 
   //Spin
   const spinRegex = /<|>/;
   let spinMatch = blockString.match(spinRegex);
-  initBlock.spin = spinMatch ? spinMatch[0] : '';
+  block.spin = spinMatch ? spinMatch[0] : '';
 
   //Head
   const headRegex = /1\*|2\*|3\*|4\*|5\*|6\*|7\*|8\*/;
   let headMatch = blockString.match(headRegex);
-  initBlock.head = headMatch ? headMatch[0] : '';
+  block.head = headMatch ? headMatch[0] : '';
 
   //LeftArm 
   const leftArmRegex = /(0|1|2|3|4|5|6|7|8|9)![°']+/;
@@ -882,17 +957,17 @@ export function stringBlockToObject(blockString, blockOrder) {
   //LeftArm Position
   const leftArmPositionRegex = /0|1|2|3|4|5|6|7|8|9/;
   let leftArmPositionMatch = LeftArm.match(leftArmPositionRegex);
-  initBlock.leftArmPosition = leftArmPositionMatch ? leftArmPositionMatch[0] : '';
+  block.leftArmPosition = leftArmPositionMatch ? leftArmPositionMatch[0] : '';
 
   //LeftArm Side
   const leftArmSideRegex = /!/;
   let leftArmSideMatch = LeftArm.match(leftArmSideRegex);
-  initBlock.leftArmSide = leftArmSideMatch ? leftArmSideMatch[0] : '';
+  block.leftArmSide = leftArmSideMatch ? leftArmSideMatch[0] : '';
 
   //LeftArm Form
   const leftArmFormRegex = /[°']+/;
   let leftArmFormMatch = LeftArm.match(leftArmFormRegex);
-  initBlock.leftArmForm = leftArmFormMatch ? leftArmFormMatch[0] : '';
+  block.leftArmForm = leftArmFormMatch ? leftArmFormMatch[0] : '';
 
   //RightArm 
   const rightArmRegex = /(0|1|2|3|4|5|6|7|8|9)(\?)[°']+/;
@@ -902,24 +977,24 @@ export function stringBlockToObject(blockString, blockOrder) {
   //RightArm Position
   const rightArmPositionRegex = /0|1|2|3|4|5|6|7|8|9/;
   let rightArmPositionMatch = RightArm.match(rightArmPositionRegex);
-  initBlock.rightArmPosition = rightArmPositionMatch ? rightArmPositionMatch[0] : '';
+  block.rightArmPosition = rightArmPositionMatch ? rightArmPositionMatch[0] : '';
 
   //RightArm Side
   const rightArmSideRegex = /\?/;
   let rightArmSideMatch = RightArm.match(rightArmSideRegex);
-  initBlock.rightArmSide = rightArmSideMatch ? rightArmSideMatch[0] : '';
+  block.rightArmSide = rightArmSideMatch ? rightArmSideMatch[0] : '';
 
   //RightArm Form
   const rightArmFormRegex = /[°']+/;
   let rightArmFormMatch = RightArm.match(rightArmFormRegex);
-  initBlock.rightArmForm = rightArmFormMatch ? rightArmFormMatch[0] : '';
+  block.rightArmForm = rightArmFormMatch ? rightArmFormMatch[0] : '';
 
   //Variants
   const variantsRegex = /[DTPLRQGEVACFNB]+/;
   let variantsMatch = blockString.match(variantsRegex);
-  initBlock.variants = variantsMatch ? variantsMatch[0] : '';
+  block.variants = variantsMatch ? variantsMatch[0] : '';
 
-  return initBlock;
+  return block;
 
 };
 
@@ -1005,4 +1080,84 @@ export function balletStringToObject(stringBallet) {
   return initClass;
 
 
+};
+
+
+
+//Function that Divides a certain Block in 2, takes a Phrase (and array of block objects)
+// and also takes the index where the division is done
+export function Division2(phrase, index) {
+
+
+  //space will be the order space between the index block and 
+  // the next index block allowing for good ordering
+  let space = 0;
+  if (index === phrase.length - 1) {
+    space = phrase[index].order - phrase[index - 1].order;
+  } else {
+    space = phrase[index + 1].order - phrase[index].order;
+  }
+
+  if (phrase[index].division < 2) {
+
+    let firstBlock = initBlock();
+    let secondBlock = initBlock();
+
+    firstBlock.division = phrase[index].division + 1;
+    secondBlock.division = phrase[index].division + 1;
+
+    firstBlock.lastOnDivision = false;
+    secondBlock.lastOnDivision = true;
+
+    firstBlock.order = phrase[index].order;
+    secondBlock.order = phrase[index].order + space * 0.5;
+
+    phrase.splice(index, 1, firstBlock, secondBlock);
+
+
+    return phrase;
+
+  } else {
+    return phrase;
+  };
+};
+
+//Function that Divides a certain Block in 3, takes a Phrase (and array of block objects)
+// and also takes the index where the division is done
+export function Division3(phrase, index) {
+
+  //space will be the order space between the index block and 
+  // the next index block allowing for good ordering
+  let space = 0;
+  if (index === phrase.length - 1) {
+    space = 1;
+  } else {
+    space = phrase[index + 1].order - phrase[index].order;
+  }
+
+  if (phrase[index].division < 2) {
+
+    let firstBlock = initBlock();
+    let secondBlock = initBlock();
+    let thirdBlock = initBlock();
+
+    firstBlock.division = phrase[index].division + 1;
+    secondBlock.division = phrase[index].division + 1;
+    thirdBlock.division = phrase[index].division + 1;
+
+    firstBlock.lastOnDivision = false;
+    secondBlock.lastOnDivision = false;
+    thirdBlock.lastOnDivision = true;
+
+    firstBlock.order = phrase[index].order;
+    secondBlock.order = phrase[index].order + space * 0.33;
+    thirdBlock.order = phrase[index].order + space * 0.66;
+
+    phrase.splice(index, 1, firstBlock, secondBlock, thirdBlock);
+
+    return phrase;
+
+  } else {
+    return phrase;
+  };
 };
