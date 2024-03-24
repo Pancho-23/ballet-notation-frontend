@@ -16,6 +16,7 @@ WorkLog
 
 22/03/24: Missing Buttons Added and functionalities
 
+24/03/24: Division of Times and Open Class Functionality Corrections
 
 Plan:
 

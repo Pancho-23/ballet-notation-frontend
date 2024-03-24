@@ -1010,8 +1010,6 @@ export function timeStringToBlockObjectArray(timeString, order) {
 
   let firstDivisionArray = timeString.split(/(?<!,),(?!,)/);
 
-  console.log("First Division Array", firstDivisionArray);
-
   //CASE 1: NO COMMAS NO SPLIT, single object and BlockString
   if (firstDivisionArray.length === 1) {
     return [stringBlockToObject(timeString, order, 0, false)];
@@ -1036,8 +1034,6 @@ export function timeStringToBlockObjectArray(timeString, order) {
       firstHalf = [stringBlockToObject(secondDivisionArray1[0], order, 1, false), stringBlockToObject(secondDivisionArray1[1], order + 0.165, 2, false), stringBlockToObject(secondDivisionArray1[2], order + 0.33, 2, true)];
     }
 
-    console.log("First Half", firstHalf);
-
     let secondDivisionArray2 = firstDivisionArray[1].split(/,,/);
     //CASE 2.2.1: NO SUBSPLIT IN THE SECOND PART
     if (secondDivisionArray2.length === 1) {
@@ -1051,8 +1047,6 @@ export function timeStringToBlockObjectArray(timeString, order) {
     else {
       secondHalf = [stringBlockToObject(secondDivisionArray2[0], order + 0.5, 2, false), stringBlockToObject(secondDivisionArray2[1], order + 0.665, 2, false), stringBlockToObject(secondDivisionArray2[2], order + 0.83, 2, true)];
     }
-
-    console.log("Second Half", secondHalf);
 
     return [...firstHalf, ...secondHalf];
 
@@ -1120,13 +1114,6 @@ export function stringPhraseToObject(phraseString) {
 
   let phraseRegex = /(.*)\t(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|(.*)\|/;
   let phraseMatch = phraseString.match(phraseRegex);
-
-
-  console.log("Phrase Match 1", phraseMatch[1]);
-  console.log("Phrase Match 2", phraseMatch[2]);
-  console.log("Phrase Match 3", phraseMatch[3]);
-  console.log("Time of phraseMatch[2]", timeStringToBlockObjectArray(phraseMatch[2], 1));
-  console.log("Time of phraseMatch[3]", timeStringToBlockObjectArray(phraseMatch[3], 2));
 
 
   const phraseObject = {
