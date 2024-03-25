@@ -21,6 +21,8 @@ function BlockInput() {
   const [currentStepText, setCurrentStepText] = useState('');
   const [currentClassText, setCurrentClassText] = useState('');
 
+  const [navTime, setNavTime] = useState(1);
+
   //TEXT LOADER
   const handleClassChange = (event) => {
     const file = event.target.files[0];
@@ -365,6 +367,14 @@ function BlockInput() {
 
 
   }, [balletClass, navBlock, navPhrase, navStep]);
+
+  useEffect(() => {
+
+    let newTime = Math.floor(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].order);
+
+    setNavTime(newTime);
+
+  }, [navBlock, navPhrase, navStep, balletClass]);
 
 
 
@@ -1021,6 +1031,41 @@ function BlockInput() {
   };
 
 
+  const handleNextTime = () => {
+    let currentTime = Math.floor(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].order);
+    if (currentTime < 8) {
+      let searchValue = currentTime + 1;
+      let propertyValues = balletClass.classBody[navStep].stepBody[navPhrase].phraseBody.map(obj => obj.order);
+      let index = propertyValues.indexOf(searchValue);
+      setNavBlock(index);
+    }
+
+  };
+
+  const handlePreviousTime = () => {
+    let currentTime = Math.floor(balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].order);
+    if (currentTime > 1) {
+      let searchValue = currentTime - 1;
+      let propertyValues = balletClass.classBody[navStep].stepBody[navPhrase].phraseBody.map(obj => obj.order);
+      let index = propertyValues.indexOf(searchValue);
+      setNavBlock(index);
+    }
+
+  };
+
+  const handleTimeChange = (event) => {
+    let newTime = navTime;
+    newTime = event.target.value;
+    setNavTime(newTime);
+
+    let number = parseInt(event.target.value);
+    if (number > 0 && number < 9 && number % 1 === 0) {
+      let searchValue = number;
+      let propertyValues = balletClass.classBody[navStep].stepBody[navPhrase].phraseBody.map(obj => obj.order);
+      let index = propertyValues.indexOf(searchValue);
+      setNavBlock(index);
+    }
+  };
 
 
   return (
@@ -1532,7 +1577,9 @@ function BlockInput() {
 
         <button className="add-division-2" onClick={handleDivision2}>Add Division 2</button>
         <button className="add-division-3" onClick={handleDivision3}>Add Division 3</button>
-
+        <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} />
+        <button className='next-time' onClick={handleNextTime}>Next Time</button>
+        <button className='previous-time' onClick={handlePreviousTime}>Previous Time</button>
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' id='master-input' type='text' value={balletClass.master} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' id='mounth-input' type='text' list="mounth-options" value={balletClass.mounth} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' id='day-input' type="number" value={balletClass.day} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' id='year-input' type='number' value={balletClass.year} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' id='country-input' type='text' value={balletClass.country} onChange={handleInputChange} /></div>
