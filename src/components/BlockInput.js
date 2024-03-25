@@ -1502,7 +1502,7 @@ function BlockInput() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button></div>
+          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button className='previous-time' onClick={handlePreviousTime}>&#10094;</button> Time <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} /><button className='next-time' onClick={handleNextTime}>&#10095;</button>&nbsp;&nbsp;<button className="add-division-2" onClick={handleDivision2}>/ 2</button>&nbsp;&nbsp;<button className="add-division-3" onClick={handleDivision3}>/ 3</button></div>
           <div className="current-phrase">
             <pre>{currentPhrase}</pre>
           </div>
@@ -1575,11 +1575,6 @@ function BlockInput() {
         <button className='save-step-button' onClick={handleSaveStep}>Save Step</button>
 
 
-        <button className="add-division-2" onClick={handleDivision2}>Add Division 2</button>
-        <button className="add-division-3" onClick={handleDivision3}>Add Division 3</button>
-        <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} />
-        <button className='next-time' onClick={handleNextTime}>Next Time</button>
-        <button className='previous-time' onClick={handlePreviousTime}>Previous Time</button>
 
         <div>
           <div className='class-tag'> Master <input className='log log-master' id='master-input' type='text' value={balletClass.master} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Mounth <input className='log log-mounth' id='mounth-input' type='text' list="mounth-options" value={balletClass.mounth} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Day <input className='log log-day' id='day-input' type="number" value={balletClass.day} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Year <input className='log log-year' id='year-input' type='number' value={balletClass.year} onChange={handleInputChange} />&nbsp;&nbsp;&nbsp; Country <input className='log log-country' id='country-input' type='text' value={balletClass.country} onChange={handleInputChange} /></div>
