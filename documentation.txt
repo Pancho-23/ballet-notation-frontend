@@ -1,0 +1,39 @@
+Key ShortCuts:
+
+Navigation Keys
+
+Previous Block: Arrow Left 
+Next Block: Arrow Right 
+Previous Phrase: Arrow Up
+Next Phrase: Arrow Arrow 
+
+Previous Time: Ctrl + Arrow Left
+Next Time: Ctrl + Arrow Right
+Previous Step: Ctrl + Arrow Up
+Next Step: Ctrl + Arrow Down 
+
+Add and Delete Keys
+
+Add Phrase: Alt + Arrow Right
+Delete Phrase: Alt + Arrow Left
+Add Step: Alt + Arrow Down
+Delete Step: Alt + Arrow Up 
+
+Divide Keys
+
+Divide Block by 2: Alt + 2
+Divide Block by 3: Alt + 3
+
+Reset Keys
+
+Reset Block: Shift + Q 
+Reset Phrase: Shift + W 
+Reset Step: Shift + E 
+Reset Class: Shift + R 
+
+File Keys
+
+Open Class: Shift + O 
+Save Class: Shift + S 
+Open Step: Shift + P 
+Save Step: Shift + V

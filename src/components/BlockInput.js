@@ -1112,29 +1112,28 @@ function BlockInput() {
       if (event.altKey && event.key === "ArrowUp") {
         document.getElementById('del-step-button').click();
       }
-      //UNTIL HERE MUST CORRECT THE FOLLOWING ONES
-      if (event.key === " " && event.key === "o") {
+      if (event.shiftKey && event.key === "o") {
         document.getElementById('open-class-button').click();
       }
-      if (event.key === " " && event.key === "s") {
+      if (event.shiftKey && event.key === "s") {
         document.getElementById('save-class-button').click();
       }
-      if (event.key === " " && event.key === "p") {
+      if (event.shiftKey && event.key === "p") {
         document.getElementById('open-step-button').click();
       }
-      if (event.key === " " && event.key === "v") {
+      if (event.shiftKey && event.key === "v") {
         document.getElementById('save-step-button').click();
       }
-      if (event.shiftKey && event.key === "b") {
+      if (event.shiftKey && event.key === "q") {
         document.getElementById('reset-block-button').click();
       }
-      if (event.shiftKey && event.key === "p") {
+      if (event.shiftKey && event.key === "w") {
         document.getElementById('reset-phrase-button').click();
       }
-      if (event.shiftKey && event.key === "s") {
+      if (event.shiftKey && event.key === "e") {
         document.getElementById('reset-step-button').click();
       }
-      if (event.shiftKey && event.key === "c") {
+      if (event.shiftKey && event.key === "r") {
         document.getElementById('reset-class-button').click();
       }
 
