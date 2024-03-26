@@ -1,0 +1,73 @@
+Presentation:
+
+The Ballet Notation Project: 
+
+This work is in response to a need that any classic ballet dancer or teacher finds when trying to record the steps
+marked or performed in a ballet class, or just anyone who wants to prepare a class or transcribe what is being marked
+at any given time. I think anyone with experience in this regard will agree that it is a tedious task, if not unapproachable, to command names, ideas, times and forms of the steps marked as these have been appointed to a way that is understandable at that time for all there to be read, even less to be registered as running. 
+Stated the problem, the solution would be to create a convention in this sense, a convention to record the pieces of classical ballet, and possibly an elegant, practical and efective system to do the job swiftly. 
+
+What you will find in this guide will be an original system developed over several years of trial and error, especially explicit and powerful system that claims to be solving the problem that has been exposed.
+
+There are several prominent ways in which one can register a ballet piece, and in general, others ways of dance.
+Laban and Benesh are two of the most important explored so far. The key issue regarding these systems is the
+large amount of time that one has to study in order to master these methods of notation, because this same issue translates into the fact that ballet dancers and teachers around the world can not see them as efficient methods to encode the pieces. The second issue with both of these methods is that even for experts, writing a piece is painfully slow; and certainly can not be matched with the process of registering as the piece is runnning (or within a razonable range of this kinds of timing). The third issue is that again both of this methods focus on the body as a holistic framework, in a way, the body is projected into the sheet of paper, and each movement of each part is registered individually. However, in classical ballet, the information marked by the coreographer or by the ballet teacher is not even close to that amount of exactness. These systems of course allow for more freedom and detail within realms that go
+outside classical ballet, but to some very high cost, and that cost is efficiency.
+
+The aim is for a method of notation that is: Easy and fast to learn, write and read.
+
+And with easy and fast we mean the following:
+  1. The principles of the notation should be apparent (for the ballet dancer or teacher) within the first day of
+learning, and fully mastered within a mounth.
+  2. A ballet class should be able to be written within the actual class, that is, a ballet step or piece may take
+about the same time to be registered as to be performed.
+  3. The information should be apparent at first sight, that is, interpretation shall be effortless and swift.
+
+  The Ballet Notation System Presented Here can do all of that for whomever is open to learn it. 
+  The Ballet Notation is a Free System and following a rapid Course it can be learned within a few days, mastery can be achived within a mounth. But is important to notice that the system can become apparent to the trained ballet dancer or teacher within few hours. 
+  You can access the Free Course in the Learn Section of this website.
+
+  Also within this very website we provide a free app to write using the Ballet Notation System accessing the Create Section, you can check it out, though it's recommended to have already an introduction to the system in order for this resource to make sense. Newcomers may find this feature challenging without previous knowledge of the system.
+
+  You can UPLOAD any classes or steps to our CLASS DATABASE and STEP DATABASE and also DOWNLOAD from it.
+  You can download freely but to upload a registration for cataloging and security will be necesary. The aim is for the classes and steps to make sense.
+
+  So this Page has an authentication process to make you become a ClassCreator:
+  Only AT-LEAST-ONE-YEAR Main Google Accounts Can Register to be ClassCreators (although an emain from a suitable Ballet Institution or Ballet Company can bypass this requirement)
+  You shall pass a Quiz designed for people that have some baisc fluency with the Ballet Notation System.
+  You should provide an Identification Document (ID) and a letter from a Ballet Institution (School, Dance Academy or Ballet Company) with your name on it, and claiming that you study or work in that institution; the letter should be emailed by the institution to the contact mail of the page classcreators@balletnotatinproject.org.
+
+  ClassCreators should addere to the Ballet Notation Guidelines when UPLOADING Classes or Steps to the DATABASE, ClassCreators that do not follow the guidelines will be banned from the system permanently. 
+  To upload a step you should moderate at least five other steps from other users.
+  To upload a class you should moderate at least ten other steps from other users.
+  (moderation will contain already aproved and/or already rejected steps and classes to prevent ACCEPT ALL or REJECT ALL RESPONSES, failing to moderate this instances correctly will get the user MODERATION FAILING POINTS, reaching 100 MODERATION FAILING POINTS will get the user BANNED )
+
+  The uploaded step or class will become UPLOADED but IN MODERATION.
+  
+  You will be provided with SEVERAL MODERATION FILE ACORDING TO YOUR UPLOADING REQUIREMENT: 
+  1) Testing if the Step is well formatted (for that you can use the App Create - Test if it can be opened).
+  2) Testing if the Step is readable (it may have the right format but with random words withing the input fields)
+  3) Testing if it makes sense as a real ballet step. (the steps may be there but in a bar step for example having a grand jete jump, or a sequence that is not cohesive, organic enough or actually able to be performed)
+  4) Your Rating of the Step (1-5 Stars) - this will not formally afect the moderation - however, when the step comes to public realm within the database, the final rating will become public.
+
+  When the process is over the ClassCreator will recibe confirmation of the ACEPTED or REJECTED result of the upload.
+  A REJECTED Class or Step will prevent the Class Creator to UPLOAD for ONE Day and give ONE REJECTTION POINT.
+  Another REJECTED Class will prevent the ClassCreator to UPLOAD for TWO Days, and so on.
+  After TEN (10) REJECTED Classes or Steps the user will be banned. (WHEN REACHING TEN (10) REJECTION POINTS)
+  Observe that only NOT correctly formatted, non-readable or non-sensible files will be rejected.
+
+The user will be given the Rating of the Classes and Steps that have reached PUBLIC STATUS and an Average of the ratings of all its contributions. Also the rejection points and the moderation failing points.
+
+ALL THE CLASSES AND STEPS UPDATED WILL BE FREELY ACCESSIBLE FOR ANYONE (classcreator or not).
+If you want to protect the classes you may not upload them, or make sure that your profile reflects the classes that were created by you. The page does not directly account for copy right infringement although you can report a given file if you have the proof to backup the claim (via mail reports@balletnotationproject.org)
+To prevent malicious intents, exact copies of steps and classes are not allowed. 
+The Uploaded Submition will be cancelled if a copy is encountered within the database (submition against other already submitted or accepted files)
+Since this can be due to chance (since two exact copies of a step can be created independeptly) the ClassCreator will not be penalized for trying to upload a copy, the copy will not continue though with the moderation process and so it will become deprecated.
+
+ALL STEPS AND CLASSES have a CATALOG CODE that is UNIQUE among the entire database.
+
+
+
+
+
+

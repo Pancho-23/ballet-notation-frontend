@@ -9,9 +9,9 @@ function RootLayouts() {
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="create">Create</NavLink>
-          <NavLink to="archive">Archive</NavLink>
           <NavLink to="learn">Learn</NavLink>
+          <NavLink to="archive">Archive</NavLink>
+          <NavLink to="create">Create</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="contact">Contact</NavLink>
         </nav>
