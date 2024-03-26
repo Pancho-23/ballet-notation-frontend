@@ -34,8 +34,9 @@ about the same time to be registered as to be performed.
 
   So this Page has an authentication process to make you become a ClassCreator:
   Only AT-LEAST-ONE-YEAR Main Google Accounts Can Register to be ClassCreators (although an emain from a suitable Ballet Institution or Ballet Company can bypass this requirement)
-  You shall pass a Quiz designed for people that have some baisc fluency with the Ballet Notation System.
+  You shall pass a Quiz designed for people that have some basic fluency with the Ballet Notation System.
   You should provide an Identification Document (ID) and a letter from a Ballet Institution (School, Dance Academy or Ballet Company) with your name on it, and claiming that you study or work in that institution; the letter should be emailed by the institution to the contact mail of the page classcreators@balletnotatinproject.org.
+  (REVISE ALL THIS, THIS CAN BE NOT SO DIFFICULT IF THE MODERATION PROCESS GETS BETTER, START WITH GOOGLE ACOUNT AND ROBUST MODERATION PROCESS FOR THE DATA)
 
   ClassCreators should addere to the Ballet Notation Guidelines when UPLOADING Classes or Steps to the DATABASE, ClassCreators that do not follow the guidelines will be banned from the system permanently. 
   To upload a step you should moderate at least five other steps from other users.
@@ -55,6 +56,7 @@ about the same time to be registered as to be performed.
   Another REJECTED Class will prevent the ClassCreator to UPLOAD for TWO Days, and so on.
   After TEN (10) REJECTED Classes or Steps the user will be banned. (WHEN REACHING TEN (10) REJECTION POINTS)
   Observe that only NOT correctly formatted, non-readable or non-sensible files will be rejected.
+  Also Failing to address correctly the Moderation files (up to a certain amount of moderation failing points per submittion) will prevent the submitted file to be accepted in that submittion. You would have to try again. Moderation Failing Points however will be added anyway. All this measures are to ensure ClassCreators take the moderation process seriously. This will augment the quality of the steps and classes uploaded to the database.
 
 The user will be given the Rating of the Classes and Steps that have reached PUBLIC STATUS and an Average of the ratings of all its contributions. Also the rejection points and the moderation failing points.
 
