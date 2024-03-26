@@ -26,14 +26,14 @@ Divide Block by 3: Alt + 3
 
 Reset Keys
 
-Reset Block: Shift + Q 
-Reset Phrase: Shift + W 
-Reset Step: Shift + E 
-Reset Class: Shift + R 
+Reset Block: Alt + Q 
+Reset Phrase: Alt + W 
+Reset Step: Alt + E 
+Reset Class: Alt + R 
 
 File Keys
 
-Open Class: Shift + O 
-Save Class: Shift + S 
-Open Step: Shift + P 
-Save Step: Shift + V
+Open Class: Alt + O 
+Save Class: Alt + S 
+Open Step: Alt + P 
+Save Step: Alt + V
