@@ -1095,34 +1095,34 @@ function BlockInput() {
         document.getElementById('next-step').click();
       }
       //UNTIL HERE
-      if (event.ctrlKey && event.key === "2") {
+      if (event.altKey && event.key === "2") {
         document.getElementById('divide-2').click();
       }
-      if (event.ctrlKey && event.key === "3") {
+      if (event.altKey && event.key === "3") {
         document.getElementById('divide-3').click();
       }
-      if (event.ctrlKey && event.key === "o") {
+      if (event.altKey && event.key === "o") {
         document.getElementById('open-class-button').click();
       }
-      if (event.ctrlKey && event.key === "s") {
+      if (event.altKey && event.key === "s") {
         document.getElementById('save-class-button').click();
       }
-      if (event.ctrlKey && event.key === "p") {
+      if (event.altKey && event.key === "p") {
         document.getElementById('open-step-button').click();
       }
-      if (event.ctrlKey && event.key === "v") {
+      if (event.altKey && event.key === "v") {
         document.getElementById('save-step-button').click();
       }
-      if (event.ctrlKey && event.key === "a") {
+      if (event.altKey && event.key === "a") {
         document.getElementById('add-phrase-button').click();
       }
-      if (event.ctrlKey && event.key === "d") {
+      if (event.altKey && event.key === "d") {
         document.getElementById('del-phrase-button').click();
       }
-      if (event.ctrlKey && event.key === "+") {
+      if (event.altKey && event.key === "+") {
         document.getElementById('add-step-button').click();
       }
-      if (event.ctrlKey && event.key === "-") {
+      if (event.altKey && event.key === "-") {
         document.getElementById('del-step-button').click();
       }
       if (event.shiftKey && event.key === "b") {
