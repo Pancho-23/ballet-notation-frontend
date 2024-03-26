@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/BlockInput.css';
+import '../styles/Create.css';
 import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
 
