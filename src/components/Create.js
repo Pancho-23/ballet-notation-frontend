@@ -3,7 +3,7 @@ import '../styles/BlockInput.css';
 import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
 
-function BlockInput() {
+function Create() {
 
 
   // We define the structure of the class, parts of which will be rendered to the user.
@@ -1692,4 +1692,4 @@ function BlockInput() {
 
 }
 
-export default BlockInput;
+export default Create;
