@@ -18,16 +18,16 @@ WorkLog
 
 24/03/24: Division of Times and Open Class Functionality Corrections
 
+25/03/24: Full Create Ballet Class Page
+
 Plan:
 
-1) Disable Navs + Key navigation + Shortcuts
-
-2) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
-  2.1) Routing
-  2.2) Content of each Page
-  2.3) Style of each Page
-  2.4) Start Documentation for Usage
-  2.5) Comment all Code until this point
+1) Style and Structure of the Page itself (Home, Create, Archive, Log in/Sign in, Learn, About, Contact)
+  1.1) Routing
+  1.2) Content of each Page
+  1.3) Style of each Page
+  1.4) Start Documentation for Usage
+  1.5) Comment all Code until this point
 
 3) Adapt Code for catalogging porpose
 
