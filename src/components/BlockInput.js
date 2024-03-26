@@ -1067,6 +1067,87 @@ function BlockInput() {
     }
   };
 
+  //KEY NAVIGATION CONTROL
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "ArrowLeft") {
+        document.getElementById('prev-block').click();
+      }
+      if (event.key === "ArrowRight") {
+        document.getElementById('next-block').click();
+      }
+      if (event.key === "ArrowUp") {
+        document.getElementById('prev-phrase').click();
+      }
+      if (event.key === "ArrowDown") {
+        document.getElementById('next-phrase').click();
+      }
+      if (event.ctrlKey && event.key === "ArrowLeft") {
+        document.getElementById('prev-time').click();
+      }
+      if (event.ctrlKey && event.key === "ArrowRight") {
+        document.getElementById('next-time').click();
+      }
+      if (event.ctrlKey && event.key === "ArrowUp") {
+        document.getElementById('prev-step').click();
+      }
+      if (event.ctrlKey && event.key === "ArrowDown") {
+        document.getElementById('next-step').click();
+      }
+      //UNTIL HERE
+      if (event.ctrlKey && event.key === "2") {
+        document.getElementById('divide-2').click();
+      }
+      if (event.ctrlKey && event.key === "3") {
+        document.getElementById('divide-3').click();
+      }
+      if (event.ctrlKey && event.key === "o") {
+        document.getElementById('open-class-button').click();
+      }
+      if (event.ctrlKey && event.key === "s") {
+        document.getElementById('save-class-button').click();
+      }
+      if (event.ctrlKey && event.key === "p") {
+        document.getElementById('open-step-button').click();
+      }
+      if (event.ctrlKey && event.key === "v") {
+        document.getElementById('save-step-button').click();
+      }
+      if (event.ctrlKey && event.key === "a") {
+        document.getElementById('add-phrase-button').click();
+      }
+      if (event.ctrlKey && event.key === "d") {
+        document.getElementById('del-phrase-button').click();
+      }
+      if (event.ctrlKey && event.key === "+") {
+        document.getElementById('add-step-button').click();
+      }
+      if (event.ctrlKey && event.key === "-") {
+        document.getElementById('del-step-button').click();
+      }
+      if (event.shiftKey && event.key === "b") {
+        document.getElementById('reset-block-button').click();
+      }
+      if (event.shiftKey && event.key === "p") {
+        document.getElementById('reset-phrase-button').click();
+      }
+      if (event.shiftKey && event.key === "s") {
+        document.getElementById('reset-step-button').click();
+      }
+      if (event.shiftKey && event.key === "c") {
+        document.getElementById('reset-class-button').click();
+      }
+
+    };
+
+    // Add event listener when component mounts
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Cleanup: Remove event listener when component unmounts
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
   return (
 
@@ -1502,21 +1583,21 @@ function BlockInput() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'><button className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button className='previous-time' onClick={handlePreviousTime}>&#10094;</button> Time <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} /><button className='next-time' onClick={handleNextTime}>&#10095;</button>&nbsp;&nbsp;<button className="add-division-2" onClick={handleDivision2}>/ 2</button>&nbsp;&nbsp;<button className="add-division-3" onClick={handleDivision3}>/ 3</button></div>
+          <div className='phrase-tag'><button id="prev-phrase" className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button id="next-phrase" className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="prev-time" className='previous-time' onClick={handlePreviousTime}>&#10094;</button> Time <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} /><button id="next-time" className='next-time' onClick={handleNextTime}>&#10095;</button>&nbsp;&nbsp;<button id="divide-2" className="add-division-2" onClick={handleDivision2}>/ 2</button>&nbsp;&nbsp;<button id="divide-3" className="add-division-3" onClick={handleDivision3}>/ 3</button></div>
           <div className="current-phrase">
             <pre>{currentPhrase}</pre>
           </div>
         </div>
 
         <div className='block-container'>
-          <div className='block-tag'><button className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
+          <div className='block-tag'><button id="prev-block" className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button id="next-block" className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
           <div className="current-block">
             <pre>{currentBlock}</pre>
           </div>
         </div>
 
         <div>
-          <div className='step-tag'><button className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
+          <div className='step-tag'><button id="prev-step" className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
 
             <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={balletClass.classBody[navStep].stage} onChange={handleInputChange} />
             <datalist id="stage-options">
@@ -1547,7 +1628,7 @@ function BlockInput() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
+            <button id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>
@@ -1555,24 +1636,24 @@ function BlockInput() {
 
 
 
-        <button className='open-class-button' onClick={handleOpenClass}>Open Class</button>
+        <button id="open-class-button" className='open-class-button' onClick={handleOpenClass}>Open Class</button>
         <input id="open-class" type="file" value="" onChange={handleClassChange} style={{ display: 'none' }} />
 
-        <button className='open-step-button' onClick={handleOpenStep}>Open Step</button>
+        <button id="open-step-button" className='open-step-button' onClick={handleOpenStep}>Open Step</button>
         <input id="open-step" type="file" value="" onChange={handleStepChange} style={{ display: 'none' }} />
 
-        <button className='save-class-button' onClick={handleSaveClass}>Save Class</button>
-        <button className='add-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
-        <button className='add-step-button' onClick={handleAddStep}>Add Step</button>
+        <button id="save-class-button" className='save-class-button' onClick={handleSaveClass}>Save Class</button>
+        <button id="add-phrase-button" className='add-phrase-button' onClick={handleAddPhrase}>Add Phrase</button>
+        <button id="add-step-button" className='add-step-button' onClick={handleAddStep}>Add Step</button>
 
 
-        <button className='reset-block-button' onClick={handleResetBlock}>Reset Block</button>
-        <button className='reset-phrase-button' onClick={handleResetPhrase}>Reset Phrase</button>
-        <button className='reset-step-button' onClick={handleResetStep}>Reset Step</button>
-        <button className='reset-class-button' onClick={handleResetClass}>Reset Class</button>
-        <button className='delete-step-button' onClick={handleDeleteStep}>Delete Step</button>
-        <button className='delete-phrase-button' onClick={handleDeletePhrase}>Delete Phrase</button>
-        <button className='save-step-button' onClick={handleSaveStep}>Save Step</button>
+        <button id='reset-block-button' className='reset-block-button' onClick={handleResetBlock}>Reset Block</button>
+        <button id='reset-phrase-button' className='reset-phrase-button' onClick={handleResetPhrase}>Reset Phrase</button>
+        <button id='reset-step-button' className='reset-step-button' onClick={handleResetStep}>Reset Step</button>
+        <button id='reset-class-button' className='reset-class-button' onClick={handleResetClass}>Reset Class</button>
+        <button id="del-step-button" className='delete-step-button' onClick={handleDeleteStep}>Delete Step</button>
+        <button id="del-phrase-button" className='delete-phrase-button' onClick={handleDeletePhrase}>Delete Phrase</button>
+        <button id="save-step-button" className='save-step-button' onClick={handleSaveStep}>Save Step</button>
 
 
 
