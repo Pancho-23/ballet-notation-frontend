@@ -348,47 +348,61 @@ function Create() {
     }
 
     if (event.target.id === 'stage-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stage = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,16}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stage = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'kind-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].kind = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,6}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].kind = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     //Catalog Inputs
 
     if (event.target.id === 'master-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.master = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,30}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.master = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'mounth-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.mounth = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,9}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.mounth = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'day-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.day = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,2}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.day = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'year-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.year = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,4}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.year = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'country-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.country = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^.{0,20}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.country = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
   }
