@@ -94,6 +94,10 @@ button {
   height: 25px;
 }
 
+button:hover {
+  color: #cb76dd;
+}
+
 .variant-side {
   border-left: 1px solid #ed96ff;
 }
