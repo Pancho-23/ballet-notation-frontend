@@ -1127,6 +1127,9 @@ function Create() {
   //KEY NAVIGATION CONTROL
   useEffect(() => {
     const handleKeyPress = (event) => {
+      if (event.altKey && event.key === 'ArrowLeft') {
+        event.preventDefault();
+      }
       if (event.key === "ArrowLeft") {
         document.getElementById('prev-block').click();
       }
@@ -1192,6 +1195,9 @@ function Create() {
       }
       if (event.altKey && event.key === "r") {
         document.getElementById('reset-class-button').click();
+      }
+      if (event.altKey || event.ctrlKey) {
+        document.activeElement.blur();
       }
       if (event.key === "Enter") {
         setProcess(prevProcess => {
