@@ -23,6 +23,9 @@ function Create() {
 
   const [navTime, setNavTime] = useState(1);
 
+  //Block Creation Process (allow to navigate one the inputs just with keyboard)
+  const [process, setProcess] = useState(-1);
+
   //TEXT LOADER
   const handleClassChange = (event) => {
     const file = event.target.files[0];
@@ -1190,6 +1193,13 @@ function Create() {
       if (event.altKey && event.key === "r") {
         document.getElementById('reset-class-button').click();
       }
+      if (event.key === "Enter") {
+        setProcess(prevProcess => {
+          const newProcess = prevProcess + 1;
+          return newProcess;
+        });
+      }
+
 
     };
 
@@ -1201,6 +1211,142 @@ function Create() {
       document.removeEventListener('keydown', handleKeyPress);
     };
   }, []);
+
+  useEffect(() => {
+    //Creation CONTROL PROCESS
+    setTimeout(() => {
+      setProcess(0);
+    }, 1)
+  }, [navBlock, navPhrase, navStep])
+
+
+  useEffect(() => {
+    //WHEN PRESSING ENTER CHANGING THE INPUT ON IMPORTANCE ORDER
+    if (process === 0) {
+      document.getElementById('step-input').focus();
+    }
+    if (process === 1) {
+      document.getElementById('step-input').blur();
+      setTimeout(() => {
+        document.getElementById('direction-cardinal-input').focus();
+      }, 10);
+    }
+    if (process === 2) {
+      document.getElementById('direction-cardinal-input').blur();
+      setTimeout(() => {
+        document.getElementById('direction-side-input').focus();
+      }, 10);
+    }
+    if (process === 3) {
+      document.getElementById('direction-side-input').blur();
+      setTimeout(() => {
+        document.getElementById('spin-input').focus();
+      }, 10);
+    }
+    if (process === 4) {
+      document.getElementById('spin-input').blur();
+      setTimeout(() => {
+        document.getElementById('feet-position-input').focus();
+      }, 10);
+    }
+    if (process === 5) {
+      document.getElementById('feet-position-input').blur();
+      setTimeout(() => {
+        document.getElementById('feet-order-input').focus();
+      }, 10);
+    }
+    if (process === 6) {
+      document.getElementById('feet-order-input').blur();
+      setTimeout(() => {
+        document.getElementById('feet-openClose-input').focus();
+      }, 10);
+    }
+    if (process === 7) {
+      document.getElementById('feet-openClose-input').blur();
+      setTimeout(() => {
+        document.getElementById('hip-input').focus();
+      }, 10);
+    }
+    if (process === 8) {
+      document.getElementById('hip-input').blur();
+      setTimeout(() => {
+        document.getElementById('leg-form-input').focus();
+      }, 10);
+    }
+    if (process === 9) {
+      document.getElementById('leg-form-input').blur();
+      setTimeout(() => {
+        document.getElementById('leg-cardinal-input').focus();
+      }, 10);
+    }
+    if (process === 10) {
+      document.getElementById('leg-cardinal-input').blur();
+      setTimeout(() => {
+        document.getElementById('leg-side-input').focus();
+      }, 10);
+    }
+    if (process === 11) {
+      document.getElementById('leg-side-input').blur();
+      setTimeout(() => {
+        document.getElementById('number-input').focus();
+      }, 10);
+    }
+    if (process === 12) {
+      document.getElementById('number-input').blur();
+      setTimeout(() => {
+        document.getElementById('leftarm-position-input').focus();
+      }, 10);
+    }
+    if (process === 13) {
+      document.getElementById('leftarm-position-input').blur();
+      setTimeout(() => {
+        document.getElementById('leftarm-side-input').focus();
+      }, 10);
+    }
+    if (process === 14) {
+      document.getElementById('leftarm-side-input').blur();
+      setTimeout(() => {
+        document.getElementById('leftarm-form-input').focus();
+      }, 10);
+    }
+    if (process === 15) {
+      document.getElementById('leftarm-form-input').blur();
+      setTimeout(() => {
+        document.getElementById('rightarm-position-input').focus();
+      }, 10);
+    }
+    if (process === 16) {
+      document.getElementById('rightarm-position-input').blur();
+      setTimeout(() => {
+        document.getElementById('rightarm-side-input').focus();
+      }, 10);
+    }
+    if (process === 17) {
+      document.getElementById('rightarm-side-input').blur();
+      setTimeout(() => {
+        document.getElementById('rightarm-form-input').focus();
+      }, 10);
+    }
+    if (process === 18) {
+      document.getElementById('rightarm-form-input').blur();
+      setTimeout(() => {
+        document.getElementById('place-input').focus();
+      }, 10);
+    }
+    if (process === 19) {
+      document.getElementById('place-input').blur();
+      setTimeout(() => {
+        document.getElementById('head-input').focus();
+      }, 10);
+    }
+    if (process === 20) {
+      document.getElementById('next-block').click();
+    }
+
+
+  }, [process, balletClass]);
+
+
 
   return (
 
