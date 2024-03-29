@@ -61,108 +61,148 @@ function Create() {
   };
   //TEXT LOADER
 
-
   const handleInputChange = (event) => {
 
     if (event.target.id === 'place-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[012345678]?$|^[012345678]{1};$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
+
     }
     if (event.target.id === 'hip-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[12345678]?$|^[12345678]{1}:$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].hip = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'feet-position-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[12345]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetPosition = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'feet-order-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[+-=]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOrder = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'feet-openClose-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^¬?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].feetOpenClose = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'step-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[abcdefgjprstv]?$|^as$|^bn$|^bt$|^bm$|^bs$|^br$|^bi$|^cb$|^cp$|^ch$|^cs$|^ct$|^cv$|^cx$|^cl$|^cn$|^db$|^dg$|^dt$|^dv$|^dl$|^ep$|^ev$|^eb$|^en$|^fi$|^fc$|^ff$|^fn$|^ft$|^fp$|^gg$|^gl$|^jt$|^je$|^pa$|^pp$|^po$|^ps$|^pm$|^pn$|^pq$|^py$|^pl$|^pe$|^pr$|^px$|^rv$|^rl$|^rn$|^re$|^rc$|^rj$|^rt$|^rp$|^ry$|^sr$|^sn$|^st$|^sp$|^tc$|^tf$|^tv$|^tl$|^tn$|^tb$|^tj$|^vs$|^tr$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].step = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'number-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[2345678]?$|^[2345678]{1}\.$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].number = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leg-form-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[#$%/]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legForm = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leg-cardinal-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[+-=]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legCardinal = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leg-side-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^!?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].legSide = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'direction-cardinal-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[+-=]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionCardinal = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'direction-side-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^!?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].directionSide = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'spin-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[><]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].spin = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'head-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[12345678]?$|^[12345678]{1}\*$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].head = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leftarm-position-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[123456789]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmPosition = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leftarm-side-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^!?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmSide = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'leftarm-form-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[°']?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].leftArmForm = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'rightarm-position-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[123456789]?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmPosition = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'rightarm-side-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^\??$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmSide = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
     if (event.target.id === 'rightarm-form-input') {
-      const updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm = event.target.value;
-      setBalletClass(updateBalletClass);
+      if (/^[°']?$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].rightArmForm = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
     }
 
     if (event.target.id === 'demi') {
@@ -1162,7 +1202,7 @@ function Create() {
                 <div className="block-input">
 
                   <label htmlFor="place-input"></label>
-                  <input type="text" id="place-input" list="place-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place} onChange={handleInputChange} />
+                  <input type="text" maxLength="2" id="place-input" list="place-options" value={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].place} onChange={handleInputChange} />
 
                   <datalist id="place-options">
                     <option label="Ommited" value=''></option>
