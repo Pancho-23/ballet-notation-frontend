@@ -359,7 +359,7 @@ function Create() {
       setBalletClass(updateBalletClass);
     }
 
-    //Here the Catalog Inputs
+    //Catalog Inputs
 
     if (event.target.id === 'master-input') {
       const updateBalletClass = { ...balletClass };
