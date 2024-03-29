@@ -1794,21 +1794,21 @@ function Create() {
       <div>
 
         <div className='phrase-container'>
-          <div className='phrase-tag'><button id="prev-phrase" className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button id="next-phrase" className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="prev-time" className='previous-time' onClick={handlePreviousTime}>&#10094;</button> Time <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} /><button id="next-time" className='next-time' onClick={handleNextTime}>&#10095;</button>&nbsp;&nbsp;<button id="divide-2" className="add-division-2" onClick={handleDivision2}>/ 2</button>&nbsp;&nbsp;<button id="divide-3" className="add-division-3" onClick={handleDivision3}>/ 3</button></div>
+          <div className='phrase-tag'><button disabled={navPhrase === 0} id="prev-phrase" className='back-phrase' onClick={handleBackPhrase}>&#10094;</button> Phrase <input className='nav-input' type='number' value={navPhrase + 1} /> <button disabled={navPhrase === balletClass.classBody[navStep].stepBody.length - 1} id="next-phrase" className='forward-phrase' onClick={handleForwardPhrase}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button disabled={navTime === 1} id="prev-time" className='previous-time' onClick={handlePreviousTime}>&#10094;</button> Time <input className='time-navigation' type='number' value={navTime} onChange={handleTimeChange} /><button disabled={navTime === 8} id="next-time" className='next-time' onClick={handleNextTime}>&#10095;</button>&nbsp;&nbsp;<button disabled={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].division === 2} id="divide-2" className="add-division-2" onClick={handleDivision2}>/ 2</button>&nbsp;&nbsp;<button disabled={balletClass.classBody[navStep].stepBody[navPhrase].phraseBody[navBlock].division === 2} id="divide-3" className="add-division-3" onClick={handleDivision3}>/ 3</button></div>
           <div className="current-phrase">
             <pre>{currentPhrase}</pre>
           </div>
         </div>
 
         <div className='block-container'>
-          <div className='block-tag'><button id="prev-block" className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button id="next-block" className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
+          <div className='block-tag'><button disabled={navBlock === 0} id="prev-block" className='back-block' onClick={handleBackBlock}>&#10094;</button> Block <input className='nav-input' type='number' value={navBlock + 1} /> <button disabled={navBlock === balletClass.classBody[navStep].stepBody[navPhrase].phraseBody.length - 1} id="next-block" className='forward-block' onClick={handleForwardBlock}>&#10095;</button></div>
           <div className="current-block">
             <pre>{currentBlock}</pre>
           </div>
         </div>
 
         <div>
-          <div className='step-tag'><button id="prev-step" className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
+          <div className='step-tag'><button disabled={navStep === 0} id="prev-step" className='back-step' onClick={handleBackStep}>&#10094;</button> Step <input className='nav-input' type='number' value={navStep + 1} />&nbsp;
 
             <input className='stage-input' type="text" id="stage-input" list="stage-options" placeholder='Stage' value={balletClass.classBody[navStep].stage} onChange={handleInputChange} />
             <datalist id="stage-options">
@@ -1839,7 +1839,7 @@ function Create() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
+            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>

@@ -436,3 +436,14 @@ pre {
   padding: 0;
   margin: 0;
 }
+
+button:disabled {
+  color: #666;  
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0 5px;
+  background-color: #a276af;
+  font-size: 16px;
+  height: 25px;
+}
