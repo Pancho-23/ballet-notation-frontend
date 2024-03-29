@@ -8,12 +8,16 @@ function RootLayouts() {
     <div className="root-layout">
       <header>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="learn">Learn</NavLink>
-          <NavLink to="archive">Archive</NavLink>
-          <NavLink to="create">Create</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="contact">Contact</NavLink>
+          <div className="logo">Ballet Notation Project</div>
+          <div className="separation"></div>
+          <NavLink className='navItems' to="/">Home</NavLink>
+          <NavLink className='navItems' to="learn">Learn</NavLink>
+          <NavLink className='navItems' to="archive">Archive</NavLink>
+          <NavLink className='navItems' to="create">Create</NavLink>
+          <NavLink className='navItems' to="about">About</NavLink>
+          <NavLink className='navItems' to="contact">Contact</NavLink>
+
+
         </nav>
       </header>
 

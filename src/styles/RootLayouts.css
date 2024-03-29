@@ -1,0 +1,24 @@
+
+.navItems {
+  display: inline-block;
+  font-size: 17px;
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #58037C;
+  color: white;
+}
+
+.separation {
+  display: inline-block;
+  width: 650px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 18px;
+  padding: 10px;
+  color: #58037C;
+  font-family: Arial, Helvetica, sans-serif;
+}
