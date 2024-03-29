@@ -37,3 +37,12 @@ Open Class: Alt + O
 Save Class: Alt + S 
 Open Step: Ctrl + O 
 Save Step: Ctrl + S
+
+
+Navigation Between Aspects
+
+The UI will enforce the Step Aspect as first input, you can write on the input 
+and then with ENTER key you can navigate to the next ASPECT in order of 
+importance, changing the block (using the left of right arrows) will reset the cursor again
+to the Step Aspect on the current block. After entering all aspects, another ENTER will 
+automatically advance one block (if the phrase allows it, that is, if the current block is not the last one on the phrase).

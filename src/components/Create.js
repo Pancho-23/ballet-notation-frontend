@@ -26,6 +26,9 @@ function Create() {
   //Block Creation Process (allow to navigate one the inputs just with keyboard)
   const [process, setProcess] = useState(-1);
 
+  //Dynamic Boolean that allows the user to upload a class or step to the database
+  const [allowed, setAllowed] = useState(true);
+
   //TEXT LOADER
   const handleClassChange = (event) => {
     const file = event.target.files[0];
@@ -1839,7 +1842,7 @@ function Create() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button></div>
+            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Upload Step</button>&nbsp;<button>Upload Class</button></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>
