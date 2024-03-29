@@ -1366,7 +1366,7 @@ function Create() {
   //Handling UPLOAD CLASS and STEP
 
   const handleUploadClass = () => {
-    axios.post('https://example.com/api/endpoint', balletClass)
+    axios.post('http://localhost:4000/classes', balletClass)
       .then(response => {
         // Handle successful response
         console.log('POST request sent successfully:', response.data);
@@ -1378,7 +1378,7 @@ function Create() {
   };
 
   const handleUploadStep = () => {
-    axios.post('https://example.com/api/endpoint', balletClass.classBody[navStep])
+    axios.post('http://localhost:4000/steps', balletClass.classBody[navStep])
       .then(response => {
         // Handle successful response
         console.log('POST request sent successfully:', response.data);
