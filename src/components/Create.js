@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/Create.css';
 import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
+import axios from 'axios';
 
 function Create() {
 
@@ -1362,6 +1363,31 @@ function Create() {
   }, [process, balletClass]);
 
 
+  //Handling UPLOAD CLASS and STEP
+
+  const handleUploadClass = () => {
+    axios.post('https://example.com/api/endpoint', balletClass)
+      .then(response => {
+        // Handle successful response
+        console.log('POST request sent successfully:', response.data);
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error sending POST request:', error.message);
+      });
+  };
+
+  const handleUploadStep = () => {
+    axios.post('https://example.com/api/endpoint', balletClass.classBody[navStep])
+      .then(response => {
+        // Handle successful response
+        console.log('POST request sent successfully:', response.data);
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error sending POST request:', error.message);
+      });
+  };
 
   return (
 
@@ -1842,7 +1868,7 @@ function Create() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button disabled={!allowed}>Upload Step</button>&nbsp;<button disabled={!allowed}>Upload Class</button></div>
+            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button disabled={!allowed} onClick={handleUploadStep} >Upload Step</button>&nbsp;<button disabled={!allowed} onClick={handleUploadClass} >Upload Class</button></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>
