@@ -1842,7 +1842,7 @@ function Create() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>Upload Step</button>&nbsp;<button>Upload Class</button></div>
+            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button disabled={!allowed}>Upload Step</button>&nbsp;<button disabled={!allowed}>Upload Class</button></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>
