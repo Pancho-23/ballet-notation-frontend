@@ -1366,7 +1366,7 @@ function Create() {
   //Handling UPLOAD CLASS and STEP
 
   const handleUploadClass = () => {
-    axios.post('http://localhost:4000/classes', balletClass)
+    axios.post('http://localhost:4000/classes', currentClassText)
       .then(response => {
         // Handle successful response
         console.log('POST request sent successfully:', response.data);
@@ -1378,7 +1378,7 @@ function Create() {
   };
 
   const handleUploadStep = () => {
-    axios.post('http://localhost:4000/steps', balletClass.classBody[navStep])
+    axios.post('http://localhost:4000/steps', currentStepText)
       .then(response => {
         // Handle successful response
         console.log('POST request sent successfully:', response.data);
