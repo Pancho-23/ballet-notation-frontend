@@ -4,20 +4,20 @@ Navigation Keys
 
 Previous Block: Arrow Left 
 Next Block: Arrow Right 
-Previous Phrase: Arrow Up
-Next Phrase: Arrow Arrow 
+Previous Phrase: Ctrl + Arrow Up 
+Next Phrase: Ctrl + Arrow Down 
 
 Previous Time: Ctrl + Arrow Left
 Next Time: Ctrl + Arrow Right
-Previous Step: Ctrl + Arrow Up
-Next Step: Ctrl + Arrow Down 
+Previous Step: Alt + Arrow Left 
+Next Step: Alt + Arrow Right
 
 Add and Delete Keys
 
-Add Phrase: Alt + Arrow Right
-Delete Phrase: Alt + Arrow Left
-Add Step: Alt + Arrow Down
-Delete Step: Alt + Arrow Up 
+Add Phrase: Alt + Arrow Down
+Delete Phrase: Alt + Arrow Up
+Add Step: Alt + A 
+Delete Step: Alt + D 
 
 Divide Keys
 
@@ -35,5 +35,5 @@ File Keys
 
 Open Class: Alt + O 
 Save Class: Alt + S 
-Open Step: Alt + P 
-Save Step: Alt + V
+Open Step: Ctrl + O 
+Save Step: Ctrl + S

@@ -1130,16 +1130,22 @@ function Create() {
       if (event.altKey && event.key === 'ArrowLeft') {
         event.preventDefault();
       }
+      if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();
+      }
+      if (event.ctrlKey && event.key === 'o') {
+        event.preventDefault();
+      }
       if (event.key === "ArrowLeft") {
         document.getElementById('prev-block').click();
       }
       if (event.key === "ArrowRight") {
         document.getElementById('next-block').click();
       }
-      if (event.key === "ArrowUp") {
+      if (event.ctrlKey && event.key === "ArrowUp") {
         document.getElementById('prev-phrase').click();
       }
-      if (event.key === "ArrowDown") {
+      if (event.ctrlKey && event.key === "ArrowDown") {
         document.getElementById('next-phrase').click();
       }
       if (event.ctrlKey && event.key === "ArrowLeft") {
@@ -1148,10 +1154,10 @@ function Create() {
       if (event.ctrlKey && event.key === "ArrowRight") {
         document.getElementById('next-time').click();
       }
-      if (event.ctrlKey && event.key === "ArrowUp") {
+      if (event.altKey && event.key === "ArrowLeft") {
         document.getElementById('prev-step').click();
       }
-      if (event.ctrlKey && event.key === "ArrowDown") {
+      if (event.altKey && event.key === "ArrowRight") {
         document.getElementById('next-step').click();
       }
       if (event.altKey && event.key === "2") {
@@ -1160,16 +1166,16 @@ function Create() {
       if (event.altKey && event.key === "3") {
         document.getElementById('divide-3').click();
       }
-      if (event.altKey && event.key === "ArrowRight") {
+      if (event.altKey && event.key === "ArrowDown") {
         document.getElementById('add-phrase-button').click();
       }
-      if (event.altKey && event.key === "ArrowLeft") {
+      if (event.altKey && event.key === "ArrowUp") {
         document.getElementById('del-phrase-button').click();
       }
-      if (event.altKey && event.key === "ArrowDown") {
+      if (event.altKey && event.key === "a") {
         document.getElementById('add-step-button').click();
       }
-      if (event.altKey && event.key === "ArrowUp") {
+      if (event.altKey && event.key === "d") {
         document.getElementById('del-step-button').click();
       }
       if (event.altKey && event.key === "o") {
@@ -1178,10 +1184,10 @@ function Create() {
       if (event.altKey && event.key === "s") {
         document.getElementById('save-class-button').click();
       }
-      if (event.altKey && event.key === "p") {
+      if (event.ctrlKey && event.key === "o") {
         document.getElementById('open-step-button').click();
       }
-      if (event.altKey && event.key === "v") {
+      if (event.ctrlKey && event.key === "s") {
         document.getElementById('save-step-button').click();
       }
       if (event.altKey && event.key === "q") {
