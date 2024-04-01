@@ -1362,7 +1362,7 @@ function Create() {
     }
 
 
-  }, [process, balletClass]);
+  }, [process, currentPhrase]);
 
 
   //Handling UPLOAD CLASS and STEP
