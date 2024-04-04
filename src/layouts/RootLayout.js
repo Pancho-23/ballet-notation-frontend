@@ -16,6 +16,8 @@ function RootLayouts() {
           <NavLink className='navItems' to="create">Create</NavLink>
           <NavLink className='navItems' to="about">About</NavLink>
           <NavLink className='navItems' to="contact">Contact</NavLink>
+          <NavLink className='navItems' to="login">Log in</NavLink>
+          <NavLink className='navItems' to="signup">Sign up</NavLink>
 
 
         </nav>

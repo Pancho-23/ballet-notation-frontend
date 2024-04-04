@@ -13,6 +13,8 @@ import RootLayouts from './layouts/RootLayout';
 import Learn from './components/Learn';
 import Contact from './components/Contact';
 import Archive from './components/Archive';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +25,8 @@ const router = createBrowserRouter(
       <Route path='learn' element={<Learn />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
+      <Route path='login' element={<Login />} />
+      <Route path='signup' element={<Signup />} />
     </Route>
   )
 )
