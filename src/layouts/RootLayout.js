@@ -1,10 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
 import '../styles/RootLayouts.css';
 import { useAuthContext } from "../hook/useAuthContext";
-
+import { useLogout } from "../hook/useLogout";
 
 function RootLayouts() {
   const { user } = useAuthContext()
+  const { logout } = useLogout()
+
+  const handleLogout = () => {
+    logout()
+  }
 
   return (
     <div className="root-layout">
@@ -18,11 +23,11 @@ function RootLayouts() {
           <NavLink className='navItems' to="create">Create</NavLink>
           <NavLink className='navItems' to="about">About</NavLink>
           <NavLink className='navItems' to="contact">Contact</NavLink>
-          {!user && (<div>
+          {!user && (<>
             <NavLink className='navItems' to="login">Log in</NavLink>
             <NavLink className='navItems' to="signup">Sign up</NavLink>
-          </div>)}
-          {user && (<div> <span>{user.email}</span> <NavLink className='navItems' to="login">Logout</NavLink></div>)}
+          </>)}
+          {user && (<> <span>{user.email}</span> <NavLink onClick={handleLogout} className='navItems' to="login">Logout</NavLink></>)}
 
 
 
