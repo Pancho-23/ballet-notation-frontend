@@ -10,8 +10,6 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-
-    console.log('FIrst Sign Up', email, password)
     await signup(email, password)
   }
 

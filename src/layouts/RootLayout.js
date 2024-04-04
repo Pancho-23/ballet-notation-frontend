@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
 import '../styles/RootLayouts.css';
+import { useAuthContext } from "../hook/useAuthContext";
 
 
 function RootLayouts() {
+  const { user } = useAuthContext()
 
   return (
     <div className="root-layout">
@@ -16,8 +18,13 @@ function RootLayouts() {
           <NavLink className='navItems' to="create">Create</NavLink>
           <NavLink className='navItems' to="about">About</NavLink>
           <NavLink className='navItems' to="contact">Contact</NavLink>
-          <NavLink className='navItems' to="login">Log in</NavLink>
-          <NavLink className='navItems' to="signup">Sign up</NavLink>
+          {!user && (<div>
+            <NavLink className='navItems' to="login">Log in</NavLink>
+            <NavLink className='navItems' to="signup">Sign up</NavLink>
+          </div>)}
+          {user && (<div> <span>{user.email}</span> <NavLink className='navItems' to="login">Logout</NavLink></div>)}
+
+
 
 
         </nav>
