@@ -1,0 +1,44 @@
+User Flow 
+
+
+Steps and classes will have a STATUS of "moderation" "approved" "rejected"
+Will also have the USER_ID which created the file.
+
+All users can access all the classes and steps that had been APPROVED.
+
+ClassCreator will be grant access to all material, including classes in modearation (however the moderation process is not guided by the class creator, he can not choose which files to moderate)
+
+Each User will be assigned a STATUS: "notValidated" "creator" "banned" "admin"
+
+MODERATION process
+
+After a user validates its email his status becomes "creator" and he's allowed to all material (approved and moderation but not rejected material) 
+
+After validation, the user can see a button "Moderate" and also sees the guidelines and rules of the creator status. 
+
+A Batch is a collection of ten (10) steps that are shown to the user in order for him to moderate them.
+Inside the batch are a random number of already approved or rejected material. To prevent the malicious user from random moderation. 
+A creator can moderate 1 batch per day, except when he manages to perform perfectly (no mistakes) in the previous batch. Until a maximum of 10 batches per day.
+
+THe user that is deliberately wrong or even accidentally wrong in judging the already moderated material will be penalized, sporadic errors will be ommited.
+
+1 wrong points on the batch: ommited
+2 wrong points on the batch: ommited
+3 wrong point on the batch: 3 points
+4 wrong points on the batch: 3 points
+5 or 6 wrong: 6 points
+7 or 8 wrong: 8 points
+9 or 10 wrong: 11 points
+
+The user with more than 10 points will be banned from the ClassCreator Program.
+Also the mail can not be used for entering the application.
+
+Moderation requires a certain practice with the system, to understand which steps are allowed and which are not allowed. For them to make sense. Moderation is not required for a class creator user, but permitted and encoraged if so inclined. The collaboration helps advance the database further.
+
+A step is approved after 10 POINTS and REJECTED after -10 points, approved +1, rejected -1. Once a steps is approved or rejected can not be modified by other classcreator, only by admin users.
+
+A previous practice and explanation of the process will be done before entering the process.
+
+
+
+

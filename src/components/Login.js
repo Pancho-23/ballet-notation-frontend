@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLogin } from "../hook/useLogin";
+import { useAuthContext } from "../hook/useAuthContext";
 
 function Login() {
+
+
+  const { user } = useAuthContext()
+
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { login, isLoading, error } = useLogin()
+
+  useEffect(() => {
+    setEmail('');
+    setPassword('');
+  }, [user])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
