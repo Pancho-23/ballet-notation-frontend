@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/Create.css';
 import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
+import { Toaster, toast } from 'sonner';
 
 function Create() {
 
@@ -28,9 +29,6 @@ function Create() {
 
   //Dynamic Boolean that allows the user to upload a class or step to the database
   const [allowed, setAllowed] = useState(true);
-
-  //Message to the user State
-  const [message, setMessage] = useState(null);
 
   //TEXT LOADER
   const handleClassChange = (event) => {
@@ -1389,11 +1387,11 @@ function Create() {
     const jsonClass = await responseClass.json()
 
     if (!responseClass.ok) {
-      setMessage(jsonClass.error)
+      toast.error(jsonClass.error)
     }
 
     if (responseClass.ok) {
-      setMessage('Class Uploaded Succesfully')
+      toast.success('Class Uploaded Successfully')
     }
   };
 
@@ -1422,17 +1420,19 @@ function Create() {
     const jsonStep = await responseStep.json()
 
     if (!responseStep.ok) {
-      setMessage(jsonStep.error)
+      toast.error(jsonStep.error)
     }
 
     if (responseStep.ok) {
-      setMessage('Step Uploaded Succesfully')
+      toast.success('Step Uploaded Successfully')
     }
   };
 
   return (
 
     <div className='main-container'>
+
+      <Toaster />
 
       <form>
 

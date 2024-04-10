@@ -8,7 +8,7 @@ All users can access all the classes and steps that had been APPROVED.
 
 ClassCreator will be grant access to all material, including classes in modearation (however the moderation process is not guided by the class creator, he can not choose which files to moderate)
 
-Each User will be assigned a STATUS: "notValidated" "creator" "banned" "admin"
+Each User will be assigned a STATUS: "newbie" "creator" "banned" "admin"
 
 MODERATION process
 
