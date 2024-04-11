@@ -1432,7 +1432,7 @@ function Create() {
 
     <div className='main-container'>
 
-      <Toaster />
+      <Toaster richColors />
 
       <form>
 
