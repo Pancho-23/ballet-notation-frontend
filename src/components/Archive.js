@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import '../styles/Archive.css';
 
 function Archive() {
 
@@ -29,18 +30,40 @@ function Archive() {
 
   }, [])
 
+  const handleLoadClass = async () => {
+
+  }
+
+  const handleDownloadClass = async () => {
+
+  }
+
   return (
     <div className='archive-container'>
+      <h2>Classes</h2>
       <div className="classes">
         {classes && classes.map((oneClass) => (
-          <p key={oneClass._id} className="">Master: {oneClass.master} Date: {oneClass.mounth} {oneClass.day} {oneClass.year} Country: {oneClass.country}</p>
+          <div className='class-containter' key={oneClass._id} >
+            <div className='master'>{oneClass.master} </div>  <div className='date'>{oneClass.mounth} {oneClass.day} {oneClass.year}</div> <div className='country'>{oneClass.country}</div> &nbsp;&nbsp;
+            <button onClick={handleLoadClass}>Load</button>
+            &nbsp;&nbsp;
+            <button onClick={handleDownloadClass}>Download</button>
+          </div>
+
         )
 
         )}
       </div>
+
       <div className="steps">
+        <h2>Steps</h2>
         {steps && steps.map((oneStep) => (
-          <p key={oneStep._id} className="">Master: {oneStep.master} Date: {oneStep.mounth} {oneStep.day} {oneStep.year} Country: {oneStep.country} Stage: {oneStep.stage} Kind: {oneStep.kind} </p>
+          <div className='step-containter' key={oneStep._id} >
+            <div className='master'>{oneStep.master} </div>  <div className='date'>{oneStep.mounth} {oneStep.day} {oneStep.year}</div> <div className='country'>{oneStep.country}</div> <div className='stage'>{oneStep.stage}</div> <div className='kind'>{oneStep.kind}</div> &nbsp;&nbsp;
+            <button >Load</button>
+            &nbsp;&nbsp;
+            <button >Download</button>
+          </div>
         )
 
         )}

@@ -3,8 +3,25 @@ import '../styles/Create.css';
 import { balletBlockText, balletPhraseText, balletStepText, balletClassText, AddStepToBalletClass, AddPhraseToStep, initBalletClass, balletStringToObject, stringStepToObject, Division2, Division3 } from '../appFunctions';
 import { deL } from '../appFunctions';
 import { Toaster, toast } from 'sonner';
+import { useAuthContext } from "../hook/useAuthContext";
 
 function Create() {
+
+
+  //we obtain the users from the environment
+  const { user } = useAuthContext()
+
+  const [email, setEmail] = useState(null)
+
+  useEffect(() => {
+    if (user) {
+      setEmail(user.email);
+      setAllowed(true);
+    } else {
+      setAllowed(false);
+    }
+  }, [user])
+
 
 
   // We define the structure of the class, parts of which will be rendered to the user.
@@ -36,7 +53,13 @@ function Create() {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      setBalletClass(balletStringToObject(e.target.result));
+      try {
+        let balletString = balletStringToObject(e.target.result);
+        setBalletClass(balletString);
+      } catch {
+        toast.error('Please, choose a valid Class File.')
+      }
+
     };
 
     reader.readAsText(file);
@@ -53,11 +76,17 @@ function Create() {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      let updateBalletClass = { ...balletClass };
-      updateBalletClass.classBody[navStep].stage = stringStepToObject(e.target.result).stage;
-      updateBalletClass.classBody[navStep].kind = stringStepToObject(e.target.result).kind;
-      updateBalletClass.classBody[navStep].stepBody = stringStepToObject(e.target.result).stepBody;
-      setBalletClass(updateBalletClass);
+      try {
+        let updateBalletClass = { ...balletClass };
+        let classString = stringStepToObject(e.target.result);
+        updateBalletClass.classBody[navStep].stage = classString.stage;
+        updateBalletClass.classBody[navStep].kind = classString.kind;
+        updateBalletClass.classBody[navStep].stepBody = classString.stepBody;
+        setBalletClass(updateBalletClass);
+      } catch {
+        toast.error('Please, choose a valid Step File.')
+      }
+
     };
 
     reader.readAsText(file);
@@ -1366,66 +1395,76 @@ function Create() {
   //Handling UPLOAD CLASS and STEP
 
   const handleUploadClass = async () => {
-    const sendClass = {
-      master: balletClass.master,
-      mounth: balletClass.mounth,
-      day: balletClass.day,
-      year: balletClass.year,
-      country: balletClass.country,
-      classBody: currentClassText
-    }
-
-    const responseClass = await fetch('/api/classes/', {
-      method: 'POST',
-      body: JSON.stringify(sendClass),
-      headers: {
-        'Content-Type': 'application/json'
+    if (email) {
+      const sendClass = {
+        master: balletClass.master,
+        mounth: balletClass.mounth,
+        day: balletClass.day,
+        year: balletClass.year,
+        country: balletClass.country,
+        classBody: currentClassText
       }
 
-    })
+      const responseClass = await fetch('/api/classes/', {
+        method: 'POST',
+        body: JSON.stringify(sendClass),
+        headers: {
+          'Content-Type': 'application/json'
+        }
 
-    const jsonClass = await responseClass.json()
+      })
 
-    if (!responseClass.ok) {
-      toast.error(jsonClass.error)
+      const jsonClass = await responseClass.json()
+
+      if (!responseClass.ok) {
+        toast.error(jsonClass.error)
+      }
+
+      if (responseClass.ok) {
+        toast.success('Class Uploaded Successfully')
+      }
+    } else {
+      toast.error('The user must be logged in to upload a class.')
     }
 
-    if (responseClass.ok) {
-      toast.success('Class Uploaded Successfully')
-    }
   };
 
   const handleUploadStep = async () => {
-    const sendStep = {
-      master: balletClass.master,
-      mounth: balletClass.mounth,
-      day: balletClass.day,
-      year: balletClass.year,
-      country: balletClass.country,
-      stage: balletClass.classBody[navStep].stage,
-      kind: balletClass.classBody[navStep].kind,
-      stepBody: currentStepText
-    };
-    console.log(sendStep);
+    if (email) {
+      const sendStep = {
+        master: balletClass.master,
+        mounth: balletClass.mounth,
+        day: balletClass.day,
+        year: balletClass.year,
+        country: balletClass.country,
+        stage: balletClass.classBody[navStep].stage,
+        kind: balletClass.classBody[navStep].kind,
+        userId: email,
+        stepBody: currentStepText
+      };
 
-    const responseStep = await fetch('/api/steps/', {
-      method: 'POST',
-      body: JSON.stringify(sendStep),
-      headers: {
-        'Content-Type': 'application/json'
+      const responseStep = await fetch('/api/steps/', {
+        method: 'POST',
+        body: JSON.stringify(sendStep),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+
+      })
+
+      const jsonStep = await responseStep.json()
+
+      if (!responseStep.ok) {
+        toast.error(jsonStep.error)
       }
 
-    })
-
-    const jsonStep = await responseStep.json()
-
-    if (!responseStep.ok) {
-      toast.error(jsonStep.error)
+      if (responseStep.ok) {
+        toast.success('Step Uploaded Successfully')
+      }
+    } else {
+      toast.error('The user must be logged in to upload a step.')
     }
 
-    if (responseStep.ok) {
-      toast.success('Step Uploaded Successfully')
-    }
   };
 
   return (
