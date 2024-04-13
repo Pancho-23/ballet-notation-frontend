@@ -1402,6 +1402,7 @@ function Create() {
         day: balletClass.day,
         year: balletClass.year,
         country: balletClass.country,
+        userId: email,
         classBody: currentClassText
       }
 
@@ -1466,6 +1467,21 @@ function Create() {
     }
 
   };
+
+  //Hovering on Upload Step Buttons
+  const handleMouseUploadStep = () => {
+    if (!user) {
+      toast.info('User must be logged in to upload a step.')
+    }
+  }
+
+  const handleMouseUploadClass = () => {
+    if (!user) {
+      toast.info('User must be logged in to upload a class.')
+    }
+  }
+
+
 
   return (
 
@@ -1948,7 +1964,7 @@ function Create() {
               <option label="Center" value='Center'></option>
             </datalist>
             &nbsp;
-            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button disabled={!allowed} onClick={handleUploadStep} >Upload Step</button>&nbsp;<button disabled={!allowed} onClick={handleUploadClass} >Upload Class</button></div>
+            <button disabled={navStep === balletClass.classBody.length - 1} id="next-step" className='forward-step' onClick={handleForwardStep}>&#10095;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className="h" onMouseEnter={handleMouseUploadStep}><button disabled={!allowed} onClick={handleUploadStep} >Upload Step</button></div>&nbsp;<div className="h" onMouseEnter={handleMouseUploadClass}><button disabled={!allowed} onClick={handleUploadClass} >Upload Class</button></div></div>
           <div className='current-step'>
             <pre>{currentStepText}</pre>
           </div>
