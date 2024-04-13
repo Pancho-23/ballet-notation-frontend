@@ -49,7 +49,7 @@ Plan:
 
 5) Make the design more engaging, clean and nice for the user.
 
-5) Construct a decent starting database of at least 100 steps and 10 classes.
+5) Construct a decent starting database of at least 20 classes.
 
 6) Upload the Project Page to the Internet
 
