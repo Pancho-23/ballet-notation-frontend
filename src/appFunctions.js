@@ -135,7 +135,7 @@ export function balletClassText(balletClass) {
     index++
   }
 
-  let finalPart = `Master: ${balletClass.master}\nDate: ${balletClass.mounth} ${balletClass.day} ${balletClass.year}\nCountry: ${balletClass.country}\n---\n\n${stepPart}`;
+  let finalPart = `Master: ${balletClass.master}\nDate: ${balletClass.mounth} ${balletClass.day} ${balletClass.year}\nCountry: ${balletClass.country}\nRegistered By: ${balletClass.registeredBy}\nComments: ${balletClass.comments}\n---\n\n${stepPart}`;
 
   return finalPart;
 };
@@ -598,6 +598,8 @@ export function initBalletClass() {
     day: 1,
     year: 2024,
     country: '',
+    registeredBy: '',
+    comments: '',
     classBody: [
       {
         order: 1,
@@ -1171,10 +1173,12 @@ export function balletStringToObject(stringBallet) {
     day: 1,
     year: 2024,
     country: '',
+    registeredBy: '',
+    comments: '',
     classBody: []
   };
 
-  let classRegex = /Master: (.*)\nDate: (.*) (.*) (.*)\nCountry: (.*)\n---\n\n([\s\S]*)\n\n$/;
+  let classRegex = /Master: (.*)\nDate: (.*) (.*) (.*)\nCountry: (.*)\nRegistered By: (.*)\nComments: (.*)\n---\n\n([\s\S]*)\n\n$/;
   let balletMatch = stringBallet.match(classRegex);
 
   initClass.master = balletMatch[1];
@@ -1182,8 +1186,10 @@ export function balletStringToObject(stringBallet) {
   initClass.day = balletMatch[3];
   initClass.year = balletMatch[4];
   initClass.country = balletMatch[5];
+  initClass.registeredBy = balletMatch[6];
+  initClass.comments = balletMatch[7];
 
-  let bodyClassString = balletMatch[6];
+  let bodyClassString = balletMatch[8];
 
   let classArray = bodyClassString.split('---\n\n');
   initClass.classBody = classArray.map(stringStepToObject);

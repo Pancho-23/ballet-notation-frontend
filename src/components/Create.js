@@ -441,6 +441,22 @@ function Create() {
       }
     }
 
+    if (event.target.id === 'registeredBy-input') {
+      if (/^.{0,30}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.registeredBy = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
+    }
+
+    if (event.target.id === 'comments-input') {
+      if (/^.{0,60}$/.test(event.target.value)) {
+        const updateBalletClass = { ...balletClass };
+        updateBalletClass.comments = event.target.value;
+        setBalletClass(updateBalletClass);
+      }
+    }
+
   }
 
 
@@ -2011,6 +2027,11 @@ function Create() {
             <option label="November" value='November'></option>
             <option label="December" value='December'></option>
           </datalist>
+
+          <div className='second-line class-tag'>
+            <div className="h"> Registered By <input className='log log-registeredBy' id='registeredBy-input' type='text' value={balletClass.registeredBy} onChange={handleInputChange} /> &nbsp;&nbsp;&nbsp; </div>
+            <div className="h"> Comments <input className='log log-comments' id='comments-input' type='text' value={balletClass.comments} onChange={handleInputChange} /></div>
+          </div>
 
           <div className='current-class'><pre>{currentClassText}</pre></div>
         </div>
