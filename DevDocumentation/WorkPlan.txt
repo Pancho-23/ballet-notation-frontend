@@ -26,32 +26,32 @@ WorkLog
 
 2/4/24: JSON database (Node.js + Express) for the entire class and for the Steps
 
+19/04/24: Classes as collections of steps, points and rating for each of them, modify and get right all the aspects and properties of classes, steps and users accoring to functionality of the application.
+
 Plan:
 
-1) Classes as collections of steps, points and rating for each of them, modify and get right all the aspects and properties of classes, steps and users accoring to functionality of the application.
-
-2) Moderation of steps, points and rating of the steps, moderations endpoints, UI for moderation.
-      2.1) UI for moderation
-      2.2) Points and Rating of the Steps as properties
-      2.3) Moderation endpoints
-      2.4) Moderation Logic (fetch + presenting + calification-rating + final db update)
-      2.5) Logic for update the status of users, status of steps and status of classes (node-cron)
+1) Moderation of steps, points and rating of the steps, moderations endpoints, UI for moderation.
+      1.1) UI for moderation (WORKING ON THIS)
+      1.2) Points and Rating of the Steps as properties
+      1.3) Moderation endpoints
+      1.4) Moderation Logic (fetch + presenting + calification-rating + final db update)
+      1.5) Logic for update the status of users, status of steps and status of classes (node-cron)
 
 
-3) Email Validation for Users
+2) Email Validation for Users
 
-4) Complete UI:
+3) Complete UI:
       4.1) Home page, explanation of the Project
       4.2) Archive Page only with approved files
       4.3) Flesh out the Learn, About and Contact Pages
 
-5) Set up ADMIN user privileges.
+4) Set up ADMIN user privileges.
 
 5) Make the design more engaging, clean and nice for the user.
 
-5) Construct a decent starting database of at least 20 classes.
+6) Construct a decent starting database of at least 20 classes.
 
-6) Upload the Project Page to the Internet
+7) Upload the Project Page to the Internet
 
-7) Start a Youtube Channel to promote and grow the page.
+8) Start a Youtube Channel to promote and grow the page.
 

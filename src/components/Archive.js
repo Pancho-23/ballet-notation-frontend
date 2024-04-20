@@ -17,7 +17,7 @@ function Archive() {
     }
 
     const fetchSteps = async () => {
-      const responseStep = await fetch('/api/steps/')
+      const responseStep = await fetch('/api/steps/?status=approved')
       const jsonStep = await responseStep.json()
 
       if (responseStep.ok) {

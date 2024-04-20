@@ -1418,6 +1418,8 @@ function Create() {
         day: balletClass.day,
         year: balletClass.year,
         country: balletClass.country,
+        registeredBy: balletClass.registeredBy,
+        comments: balletClass.comments,
         userId: email,
         classBody: currentClassText
       }
